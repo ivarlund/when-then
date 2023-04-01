@@ -5,7 +5,6 @@ export interface Question {
     description: string;
 }
 export interface Team {
-    score: number;
     timeline: Question[];
 }
 
@@ -16,6 +15,8 @@ export interface State {
     freshQuestions: Question[];
     guess: number;
     activeQuestion: Question | null;
+    activeTeam: string | null;
+    round: number;
     shouldShowAnswer: boolean;
     teams: Teams;
     timeline: Question[];

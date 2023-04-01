@@ -12,13 +12,13 @@ const initialState: State = {
     guess: -488,
     activeQuestion: null,
     shouldShowAnswer: false,
+    activeTeam: null,
+    round: 1,
     teams: {
-        'Team 1' :{
-            score: 0,
+        'Team 1': {
             timeline: []
         },
-        'Team 2' : {
-            score: 0,
+        'Team 2': {
             timeline: []
         }
     },
@@ -41,9 +41,9 @@ function setActiveQuestion(state: State, question: Question | null) {
     return state;
 }
 
-function pushToTimeline(state: State) {
-    state.activeQuestion && state.timeline.push(state.activeQuestion);
-    state.timeline.sort((a, b) => (a.answer - b.answer));
+function pushToTimeline(state: State, teamKey: string) {
+    state.teams[teamKey].timeline.push(state.activeQuestion!);
+    state.teams[teamKey].timeline.sort((a, b) => (a.answer - b.answer));
     return state;
 }
 
@@ -52,24 +52,36 @@ function setShouldShowAnswer(state: State, shouldShowAnswer: boolean) {
     return state;
 }
 
+function setActiveTeam(state: State, teamName: string | null) {
+    state.activeTeam = teamName;
+    return state;
+}
+
 const gameSlice = createSlice({
     name: 'game',
     initialState,
     reducers: {
-        makeQuestionUsed(state, action: PayloadAction<Question>) {
+        updateQuestionUsed(state, action: PayloadAction<Question>) {
             state = deprecateQuestion(action.payload, state);
         },
         updateShouldShowAnswer(state, action: PayloadAction<boolean>) {
             state = setShouldShowAnswer(state, action.payload);
         },
-        changeGuess(state, action: PayloadAction<number>) {
+        updateGuess(state, action: PayloadAction<number>) {
             state = setGuess(state, action.payload);
         },
-        changeActiveQuestion(state, action: PayloadAction<Question>) {
+        updateActiveQuestion(state, action: PayloadAction<Question>) {
             state = setActiveQuestion(state, action.payload);
+        },
+        updateActiveTeam(state, action: PayloadAction<string | null>) {
+            state = setActiveTeam(state, action.payload);
+            state.timeline = [];
         },
         getNewActiveQuestion(state) {
             state = setActiveQuestion(state, selectRandomQuestion(state))
+        },
+        incrementRound(state) {
+            state.round += 1;
         },
         resetAndDeprecateActiveQuestion(state) {
             if (state.activeQuestion !== null) {
@@ -77,10 +89,16 @@ const gameSlice = createSlice({
             }
             state = setActiveQuestion(state, null);
         },
-        answerQuestion(state) {
+        answerQuestion(state, action: PayloadAction<string>) {
             setShouldShowAnswer(state, true);
             if (selectGetAnswerCorrect(state)) {
-                state = pushToTimeline(state);
+                state = pushToTimeline(state, action.payload);
+                state.timeline.push(state.activeQuestion!);
+            } else if (!selectGetAnswerCorrect(state)) {
+                const teamArray = state.teams[action.payload].timeline;
+                state.teams[action.payload].timeline = teamArray.filter((question) => !state.timeline.some((otherQuestion) => question.id === otherQuestion.id))
+                updateActiveTeam(null);
+                incrementRound();
             }
         }
     }
@@ -96,18 +114,20 @@ export const selectRandomQuestion = createSelector(
 export const selectGetAnswerCorrect = createSelector(
     (state: State) => state.guess === state.activeQuestion?.answer,
     (answerCorrect) => {
-        // return answerCorrect;
-        return true;
+        return answerCorrect;
+        // return true;
     }
 );
 
 export const {
     answerQuestion,
-    makeQuestionUsed,
+    updateQuestionUsed,
     updateShouldShowAnswer,
-    changeGuess,
-    changeActiveQuestion,
+    updateGuess,
+    updateActiveQuestion,
+    updateActiveTeam,
     getNewActiveQuestion,
+    incrementRound,
     resetAndDeprecateActiveQuestion
 } = gameSlice.actions;
 
