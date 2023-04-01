@@ -12,6 +12,16 @@ const initialState: State = {
     guess: -488,
     activeQuestion: null,
     shouldShowAnswer: false,
+    teams: {
+        'Team 1' :{
+            score: 0,
+            timeline: []
+        },
+        'Team 2' : {
+            score: 0,
+            timeline: []
+        }
+    },
     timeline: []
 };
 

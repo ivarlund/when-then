@@ -6,6 +6,34 @@ import * as reducers from '@/slices/gameSlice';
 import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, StepContent, StepIcon, Slide } from '@mui/material';
 import { Question } from '../data/types';
 
+/**
+ * TODO
+ * 
+ * UI
+ * 	- Change UI to show BC/AD
+ * 	- Add input for guess
+ * Teams
+ * 	- Decide on using array or object for teams (object is probably better, will be looking up by id a lot)
+ * 	- Functionality for adding teams
+ * 	- Functionality for removing teams
+ * 	- Functionality for changing team names
+ * 	- Functionality for changing team colors
+ * 	- Functionality for changing team score
+ * Game
+ * 	- Functionality for starting game
+ * 	- Functionality for ending game
+ * 	- Functionality for starting round
+ * 	- Functionality for ending round
+ * 	- Functionality for starting timer ( 30 seconds? )
+ * 	- A question is answered correctly if the guess is placed correctly on the timeline
+ *  - If question is incorrectly answered all points for the round are lost
+ * 		- Display committed/uncomitted points
+ * 	- First to 10 points wins
+ * 	- Each team get a question at the games start as a starting point
+ * 
+ * 
+ */
+
 function CustomStepIcon(props: any) {
 	const { active, completed } = props;
 	console.log(props)
@@ -76,7 +104,7 @@ function TimeLine({ timeline }: { timeline: Question[] }) {
 	return (
 		<Box sx={{ width: '100%' }}>
 			<Stepper activeStep={timeline.length} alternativeLabel>
-				{timeline.map((question, index) => (
+				{timeline.map((question) => (
 					<Step key={question.id} sx={{
 						'& .MuiStepLabel-root .Mui-completed': {
 							color: 'green',
@@ -135,9 +163,6 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Card sx={{ p: 2, my: 2 }} elevation={3}>
-				{/* {state.timeline.length > 0 && */}
-					<TimeLine timeline={state.timeline} />
-				{/* } */}
 				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
 					{state.activeQuestion
 						? <Typography variant="h6">{state.activeQuestion.question}</Typography>
@@ -162,6 +187,14 @@ export default function Home() {
 						</Button>
 					</ButtonGroup>
 				</Box>
+				{Object.keys(state.teams).map((team) => {
+					return <>
+						<Typography>{team}</Typography>
+						<TimeLine timeline={state.teams[team].timeline} />
+					</>
+				})
+				}
+				<TimeLine timeline={state.timeline} />
 			</Card>
 		</>
 	)
