@@ -3,9 +3,19 @@ import { Inter } from 'next/font/google'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, StepContent } from '@mui/material';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, StepContent, StepIcon, Slide } from '@mui/material';
 import { Question } from '../data/types';
-const inter = Inter({ subsets: ['latin'] })
+
+function CustomStepIcon(props: any) {
+	const { active, completed } = props;
+	console.log(props)
+	return (
+		<StepIcon
+			sx={{ color: 'green' }}
+			{...props}
+		/>
+	);
+}
 
 function YearSelector({ disabled, handleChange, changeValue, value, minValue, maxValue }: {
 	disabled: boolean,
@@ -62,24 +72,27 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 		</Alert>
 }
 
-
 function TimeLine({ timeline }: { timeline: Question[] }) {
 	return (
 		<Box sx={{ width: '100%' }}>
-			<Stepper activeStep={timeline.length}>
-				{timeline.map((question) => (
-					<Step key={question.id}>
-						<Tooltip title={question.question + ' - ' + question.description}>
-							<StepLabel>
-								<Box>
+			<Stepper activeStep={timeline.length} alternativeLabel>
+				{timeline.map((question, index) => (
+					<Step key={question.id} sx={{
+						'& .MuiStepLabel-root .Mui-completed': {
+							color: 'green',
+						},
+						'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
+							color: '#2E3440', marginTop: 1
+						}
+					}}>
+						<Tooltip arrow title={question.question + ' - ' + question.description}>
+							<Slide direction="right" in={true}>
+								<StepLabel>
 									<Box>
 										{question.answer}
 									</Box>
-									{/* <Box>
-									{question.question}
-								</Box> */}
-								</Box>
-							</StepLabel>
+								</StepLabel>
+							</Slide>
 						</Tooltip>
 					</Step>
 				))}
@@ -122,7 +135,9 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Card sx={{ p: 2, my: 2 }} elevation={3}>
-				{state.timeline.length > 0 && <TimeLine timeline={state.timeline} />}
+				{/* {state.timeline.length > 0 && */}
+					<TimeLine timeline={state.timeline} />
+				{/* } */}
 				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
 					{state.activeQuestion
 						? <Typography variant="h6">{state.activeQuestion.question}</Typography>

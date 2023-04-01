@@ -86,7 +86,8 @@ export const selectRandomQuestion = createSelector(
 export const selectGetAnswerCorrect = createSelector(
     (state: State) => state.guess === state.activeQuestion?.answer,
     (answerCorrect) => {
-        return answerCorrect;
+        // return answerCorrect;
+        return true;
     }
 );
 
