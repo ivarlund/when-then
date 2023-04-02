@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, StepContent, StepIcon, Slide, Chip, Avatar } from '@mui/material';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, StepContent, StepIcon, Slide, Chip, Avatar, Skeleton } from '@mui/material';
 import { Question } from '../data/types';
 
 /**
@@ -23,12 +23,12 @@ import { Question } from '../data/types';
  * Game
  * 	- Functionality for starting game
  * 	- Functionality for ending game
- * 	- Functionality for starting round
- * 	- Functionality for ending round
+ * 	- Functionality for starting round CHECK
+ * 	- Functionality for ending round CHECK
  * 	- Functionality for starting timer ( 30 seconds? )
  * 	- A question is answered correctly if the guess is placed correctly on the timeline
- *  - If question is incorrectly answered all points for the round are lost
- * 		- Display committed/uncomitted points
+ *  - If question is incorrectly answered all points for the round are lost CHECK
+ * 		- Display committed/uncomitted points CHECK
  * 	- First to 10 points wins
  * 	- Each team get a question at the games start as a starting point
  * 
@@ -44,15 +44,17 @@ function YearSelector({ disabled, handleChange, changeValue, value, minValue, ma
 }) {
 	return (
 		<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 2 }}>
-			<Box sx={{ display: 'flex', justifyContent: 'center' }}><Typography variant="h2">{value}</Typography></Box>
+			<Box sx={{ display: 'flex', justifyContent: 'center' }}>
+				<Typography variant="h2">{value < 0 ? 'BC ' + value.toString().substring(1) : 'AD ' + value}</Typography>
+			</Box>
 			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
 				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
 					changeValue(value, -1)
 				}>-</Button>
-				<Typography sx={{ px: 2 }}>{minValue}</Typography>
+				<Typography sx={{ px: 2, whiteSpace: 'nowrap' }}>{minValue.toString().substring(1) + ' BC'}</Typography>
 				<Slider disabled={disabled} aria-label="Volume" value={value} onChange={handleChange}
 					min={minValue} max={maxValue} />
-				<Typography sx={{ px: 2 }}>{maxValue}</Typography>
+				<Typography sx={{ px: 2, whiteSpace: 'nowrap' }}>{maxValue + ' AD'}</Typography>
 				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
 					changeValue(value, 1)
 				}>+</Button>
@@ -68,21 +70,25 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 }) {
 	return answerCorrect ?
 		<Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%' }} action={
-			<Button color="primary" variant="contained" size="large" onClick={() =>
-				resetQuestion()
-			}>
-				Next question
-			</Button>
+			<Box sx={{ display: 'flex', alignItems: 'center', height: '100%', pb: '4px' }}>
+				<Button color="inherit" variant="outlined" size="large" onClick={() =>
+					resetQuestion()
+				}>
+					Next question
+				</Button>
+			</Box>
 		}>
 			<AlertTitle>Great job, that is correct!</AlertTitle>
 			{description}
 		</Alert>
 		: <Alert variant="filled" severity="warning" sx={{ mb: 3, width: '100%' }} action={
-			<Button color="primary" variant="contained" size="large" onClick={() =>
-				resetQuestion()
-			}>
-				Next question
-			</Button>
+			<Box sx={{ display: 'flex', alignItems: 'center', height: '100%', pb: '4px' }}>
+				<Button color="inherit" variant="outlined" onClick={() =>
+					resetQuestion()
+				}>
+					Next question
+				</Button>
+			</Box>
 		}>
 			<AlertTitle>Too bad, that is wrong!</AlertTitle>
 			{description}
@@ -117,7 +123,8 @@ function TimeLine({ timeline, stateTimeline }: { timeline: Question[], stateTime
 								</Slide>
 							</Tooltip>
 						</Step>
-					)})}
+					)
+				})}
 			</Stepper>
 		</Box>
 	)
@@ -186,11 +193,11 @@ export default function Home() {
 						})}
 					</Box>
 				</Box>
-				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 170 }}>
 					{state.activeQuestion
 						? <Typography variant="h6">{state.activeQuestion.question}</Typography>
 						: <Button onClick={getNewQuestion}
-							sx={{ width: '100px' }}
+							sx={{ width: 'auto' }}
 							color="primary"
 							disabled={state.freshQuestions.length === 0}
 							variant="contained">
