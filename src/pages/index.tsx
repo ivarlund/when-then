@@ -15,7 +15,7 @@ import { Question } from '../data/types';
  * 	- Add input for guess
  * Teams
  * 	- Decide on using array or object for teams (object is probably better, will be looking up by id a lot)
- * 	- Functionality for adding teams
+ * 	- Functionality for adding teams 
  * 	- Functionality for removing teams
  * 	- Functionality for changing team names
  * 	- Functionality for changing team colors
@@ -32,6 +32,8 @@ import { Question } from '../data/types';
  * 	- First to 10 points wins
  * 	- Each team get a question at the games start as a starting point
  * 
+ * Rule-modal
+ * 	- make a modal that shows the rules and can be toggled
  */
 
 function YearSelector({ disabled, handleChange, changeValue, value, minValue, maxValue }: {
@@ -45,7 +47,9 @@ function YearSelector({ disabled, handleChange, changeValue, value, minValue, ma
 	return (
 		<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 2 }}>
 			<Box sx={{ display: 'flex', justifyContent: 'center' }}>
-				<Typography variant="h2">{value < 0 ? 'BC ' + value.toString().substring(1) : 'AD ' + value}</Typography>
+				<Card sx={{ p: 1, width: 237, display: 'flex', justifyContent: 'center'}} variant="outlined">
+					<Typography variant="h2">{value < 0 ? value.toString().substring(1) + ' BC' : value}</Typography>
+				</Card>
 			</Box>
 			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
 				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
@@ -69,26 +73,22 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 	resetQuestion: () => void
 }) {
 	return answerCorrect ?
-		<Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%' }} action={
-			<Box sx={{ display: 'flex', alignItems: 'center', height: '100%', pb: '4px' }}>
-				<Button color="inherit" variant="outlined" size="large" onClick={() =>
-					resetQuestion()
-				}>
-					Next question
-				</Button>
-			</Box>
+		<Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%', bgcolor: 'success.light' }} action={
+			<Button color="inherit" variant="outlined" size="large" onClick={() =>
+				resetQuestion()
+			}>
+				Next question
+			</Button>
 		}>
 			<AlertTitle>Great job, that is correct!</AlertTitle>
 			{description}
 		</Alert>
-		: <Alert variant="filled" severity="warning" sx={{ mb: 3, width: '100%' }} action={
-			<Box sx={{ display: 'flex', alignItems: 'center', height: '100%', pb: '4px' }}>
-				<Button color="inherit" variant="outlined" onClick={() =>
-					resetQuestion()
-				}>
-					Next question
-				</Button>
-			</Box>
+		: <Alert variant="filled" severity="warning" sx={{ mb: 3, width: '100%', bgcolor: 'warning.light' }} action={
+			<Button color="inherit" variant="outlined" onClick={() =>
+				resetQuestion()
+			}>
+				Next question
+			</Button>
 		}>
 			<AlertTitle>Too bad, that is wrong!</AlertTitle>
 			{description}
@@ -175,7 +175,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Card sx={{ p: 2, my: 2 }} elevation={3}>
+			<Card sx={{ p: 2, my: 2 }}>
 				<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
 					<Button variant="outlined" onClick={toggleRound}>
 						{state.activeTeam ? 'End round' : 'Start round'}
@@ -199,7 +199,7 @@ export default function Home() {
 						: <Button onClick={getNewQuestion}
 							sx={{ width: 'auto' }}
 							color="primary"
-							disabled={state.freshQuestions.length === 0}
+							disabled={state.freshQuestions.length === 0 || !state.activeTeam}
 							variant="contained">
 							Show question
 						</Button>
@@ -226,7 +226,7 @@ export default function Home() {
 			</Card>
 			{Object.keys(state.teams).map((team) => {
 				return (
-					<Card key={team} sx={{ p: 2, my: 2 }} elevation={3}>
+					<Card key={team} sx={{ p: 2, my: 2 }}>
 						<Typography>{team}</Typography>
 						<TimeLine stateTimeline={state.timeline} timeline={state.teams[team].timeline} />
 					</Card>
