@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import { useState } from 'react';
-import { Inter } from 'next/font/google'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
@@ -11,12 +9,13 @@ import { Question } from '../data/types';
  * TODO
  * 
  * Code
- *  - Put text in a separate json file in /data
+ *  - Put text in a separate json file in /data CHECK
  *  - Break up code into smaller components
  * 
  * UI
  * 	- Change UI to show BC/AD
  * 	- Add input for guess
+ *  - Make mobile friendly
  *  - Add green border to current team timeline CHECK
  * Teams
  * 	- Functionality for adding teams 
@@ -118,7 +117,7 @@ function TimeLine({ timeline, stateTimeline }: { timeline: Question[], stateTime
 								<Slide timeout={1000} direction="right" in={true} unmountOnExit>
 									<StepLabel>
 										<Box>
-											{question.answer}
+											{question.answer < 0 ? question.answer.toString().substring(1) + ' BC' : question.answer}
 										</Box>
 										<Box>
 											{question.question}
@@ -184,7 +183,7 @@ export default function Home() {
 			</Head>
 			<Card sx={{ p: 2, my: 2 }}>
 				<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-					<Button sx={{ width: 130 }} variant="outlined" onClick={toggleRound}>
+					<Button sx={{ width: 130 }} disabled={!!state.activeQuestion} variant="outlined" onClick={toggleRound}>
 						{state.activeTeam ? 'End round' : 'Start round'}
 					</Button>
 					<Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -200,7 +199,7 @@ export default function Home() {
 						})}
 					</Box>
 				</Box>
-				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 170 }}>
+				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: 150 }}>
 					{state.activeQuestion
 						? <Typography variant="h6">{state.activeQuestion.question}</Typography>
 						: <Button onClick={getNewQuestion}
@@ -221,14 +220,9 @@ export default function Home() {
 				</Box>
 				<YearSelector disabled={state.shouldShowAnswer} handleChange={handleChange} changeValue={changeValue} value={state.guess} minValue={-3000} maxValue={2023} />
 				<Box sx={{ display: 'flex', justifyContent: 'end' }}>
-					<ButtonGroup>
-						<Button variant="outlined" disabled={!state.activeQuestion || state.shouldShowAnswer || !state.activeTeam} onClick={resetQuestion}>
-							Pass
-						</Button>
-						<Button variant="contained" disabled={!state.activeQuestion || state.shouldShowAnswer || !state.activeTeam} onClick={answerQuestion}>
-							Answer
-						</Button>
-					</ButtonGroup>
+					<Button variant="contained" disabled={!state.activeQuestion || state.shouldShowAnswer || !state.activeTeam} onClick={answerQuestion}>
+						Answer
+					</Button>
 				</Box>
 			</Card>
 			{Object.keys(state.teams).map((team) => {

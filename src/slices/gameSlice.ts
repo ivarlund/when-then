@@ -42,6 +42,7 @@ function setActiveQuestion(state: State, question: Question | null) {
     return state;
 }
 
+// Should probably only have one function for pushing to timeline?
 function pushActiveQuestionToTimeline(state: State, teamKey: string) {
     state.teams[teamKey].timeline.push(state.activeQuestion!);
     state.teams[teamKey].timeline.sort((a, b) => (a.answer - b.answer));
@@ -127,7 +128,9 @@ const gameSlice = createSlice({
                 state.answerCorrect = true;
             } else if (!answerCorrect) {
                 const teamArray = state.teams[action.payload].timeline;
-                state.teams[action.payload].timeline = teamArray.filter((question) => !state.timeline.some((otherQuestion) => question.id === otherQuestion.id))
+                state.teams[action.payload].timeline = teamArray.filter((question) => !state.timeline.some(
+                    (otherQuestion) => question.id === otherQuestion.id
+                ));
                 state = setActiveTeam(state, null);
                 state.timeline = [];
                 state.round += 1;
