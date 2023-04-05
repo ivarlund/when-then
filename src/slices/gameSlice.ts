@@ -127,7 +127,7 @@ const gameSlice = createSlice({
                 state.timeline.push(state.activeQuestion!);
                 state.answerCorrect = true;
             } else if (!answerCorrect) {
-                const teamArray = state.teams[action.payload].timeline;
+                const teamArray = state.teams[action.payload]?.timeline;
                 state.teams[action.payload].timeline = teamArray.filter((question) => !state.timeline.some(
                     (otherQuestion) => question.id === otherQuestion.id
                 ));

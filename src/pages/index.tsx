@@ -4,6 +4,7 @@ import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
 import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar } from '@mui/material';
 import { Question } from '../data/types';
+import { useEffect, useState } from 'react';
 
 /**
  * TODO
@@ -133,12 +134,66 @@ function TimeLine({ timeline, stateTimeline }: { timeline: Question[], stateTime
 	)
 }
 
+
+function CountdownTimer({ time, setTime }: { time: number, setTime: (number: any) => void }) {
+	let outlineColor;
+
+	if (time < 10) {
+		outlineColor = 'red'
+	} else if (time < 20) {
+		outlineColor = 'orange'
+	} else {
+		outlineColor = 'green'
+	}
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			setTime((prevTime: number) => prevTime - 1);
+		}, 1000);
+
+		return () => clearInterval(intervalId);
+	}, [setTime]);
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			if (time === 0) {
+				clearInterval(intervalId);
+			}
+		}, 1000);
+
+		return () => clearInterval(intervalId);
+	}, [time]);
+
+	return (
+		<Box>
+			<Card variant="outlined" sx={{ outline: '2px solid ' + outlineColor }}>
+				<Typography variant="h6" align="center" width={40}>{time}</Typography>
+			</Card>
+		</Box>
+	)
+}
+
 export default function Home() {
 	const state = useSelector((state: RootState) => state.game);
 	const dispatch = useDispatch();
+	const [time, setTime] = useState<number>(30);
+	const [timerRunning, setTimerRunning] = useState(false);
+
+	useEffect(() => {
+		if (time === 0 && timerRunning) {
+			stopTimer();
+			dispatch(reducers.answerQuestion(state.activeTeam!));
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [time]);
 
 	function handleChange(event: Event, newGuess: number | number[]) {
 		dispatch(reducers.updateGuess(newGuess as number));
+	}
+
+	function stopTimer() {
+		setTimerRunning(false);
+		setTime(30);
 	}
 
 	function changeValue(currentValue: number, change: number) {
@@ -170,6 +225,7 @@ export default function Home() {
 		} else {
 			dispatch(reducers.updateActiveTeam(null));
 			dispatch(reducers.incrementRound());
+			setTimerRunning(false);
 		}
 	}
 
@@ -186,6 +242,7 @@ export default function Home() {
 					<Button sx={{ width: 130 }} disabled={!!state.activeQuestion} variant="outlined" onClick={toggleRound}>
 						{state.activeTeam ? 'End round' : 'Start round'}
 					</Button>
+					{timerRunning && (time > -1) && <CountdownTimer time={time} setTime={setTime} />}
 					<Box sx={{ display: 'flex', flexDirection: 'column' }}>
 						{Object.keys(state.teams).map((team) => {
 							return (
@@ -202,7 +259,11 @@ export default function Home() {
 				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: 150 }}>
 					{state.activeQuestion
 						? <Typography variant="h6">{state.activeQuestion.question}</Typography>
-						: <Button onClick={getNewQuestion}
+						: <Button
+							onClick={function () {
+								setTimerRunning(true);
+								getNewQuestion();
+							}}
 							sx={{ width: 'auto' }}
 							color="primary"
 							disabled={state.freshQuestions.length === 0 || !state.activeTeam}
@@ -220,7 +281,13 @@ export default function Home() {
 				</Box>
 				<YearSelector disabled={state.shouldShowAnswer} handleChange={handleChange} changeValue={changeValue} value={state.guess} minValue={-3000} maxValue={2023} />
 				<Box sx={{ display: 'flex', justifyContent: 'end' }}>
-					<Button variant="contained" disabled={!state.activeQuestion || state.shouldShowAnswer || !state.activeTeam} onClick={answerQuestion}>
+					<Button
+						variant="contained"
+						disabled={!state.activeQuestion || state.shouldShowAnswer || !state.activeTeam}
+						onClick={function () {
+							answerQuestion();
+							stopTimer();
+						}}>
 						Answer
 					</Button>
 				</Box>
