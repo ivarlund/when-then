@@ -1,4 +1,4 @@
-import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import questions from '../data/questions.json';
 import { Question, State } from '../data/types';
 
@@ -12,6 +12,7 @@ const initialState: State = {
     guess: -488,
     activeQuestion: null,
     shouldShowAnswer: false,
+    answerCorrect: false,
     activeTeam: null,
     round: 1,
     teams: {
@@ -25,7 +26,7 @@ const initialState: State = {
     timeline: []
 };
 
-function deprecateQuestion(question: Question, state: State) {
+function deprecateQuestion(state: State, question: Question) {
     const index = state.freshQuestions.findIndex(q => q.id === question.id)
     state.freshQuestions.splice(index, 1)
     return state;
@@ -41,9 +42,16 @@ function setActiveQuestion(state: State, question: Question | null) {
     return state;
 }
 
-function pushToTimeline(state: State, teamKey: string) {
+function pushActiveQuestionToTimeline(state: State, teamKey: string) {
     state.teams[teamKey].timeline.push(state.activeQuestion!);
     state.teams[teamKey].timeline.sort((a, b) => (a.answer - b.answer));
+    return state;
+}
+
+function pushInitialQuestionToTimeline(state: State, teamKey: string) {
+    const question = selectRandomQuestion(state);
+    state.teams[teamKey].timeline.push(question);
+    state = deprecateQuestion(state, question);
     return state;
 }
 
@@ -57,12 +65,30 @@ function setActiveTeam(state: State, teamName: string | null) {
     return state;
 }
 
+function getAnswerCorrect(guess: number, currentQuestion: Question, currentTimeline: Question[]) {
+    let temporaryTimeline = currentTimeline;;
+    temporaryTimeline = temporaryTimeline.concat(currentQuestion).sort(
+        (a, b) => (a.answer - b.answer)
+    );
+
+    const index = temporaryTimeline.findIndex(q => q.id === currentQuestion.id);
+    const previous = temporaryTimeline[index - 1] && temporaryTimeline[index - 1].answer;
+    const next = temporaryTimeline[index + 1] && temporaryTimeline[index + 1].answer;
+    if (!!previous && !!next) {
+        return guess >= previous && guess <= next;
+    } else if (!!previous && !next) {
+        return guess >= previous;
+    } else if (!previous && !!next) {
+        return guess <= next;
+    }
+}
+
 const gameSlice = createSlice({
     name: 'game',
     initialState,
     reducers: {
         updateQuestionUsed(state, action: PayloadAction<Question>) {
-            state = deprecateQuestion(action.payload, state);
+            state = deprecateQuestion(state, action.payload);
         },
         updateShouldShowAnswer(state, action: PayloadAction<boolean>) {
             state = setShouldShowAnswer(state, action.payload);
@@ -85,20 +111,27 @@ const gameSlice = createSlice({
         },
         resetAndDeprecateActiveQuestion(state) {
             if (state.activeQuestion !== null) {
-                state = deprecateQuestion(state.activeQuestion, state);
+                state = deprecateQuestion(state, state.activeQuestion);
             }
             state = setActiveQuestion(state, null);
         },
+        updateTimelineWithInitialQuestion(state, action: PayloadAction<string>) {
+            state = pushInitialQuestionToTimeline(state, action.payload);
+        },
         answerQuestion(state, action: PayloadAction<string>) {
             setShouldShowAnswer(state, true);
-            if (selectGetAnswerCorrect(state)) {
-                state = pushToTimeline(state, action.payload);
+            const answerCorrect = selectGetAnswerCorrect(state)
+            if (answerCorrect) {
+                state = pushActiveQuestionToTimeline(state, action.payload);
                 state.timeline.push(state.activeQuestion!);
-            } else if (!selectGetAnswerCorrect(state)) {
+                state.answerCorrect = true;
+            } else if (!answerCorrect) {
                 const teamArray = state.teams[action.payload].timeline;
                 state.teams[action.payload].timeline = teamArray.filter((question) => !state.timeline.some((otherQuestion) => question.id === otherQuestion.id))
-                updateActiveTeam(null);
-                incrementRound();
+                state = setActiveTeam(state, null);
+                state.timeline = [];
+                state.round += 1;
+                state.answerCorrect = false;
             }
         }
     }
@@ -111,11 +144,22 @@ export const selectRandomQuestion = createSelector(
         return freshQuestions[randomIndex];
     }
 );
+
 export const selectGetAnswerCorrect = createSelector(
-    (state: State) => state.guess === state.activeQuestion?.answer,
+    (state: State) => (
+        state.activeQuestion && state.activeTeam
+            ? getAnswerCorrect(state.guess, state.activeQuestion!, state.teams[state.activeTeam!].timeline)
+            : false
+    ),
     (answerCorrect) => {
         return answerCorrect;
-        // return true;
+    }
+);
+
+export const selectAnswerCorrect = createSelector(
+    (state: State) => state.answerCorrect,
+    (answerCorrect) => {
+        return answerCorrect;
     }
 );
 
@@ -127,6 +171,7 @@ export const {
     updateActiveQuestion,
     updateActiveTeam,
     getNewActiveQuestion,
+    updateTimelineWithInitialQuestion,
     incrementRound,
     resetAndDeprecateActiveQuestion
 } = gameSlice.actions;

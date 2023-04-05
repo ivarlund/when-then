@@ -18,6 +18,7 @@ export interface State {
     activeTeam: string | null;
     round: number;
     shouldShowAnswer: boolean;
+    answerCorrect: boolean;
     teams: Teams;
     timeline: Question[];
 }

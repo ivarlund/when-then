@@ -4,17 +4,21 @@ import { Inter } from 'next/font/google'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, StepContent, StepIcon, Slide, Chip, Avatar, Skeleton } from '@mui/material';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar } from '@mui/material';
 import { Question } from '../data/types';
 
 /**
  * TODO
  * 
+ * Code
+ *  - Put text in a separate json file in /data
+ *  - Break up code into smaller components
+ * 
  * UI
  * 	- Change UI to show BC/AD
  * 	- Add input for guess
+ *  - Add green border to current team timeline CHECK
  * Teams
- * 	- Decide on using array or object for teams (object is probably better, will be looking up by id a lot)
  * 	- Functionality for adding teams 
  * 	- Functionality for removing teams
  * 	- Functionality for changing team names
@@ -26,14 +30,14 @@ import { Question } from '../data/types';
  * 	- Functionality for starting round CHECK
  * 	- Functionality for ending round CHECK
  * 	- Functionality for starting timer ( 30 seconds? )
- * 	- A question is answered correctly if the guess is placed correctly on the timeline
+ * 	- A question is answered correctly if the guess is placed correctly on the timeline CHECK
  *  - If question is incorrectly answered all points for the round are lost CHECK
  * 		- Display committed/uncomitted points CHECK
  * 	- First to 10 points wins
- * 	- Each team get a question at the games start as a starting point
+ * 	- Each team get a question at the games start as a starting point CHECK
  * 
  * Rule-modal
- * 	- make a modal that shows the rules and can be toggled
+ * 	- make a modal that shows the rules and can be toggled CHECK
  */
 
 function YearSelector({ disabled, handleChange, changeValue, value, minValue, maxValue }: {
@@ -47,8 +51,8 @@ function YearSelector({ disabled, handleChange, changeValue, value, minValue, ma
 	return (
 		<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 2 }}>
 			<Box sx={{ display: 'flex', justifyContent: 'center' }}>
-				<Card sx={{ p: 1, width: 237, display: 'flex', justifyContent: 'center'}} variant="outlined">
-					<Typography variant="h2">{value < 0 ? value.toString().substring(1) + ' BC' : value}</Typography>
+				<Card sx={{ p: 1, width: 237 }} variant="outlined">
+					<Typography align="center" variant="h2">{value < 0 ? value.toString().substring(1) + ' BC' : value}</Typography>
 				</Card>
 			</Box>
 			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
@@ -152,7 +156,7 @@ export default function Home() {
 	}
 
 	function answerQuestion() {
-		state.activeTeam && dispatch(reducers.answerQuestion(state.activeTeam));
+		dispatch(reducers.answerQuestion(state.activeTeam!));
 	}
 
 	function toggleRound() {
@@ -161,6 +165,9 @@ export default function Home() {
 		if (state.activeTeam === null) {
 			const nextTeam = state.round % 2 === 0 ? Object.keys(state.teams)[1] : Object.keys(state.teams)[0];
 			dispatch(reducers.updateActiveTeam(nextTeam));
+			if (state.teams[nextTeam].timeline.length === 0) {
+				dispatch(reducers.updateTimelineWithInitialQuestion(nextTeam));
+			}
 		} else {
 			dispatch(reducers.updateActiveTeam(null));
 			dispatch(reducers.incrementRound());
@@ -177,7 +184,7 @@ export default function Home() {
 			</Head>
 			<Card sx={{ p: 2, my: 2 }}>
 				<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-					<Button variant="outlined" onClick={toggleRound}>
+					<Button sx={{ width: 130 }} variant="outlined" onClick={toggleRound}>
 						{state.activeTeam ? 'End round' : 'Start round'}
 					</Button>
 					<Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -206,7 +213,7 @@ export default function Home() {
 					}
 					{state.activeQuestion && state.shouldShowAnswer &&
 						<QuestionAnsweredAlert
-							answerCorrect={reducers.selectGetAnswerCorrect(state)}
+							answerCorrect={reducers.selectAnswerCorrect(state)}
 							description={state.activeQuestion.description}
 							resetQuestion={resetQuestion}
 						/>
@@ -226,7 +233,7 @@ export default function Home() {
 			</Card>
 			{Object.keys(state.teams).map((team) => {
 				return (
-					<Card key={team} sx={{ p: 2, my: 2 }}>
+					<Card key={team} sx={{ p: 2, my: 2, outline: team === state.activeTeam ? '2px solid green' : '' }}>
 						<Typography>{team}</Typography>
 						<TimeLine stateTimeline={state.timeline} timeline={state.teams[team].timeline} />
 					</Card>
