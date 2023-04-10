@@ -2,8 +2,8 @@ import Head from 'next/head'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar } from '@mui/material';
-import { Question } from '../data/types';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch } from '@mui/material';
+import { Question, Mark } from '../data/types';
 import { useEffect, useState } from 'react';
 
 /**
@@ -43,11 +43,12 @@ import { useEffect, useState } from 'react';
 function YearSelector({ disabled, handleChange, changeValue, value, minValue, maxValue }: {
 	disabled: boolean,
 	handleChange: (event: Event, newGuess: number | number[]) => void,
-	changeValue: (currentValue: number, change: number) => void,
+	changeValue: (change: number) => void,
 	value: number,
 	minValue: number,
 	maxValue: number
 }) {
+
 	return (
 		<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 2 }}>
 			<Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -57,14 +58,14 @@ function YearSelector({ disabled, handleChange, changeValue, value, minValue, ma
 			</Box>
 			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
 				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
-					changeValue(value, -1)
+					changeValue(value - 1)
 				}>-</Button>
 				<Typography sx={{ px: 2, whiteSpace: 'nowrap' }}>{minValue.toString().substring(1) + ' BC'}</Typography>
-				<Slider disabled={disabled} aria-label="Volume" value={value} onChange={handleChange}
+				<Slider disabled={disabled} aria-label="Volume" value={value as number} onChange={handleChange}
 					min={minValue} max={maxValue} />
 				<Typography sx={{ px: 2, whiteSpace: 'nowrap' }}>{maxValue + ' AD'}</Typography>
 				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
-					changeValue(value, 1)
+					changeValue(value + 1)
 				}>+</Button>
 			</Stack>
 		</Box>
@@ -99,38 +100,83 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 		</Alert>
 }
 
-function TimeLine({ timeline, stateTimeline }: { timeline: Question[], stateTimeline: Question[] }) {
+function getMarks(timeline: Question[]) {
+	let marks: Mark[] = [];
+	timeline.forEach((question, index) => {
+		if (index === 0) {
+			marks.push({
+				value: index,
+				answer: question.answer - 1,
+				label: question.answer + ' <'
+			})
+		}
+		if (index === timeline.length - 1) {
+			marks.push({
+				value: index + 1,
+				answer: question.answer + 1,
+				label: '> ' + question.answer
+			});
+		} else {
+			marks.push({
+				value: index + 1,
+				answer: question.answer + 1,
+				label: question.answer + ' < > ' + timeline[index + 1].answer
+			});
+		}
+	});
+
+	return marks;
+}
+
+function TimeLine({ timeline, stateTimeline, team, activeTeam, onChange }: { timeline: Question[], team: string, activeTeam: string | null, stateTimeline: Question[], onChange: (newValue: number) => void }) {
+
 	return (
-		<Box sx={{ width: '100%' }}>
-			<Stepper activeStep={timeline.length} alternativeLabel>
-				{timeline.map((question) => {
-					let pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
-					return (
-						<Step key={question.id} sx={{
-							'& .MuiStepLabel-root .Mui-completed': {
-								color: pointLocked ? 'green' : 'orange',
-							},
-							'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
-								color: '#2E3440', marginTop: 1
-							}
-						}}>
-							<Tooltip arrow title={question.description}>
-								<Slide timeout={1000} direction="right" in={true} unmountOnExit>
-									<StepLabel>
-										<Box>
-											{question.answer < 0 ? question.answer.toString().substring(1) + ' BC' : question.answer}
-										</Box>
-										<Box>
-											{question.question}
-										</Box>
-									</StepLabel>
-								</Slide>
-							</Tooltip>
-						</Step>
-					)
-				})}
-			</Stepper>
-		</Box>
+		<Card key={team} sx={{ p: 2, my: 2, outline: team === activeTeam ? '2px solid green' : '' }}>
+			<Typography>{team}</Typography>
+			<Box sx={{ px: 2 }}>
+				{timeline.length > 0 &&
+					<Slider
+						marks={getMarks(timeline)}
+						track={false}
+						step={null}
+						min={0}
+						max={timeline.length}
+						disabled={team !== activeTeam}
+						onChange={(event, value) => {
+							const answerValue = getMarks(timeline)[value as number].answer;
+							onChange(answerValue)
+						}}
+					/>}
+				<Stepper activeStep={timeline.length} alternativeLabel>
+					{timeline.map((question) => {
+						let pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
+						return (
+							<Step key={question.id} sx={{
+								'& .MuiStepLabel-root .Mui-completed': {
+									color: pointLocked ? 'green' : 'orange',
+								},
+								'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
+									color: '#2E3440', marginTop: 1
+								}
+							}}>
+								<Tooltip arrow title={question.description}>
+									<Slide timeout={1000} direction="right" in={true} unmountOnExit>
+										<StepLabel>
+											<Box>
+												{question.answer < 0 ? question.answer.toString().substring(1) + ' BC' : question.answer}
+											</Box>
+											<Box>
+												{question.question}
+											</Box>
+										</StepLabel>
+									</Slide>
+								</Tooltip>
+							</Step>
+						)
+					})}
+				</Stepper>
+			</Box>
+		</Card>
 	)
 }
 
@@ -196,8 +242,8 @@ export default function Home() {
 		setTime(30);
 	}
 
-	function changeValue(currentValue: number, change: number) {
-		dispatch(reducers.updateGuess(currentValue + change));
+	function changeValue(newValue: number) {
+		dispatch(reducers.updateGuess(newValue));
 	}
 
 	function getNewQuestion() {
@@ -279,7 +325,7 @@ export default function Home() {
 						/>
 					}
 				</Box>
-				<YearSelector disabled={state.shouldShowAnswer} handleChange={handleChange} changeValue={changeValue} value={state.guess} minValue={-3000} maxValue={2023} />
+				{/* <YearSelector disabled={state.shouldShowAnswer} handleChange={handleChange} changeValue={changeValue} value={state.guess} minValue={-3000} maxValue={2023} /> */}
 				<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 					<Button
 						variant="contained"
@@ -294,10 +340,10 @@ export default function Home() {
 			</Card>
 			{Object.keys(state.teams).map((team) => {
 				return (
-					<Card key={team} sx={{ p: 2, my: 2, outline: team === state.activeTeam ? '2px solid green' : '' }}>
-						<Typography>{team}</Typography>
-						<TimeLine stateTimeline={state.timeline} timeline={state.teams[team].timeline} />
-					</Card>
+					// <Card key={team} sx={{ p: 2, my: 2, outline: team === state.activeTeam ? '2px solid green' : '' }}>
+					// 	<Typography>{team}</Typography>
+					<TimeLine key={team} stateTimeline={state.timeline} team={team} activeTeam={state.activeTeam} timeline={state.teams[team].timeline} onChange={changeValue} />
+					// </Card>
 				)
 			})}
 		</>

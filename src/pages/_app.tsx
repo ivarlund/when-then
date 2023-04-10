@@ -35,14 +35,14 @@ export default function App({ Component, pageProps }: AppProps) {
 	const [rulesDrawerOpen, setRulesDrawerOpen] = useState(false);
 
 	return (
-		<Provider store={store} >
+		<Provider store={store}>
 			<ThemeProvider theme={theme}>
 				<RulesDrawer isOpen={rulesDrawerOpen} setIsOpen={setRulesDrawerOpen} />
-				<Header
-					title="When, then?"
-				><Button sx={{ my: 2, color: '#F2F8F2' }} onClick={() => setRulesDrawerOpen(true)} variant="text">
-				Show rules
-			</Button></Header>
+				<Header title="When then?">
+					<Button sx={{ my: 2, color: '#F2F8F2' }} onClick={() => setRulesDrawerOpen(true)} variant="text">
+						Show rules
+					</Button>
+				</Header>
 				<Container>
 					<Component {...pageProps} />
 				</Container>

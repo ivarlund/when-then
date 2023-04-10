@@ -1,602 +1,600 @@
 [
     {
         "id": 1,
+        "question": "In what year was the first issue of Vogue magazine published?",
+        "description": "",
+        "answer": 1892
+    },
+    {
+        "id": 1,
         "question": "In what year was the first motion picture shown to a paying audience?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1895
     },
     {
         "question": "In what year was the famous painter Leonardo da Vinci born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
-        "answer": 1452,
-        "id": 2
+        "description": "",
+        "answer": 1452
     },
     {
-        "id": 3,
+        "id": 1,
         "question": "In what year did the Beatles release their first album, 'Please Please Me'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1963
     },
     {
-        "id": 4,
+        "id": 1,
         "question": "In what year did the popular TV show 'The Simpsons' first air?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1989
     },
     {
-        "id": 5,
+        "id": 1,
         "question": "In what year did Coco Chanel open her first boutique in Paris?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1910
     },
     {
-        "id": 6,
+        "id": 1,
         "question": "In what year did the famous French monarch, Louis XIV, die?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1715
     },
     {
-        "id": 7,
+        "id": 1,
         "question": "In what year did the famous Hollywood actress Marilyn Monroe pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1962
     },
     {
-        "id": 8,
+        "id": 1,
         "question": "In what year was the first issue of Rolling Stone magazine published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1967
     },
     {
-        "id": 9,
+        "id": 1,
         "question": "In what year did Michael Jackson release his iconic album 'Thriller'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1982
     },
     {
-        "id": 10,
+        "id": 1,
         "question": "In what year did the famous Italian composer Wolfgang Amadeus Mozart die?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1791
     },
     {
         "question": "In what year did the popular musical 'Hamilton' make its debut on Broadway?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
-        "answer": 2015,
-        "id": 11
+        "description": "",
+        "answer": 2015
     },
     {
-        "id": 12,
+        "id": 1,
         "question": "In what year did the first episode of the TV show 'Friends' air?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1994
     },
     {
-        "id": 13,
+        "id": 1,
         "question": "In what year did the iconic American fashion designer Ralph Lauren launch his fashion brand?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1967
     },
     {
-        "id": 14,
+        "id": 1,
         "question": "In what year was the famous English playwright William Shakespeare born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1564
     },
     {
-        "id": 15,
+        "id": 1,
         "question": "In what year did the Academy Awards (Oscars) ceremony first take place?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1929
     },
     {
-        "id": 16,
+        "id": 1,
         "question": "In what year did the famous American singer Elvis Presley pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1977
     },
     {
-        "id": 17,
+        "id": 1,
         "question": "In what year was the popular video-sharing platform YouTube launched?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2005
     },
     {
-        "id": 18,
+        "id": 1,
         "question": "In what year did the first issue of the comic book 'Superman' hit the shelves?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1938
     },
     {
-        "id": 19,
+        "id": 1,
         "question": "In what year did the famous French fashion designer Christian Dior launch his first collection, known as the 'New Look'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1947
     },
     {
-        "id": 20,
+        "id": 1,
         "question": "In what year was the famous American author Mark Twain born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1835
     },
     {
-        "id": 21,
+        "id": 1,
         "question": "In what year did the popular TV show 'Game of Thrones' first premiere?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2011
     },
     {
-        "id": 22,
+        "id": 1,
         "question": "In what year was the famous Hollywood actress Audrey Hepburn born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1929
     },
     {
-        "id": 23,
+        "id": 1,
         "question": "In what year did the first issue of the popular comic book 'Spider-Man' hit the stands?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1962
     },
     {
-        "id": 24,
+        "id": 1,
         "question": "In what year did the famous English scientist Sir Isaac Newton publish his 'Principia Mathematica'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1687
     },
     {
-        "id": 25,
+        "id": 1,
         "question": "In what year did the iconic American pop artist Andy Warhol pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1987
     },
     {
-        "id": 26,
+        "id": 1,
         "question": "In what year was the famous French emperor Napoleon Bonaparte born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1769
     },
     {
-        "id": 27,
+        "id": 1,
         "question": "In what year did the popular TV show 'Breaking Bad' make its debut?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2008
     },
     {
-        "id": 28,
+        "id": 1,
         "question": "In what year did the famous American author Ernest Hemingway win the Nobel Prize in Literature?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1954
     },
     {
-        "id": 29,
+        "id": 1,
         "question": "In what year did the iconic British band Queen release their album 'A Night at the Opera'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1975
     },
     {
-        "id": 30,
+        "id": 1,
         "question": "In what year did the famous American film director Steven Spielberg release his movie 'Jaws'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1975
     },
     {
-        "id": 31,
+        "id": 1,
         "question": "In what year was the popular American talk show 'The Oprah Winfrey Show' first aired?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1986
     },
     {
-        "id": 32,
+        "id": 1,
         "question": "In what year did the famous American singer Whitney Houston pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2012
     },
     {
-        "id": 33,
+        "id": 1,
         "question": "In what year did the first issue of the popular comic book 'Batman' hit the shelves?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1939
     },
     {
-        "id": 34,
+        "id": 1,
         "question": "In what year was the famous German composer Ludwig van Beethoven born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1770
     },
     {
-        "id": 35,
+        "id": 1,
         "question": "In what year did the iconic French fashion designer Yves Saint Laurent launch his brand?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1961
     },
     {
-        "id": 36,
+        "id": 1,
         "question": "In what year did the popular TV show 'The Walking Dead' make its debut?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2010
     },
     {
-        "id": 37,
+        "id": 1,
         "question": "In what year was the famous American singer and actor Frank Sinatra born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1915
     },
     {
-        "id": 38,
+        "id": 1,
         "question": "In what year did the famous Italian explorer Christopher Columbus make his first voyage to the Americas?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1492
     },
     {
-        "id": 39,
+        "id": 1,
         "question": "In what year did the popular American sitcom 'Seinfeld' air its final episode?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1998
     },
     {
-        "id": 40,
+        "id": 1,
         "question": "In what year did Leonardo da Vinci complete his painting 'The Last Supper'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1498
     },
     {
-        "id": 41,
+        "id": 1,
         "question": "In what year did the famous Dutch painter Vincent van Gogh pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1890
     },
     {
-        "id": 42,
+        "id": 1,
         "question": "In what year was the famous Italian painter Michelangelo born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1475
     },
     {
-        "id": 43,
+        "id": 1,
         "question": "In what year did the famous French painter Claude Monet complete his painting 'Water Lilies'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1916
     },
     {
-        "id": 44,
+        "id": 1,
         "question": "In what year was the famous Spanish painter Pablo Picasso born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1881
     },
     {
-        "id": 45,
+        "id": 1,
         "question": "In what year did the famous Dutch painter Rembrandt van Rijn complete his painting 'The Night Watch'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1642
     },
     {
-        "id": 46,
+        "id": 1,
         "question": "In what year was the famous American artist Andy Warhol born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1928
     },
     {
-        "id": 47,
+        "id": 1,
         "question": "In what year did the famous Dutch painter Johannes Vermeer complete his painting 'Girl with a Pearl Earring'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1665
     },
     {
-        "id": 48,
+        "id": 1,
         "question": "In what year was the famous British painter J.M.W. Turner born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1775
     },
     {
-        "id": 49,
+        "id": 1,
         "question": "In what year did the famous Mexican painter Frida Kahlo pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1954
     },
     {
-        "id": 50,
+        "id": 1,
         "question": "In what year was the famous American actor Tom Hanks born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1956
     },
     {
-        "id": 51,
+        "id": 1,
         "question": "In what year did the famous American singer Michael Jackson pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2009
     },
     {
-        "id": 52,
+        "id": 1,
         "question": "In what year was the famous American actress Marilyn Monroe born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1926
     },
     {
-        "id": 53,
+        "id": 1,
         "question": "In what year did the famous American actress Angelina Jolie win an Academy Award for Best Supporting Actress for her role in 'Girl, Interrupted'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2000
     },
     {
-        "id": 54,
+        "id": 1,
         "question": "In what year was the famous American singer Elvis Presley born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1935
     },
     {
-        "id": 55,
+        "id": 1,
         "question": "In what year did the famous American actor Robin Williams pass away?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2014
     },
     {
-        "id": 56,
+        "id": 1,
         "question": "In what year was the famous British actor and humanitarian Sir Michael Caine born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1933
     },
     {
-        "id": 57,
+        "id": 1,
         "question": "In what year did the famous American actress Meryl Streep win an Academy Award for Best Actress for her role in 'Sophie's Choice'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1983
     },
     {
-        "id": 58,
+        "id": 1,
         "question": "In what year was the famous American singer Beyoncé Knowles born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1981
     },
     {
-        "id": 59,
+        "id": 1,
         "question": "In what year did the famous American actor and director Clint Eastwood win an Academy Award for Best Director for his film 'Unforgiven'?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1993
     },
     {
-        "id": 60,
+        "id": 1,
         "question": "In what year was the famous American writer Ernest Hemingway born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1899
     },
     {
-        "id": 61,
+        "id": 1,
         "question": "In what year was the famous English author Jane Austen born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1775
     },
     {
-        "id": 62,
+        "id": 1,
         "question": "In what year was the famous American writer Mark Twain born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1835
     },
     {
-        "id": 63,
+        "id": 1,
         "question": "In what year was the famous Russian writer Fyodor Dostoevsky born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1821
     },
     {
-        "id": 64,
+        "id": 1,
         "question": "In what year was the famous American author Harper Lee's novel 'To Kill a Mockingbird' published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1960
     },
     {
-        "id": 65,
+        "id": 1,
         "question": "In what year was the famous British author J.K. Rowling's first 'Harry Potter' book published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1997
     },
     {
-        "id": 66,
+        "id": 1,
         "question": "In what year was the famous American author Toni Morrison's novel 'Beloved' published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1987
     },
     {
-        "id": 67,
+        "id": 1,
         "question": "In what year was the famous British author Charles Dickens' novel 'Oliver Twist' published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1838
     },
     {
-        "id": 68,
+        "id": 1,
         "question": "In what year was the famous American writer Maya Angelou's autobiography 'I Know Why the Caged Bird Sings' published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1969
     },
     {
-        "id": 69,
+        "id": 1,
         "question": "In what year was the famous American author Edgar Allan Poe's poem 'The Raven' published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1845
     },
     {
-        "id": 70,
+        "id": 1,
         "question": "In what year did the Hanseatic League establish a trading post in the Baltic Sea town of Riga?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1282
     },
     {
-        "id": 71,
+        "id": 1,
         "question": "In what year did the Danish King Waldemar IV conquer the city of Gdańsk and gain control of the Baltic Sea trade routes?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1361
     },
     {
-        "id": 72,
+        "id": 1,
         "question": "In what year did the Swedish navy defeat the Russian navy in the Battle of Svensksund, a naval battle fought in the eastern part of the Baltic Sea?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1790
     },
     {
-        "id": 73,
+        "id": 1,
         "question": "In what year did the Russian navy defeat the Swedish navy in the Battle of Gangut, a naval battle fought in the Gulf of Finland in the eastern part of the Baltic Sea?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1714
     },
     {
-        "id": 74,
+        "id": 1,
         "question": "In what year did the first steamship cross the Baltic Sea, from Stockholm to St. Petersburg?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1816
     },
     {
-        "id": 75,
+        "id": 1,
         "question": "In what year did the Treaty of Nystad, which ended the Great Northern War between Sweden and Russia, cede much of the eastern part of the Baltic Sea to Russia?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1721
     },
     {
-        "id": 76,
+        "id": 1,
         "question": "In what year did the Battle of Bornhöved, a major battle fought between the armies of Denmark and Holstein on one side and the army of the Hanseatic League on the other side, take place near the Baltic Sea coast?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1227
     },
     {
-        "id": 77,
+        "id": 1,
         "question": "In what year did the German battleship SMS Schleswig-Holstein bombard the Polish military outpost at Westerplatte, marking the start of World War II?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1939
     },
     {
-        "id": 78,
+        "id": 1,
         "question": "In what year did the Treaty of Stolbovo, which ended the Ingrian War between Sweden and Russia, give Russia control of the Karelian Isthmus and access to the Baltic Sea?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1617
     },
     {
-        "id": 79,
+        "id": 1,
         "question": "In what year did the Soviet Union intentionally sink the German liner MV Wilhelm Gustloff in the Baltic Sea, resulting in the deaths of over 9,000 refugees and civilians?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1945
     },
     {
-        "id": 80,
+        "id": 1,
         "question": "In what year was the Swedish passenger ship MS Estonia sunk in the Baltic Sea, resulting in the deaths of 852 people?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1994
     },
     {
-        "id": 81,
+        "id": 1,
         "question": "In what year did the Soviet Union begin dumping radioactive waste into the Baltic Sea, leading to environmental and health concerns in the region?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1950
     },
     {
-        "id": 82,
+        "id": 1,
         "question": "In what year did the Baltic States of Estonia, Latvia, and Lithuania regain their independence from the Soviet Union, following the collapse of the Soviet Union?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1991
     },
     {
-        "id": 83,
+        "id": 1,
         "question": "In what year did the passenger ferry MS Scandinavian Star catch fire and sink in the Baltic Sea, resulting in the deaths of 159 people?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1990
     },
     {
-        "id": 84,
+        "id": 1,
         "question": "In what year did the oil tanker MV Prestige sink in the Baltic Sea, causing an oil spill and environmental disaster?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2002
     },
     {
-        "id": 85,
+        "id": 1,
         "question": "In what year did the Baltic Sea Action Plan, a regional effort to reduce pollution and protect the Baltic Sea, come into effect?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2007
     },
     {
-        "id": 86,
+        "id": 1,
         "question": "In what year did the Swedish passenger ship MS Hansa catch fire and sink in the Baltic Sea, resulting in the deaths of 50 people?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1990
     },
     {
-        "id": 87,
+        "id": 1,
         "question": "In what year did the passenger ferry MS Estonia capsized and sunk in the Baltic Sea, resulting in the deaths of 852 people?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1994
     },
     {
-        "id": 88,
+        "id": 1,
         "question": "In what year did the submarine Kursk, belonging to the Russian Navy, sink in the Barents Sea after an explosion, leading to the deaths of 118 sailors?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2000
     },
     {
-        "id": 89,
+        "id": 1,
         "question": "In what year did the cargo ship MS Tricolor sink in the English Channel, causing a shipping hazard and leading to the loss of many containers in the Baltic Sea?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2002
     },
     {
-        "id": 90,
+        "id": 1,
         "question": "What year did the first successfully cloned mammal, a sheep named Dolly, born?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1996
     },
     {
-        "id": 91,
+        "id": 1,
         "question": "In what year was the first recorded sighting of the giant squid, a deep-sea creature that can grow up to 43 feet long?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1874
     },
     {
-        "id": 92,
+        "id": 1,
         "question": "What year was the first animal, a dog named Laika, sent into space aboard the Soviet Union's Sputnik 2 spacecraft?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1957
     },
     {
-        "id": 93,
+        "id": 1,
         "question": "In what year was the endangered mountain gorilla first studied in its natural habitat in Rwanda by American zoologist Dian Fossey?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1967
     },
     {
-        "id": 94,
+        "id": 1,
         "question": "What year was the Tasmanian tiger, a marsupial carnivore, declared extinct after the last known individual died in captivity?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1936
     },
     {
-        "id": 95,
+        "id": 1,
         "question": "In what year was the bald eagle, the national bird and symbol of the United States, removed from the endangered species list?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2007
     },
     {
-        "id": 96,
+        "id": 1,
         "question": "What year was the first successful artificial insemination of an animal, a rabbit, achieved?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1899
     },
     {
-        "id": 97,
+        "id": 1,
         "question": "In what year was the first panda, Hsing-Hsing, gifted to the United States by China as part of the 'ping-pong diplomacy' initiative?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1972
     },
     {
-        "id": 98,
+        "id": 1,
         "question": "What year was the largest animal on earth, the blue whale, first photographed underwater by Japanese researchers?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 1978
     },
     {
-        "id": 99,
+        "id": 1,
         "question": "In what year was the first successful cloning of an endangered species, a wild gaur (a type of wild cattle), achieved in India?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
+        "description": "",
         "answer": 2001
-    },
-    {
-        "id": 100,
-        "question": "In what year was the first issue of Vogue magazine published?",
-        "description": "Lorem ipsum dolor it Satem in Shallah",
-        "answer": 1892
     }
 ]

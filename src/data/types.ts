@@ -8,6 +8,11 @@ export interface Team {
     timeline: Question[];
 }
 
+export interface Mark {
+	value: number;
+	answer: number;
+	label: string;
+}
 interface Teams {
     [key: string]: Team;
 }

@@ -9,7 +9,7 @@ const initialQuestions: Question[] = questions;
 
 const initialState: State = {
     freshQuestions: initialQuestions,
-    guess: -488,
+    guess: 0,
     activeQuestion: null,
     shouldShowAnswer: false,
     answerCorrect: false,
