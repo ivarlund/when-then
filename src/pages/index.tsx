@@ -5,6 +5,7 @@ import * as reducers from '@/slices/gameSlice';
 import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch } from '@mui/material';
 import { Question } from '../data/types';
 import { useEffect, useState } from 'react';
+import { getYearDisplayText } from '../helpers/helperFunctions';
 
 /**
  * TODO
@@ -131,7 +132,7 @@ function TimeLine({ timeline, stateTimeline, team, active, onChange }: { timelin
 									<Slide timeout={1000} direction="right" in={true} unmountOnExit>
 										<StepLabel>
 											<Box>
-												{question.answer < 0 ? question.answer.toString().substring(1) + ' BC' : question.answer}
+												{getYearDisplayText(question.answer)}
 											</Box>
 											<Box>
 												{question.question}

@@ -1,9 +1,7 @@
 import { createSelector, createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import questions from '../data/questions.json';
 import { Question, State, Mark } from '../data/types';
-
-// TODO Kan förmodligen göra det mycket effektivare genom att bara ha en array med frågor och sedan ha en boolean som säger om den är använd eller inte
-// eller ha ett objekt med frågor och en array med id:n på de som är använda
+import { getYearDisplayText } from '../helpers/helperFunctions';
 
 const initialQuestions: Question[] = questions;
 
@@ -73,20 +71,20 @@ function getMarks(timeline: Question[]) {
 			marks.push({
 				value: index,
 				answer: question.answer - 1,
-				label: question.answer + ' <'
+				label: getYearDisplayText(question.answer) + ' <'
 			})
 		}
 		if (index === timeline.length - 1) {
 			marks.push({
 				value: index + 1,
 				answer: question.answer + 1,
-				label: '> ' + question.answer
+				label: '> ' + getYearDisplayText(question.answer)
 			});
 		} else {
 			marks.push({
 				value: index + 1,
 				answer: question.answer + 1,
-				label: question.answer + ' < > ' + timeline[index + 1].answer
+				label: getYearDisplayText(question.answer) + ' < > ' + getYearDisplayText(timeline[index + 1].answer)
 			});
 		}
 	});
