@@ -1,6 +1,6 @@
 import { createSelector, createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import questions from '../data/questions.json';
-import { Question, State } from '../data/types';
+import { Question, State, Mark } from '../data/types';
 
 // TODO Kan förmodligen göra det mycket effektivare genom att bara ha en array med frågor och sedan ha en boolean som säger om den är använd eller inte
 // eller ha ett objekt med frågor och en array med id:n på de som är använda
@@ -64,6 +64,34 @@ function setShouldShowAnswer(state: State, shouldShowAnswer: boolean) {
 function setActiveTeam(state: State, teamName: string | null) {
     state.activeTeam = teamName;
     return state;
+}
+
+function getMarks(timeline: Question[]) {
+	let marks: Mark[] = [];
+	timeline.forEach((question, index) => {
+		if (index === 0) {
+			marks.push({
+				value: index,
+				answer: question.answer - 1,
+				label: question.answer + ' <'
+			})
+		}
+		if (index === timeline.length - 1) {
+			marks.push({
+				value: index + 1,
+				answer: question.answer + 1,
+				label: '> ' + question.answer
+			});
+		} else {
+			marks.push({
+				value: index + 1,
+				answer: question.answer + 1,
+				label: question.answer + ' < > ' + timeline[index + 1].answer
+			});
+		}
+	});
+
+	return marks;
 }
 
 function getAnswerCorrect(guess: number, currentQuestion: Question, currentTimeline: Question[]) {
@@ -140,6 +168,7 @@ const gameSlice = createSlice({
     }
 })
 
+// TODO Läs på om hur syntaxen för dessa borde se ut - ska logiken ligga i första eller andra funktionen?
 export const selectRandomQuestion = createSelector(
     (state: State) => state.freshQuestions,
     (freshQuestions) => {
@@ -149,13 +178,11 @@ export const selectRandomQuestion = createSelector(
 );
 
 export const selectGetAnswerCorrect = createSelector(
-    (state: State) => (
-        state.activeQuestion && state.activeTeam
-            ? getAnswerCorrect(state.guess, state.activeQuestion!, state.teams[state.activeTeam!].timeline)
-            : false
-    ),
-    (answerCorrect) => {
-        return answerCorrect;
+    (state: State) => state,
+    (state) => {
+        return state.activeQuestion && state.activeTeam
+        ? getAnswerCorrect(state.guess, state.activeQuestion!, state.teams[state.activeTeam!].timeline)
+        : false
     }
 );
 
@@ -163,6 +190,13 @@ export const selectAnswerCorrect = createSelector(
     (state: State) => state.answerCorrect,
     (answerCorrect) => {
         return answerCorrect;
+    }
+);
+
+export const selectGetMarks = createSelector(
+    (timeline: Question[]) => timeline,
+    (timeline) => {
+        return getMarks(timeline);
     }
 );
 

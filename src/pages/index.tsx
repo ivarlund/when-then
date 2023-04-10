@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
 import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch } from '@mui/material';
-import { Question, Mark } from '../data/types';
+import { Question } from '../data/types';
 import { useEffect, useState } from 'react';
 
 /**
@@ -29,7 +29,7 @@ import { useEffect, useState } from 'react';
  * 	- Functionality for ending game
  * 	- Functionality for starting round CHECK
  * 	- Functionality for ending round CHECK
- * 	- Functionality for starting timer ( 30 seconds? )
+ * 	- Functionality for starting timer ( 30 seconds? ) CHECK
  * 	- A question is answered correctly if the guess is placed correctly on the timeline CHECK
  *  - If question is incorrectly answered all points for the round are lost CHECK
  * 		- Display committed/uncomitted points CHECK
@@ -40,113 +40,81 @@ import { useEffect, useState } from 'react';
  * 	- make a modal that shows the rules and can be toggled CHECK
  */
 
-function YearSelector({ disabled, handleChange, changeValue, value, minValue, maxValue }: {
-	disabled: boolean,
-	handleChange: (event: Event, newGuess: number | number[]) => void,
-	changeValue: (change: number) => void,
-	value: number,
-	minValue: number,
-	maxValue: number
-}) {
-
-	return (
-		<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 2 }}>
-			<Box sx={{ display: 'flex', justifyContent: 'center' }}>
-				<Card sx={{ p: 1, width: 237 }} variant="outlined">
-					<Typography align="center" variant="h2">{value < 0 ? value.toString().substring(1) + ' BC' : value}</Typography>
-				</Card>
-			</Box>
-			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
-					changeValue(value - 1)
-				}>-</Button>
-				<Typography sx={{ px: 2, whiteSpace: 'nowrap' }}>{minValue.toString().substring(1) + ' BC'}</Typography>
-				<Slider disabled={disabled} aria-label="Volume" value={value as number} onChange={handleChange}
-					min={minValue} max={maxValue} />
-				<Typography sx={{ px: 2, whiteSpace: 'nowrap' }}>{maxValue + ' AD'}</Typography>
-				<Button sx={{ fontSize: '1.5rem' }} disabled={disabled} variant="outlined" onClick={() =>
-					changeValue(value + 1)
-				}>+</Button>
-			</Stack>
-		</Box>
-	)
-}
-
 function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 	answerCorrect: boolean | undefined,
 	description: string,
 	resetQuestion: () => void
 }) {
-	return answerCorrect ?
-		<Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%', bgcolor: 'success.light' }} action={
-			<Button color="inherit" variant="outlined" size="large" onClick={() =>
-				resetQuestion()
+	return answerCorrect
+		? <Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%', bgcolor: 'success.light' }}
+			action={
+				<Button color="inherit" variant="outlined" size="large" onClick={() => resetQuestion()}>
+					Next question
+				</Button>
 			}>
-				Next question
-			</Button>
-		}>
 			<AlertTitle>Great job, that is correct!</AlertTitle>
 			{description}
 		</Alert>
-		: <Alert variant="filled" severity="warning" sx={{ mb: 3, width: '100%', bgcolor: 'warning.light' }} action={
-			<Button color="inherit" variant="outlined" onClick={() =>
-				resetQuestion()
+		: <Alert variant="filled" severity="warning" sx={{ mb: 3, width: '100%', bgcolor: 'warning.light' }}
+			action={
+				<Button color="inherit" variant="outlined" onClick={() => resetQuestion()}>
+					Next question
+				</Button>
 			}>
-				Next question
-			</Button>
-		}>
 			<AlertTitle>Too bad, that is wrong!</AlertTitle>
 			{description}
 		</Alert>
 }
 
-function getMarks(timeline: Question[]) {
-	let marks: Mark[] = [];
-	timeline.forEach((question, index) => {
-		if (index === 0) {
-			marks.push({
-				value: index,
-				answer: question.answer - 1,
-				label: question.answer + ' <'
-			})
-		}
-		if (index === timeline.length - 1) {
-			marks.push({
-				value: index + 1,
-				answer: question.answer + 1,
-				label: '> ' + question.answer
-			});
-		} else {
-			marks.push({
-				value: index + 1,
-				answer: question.answer + 1,
-				label: question.answer + ' < > ' + timeline[index + 1].answer
-			});
-		}
-	});
+// function getMarks(timeline: Question[]) {
+// 	let marks: Mark[] = [];
+// 	timeline.forEach((question, index) => {
+// 		if (index === 0) {
+// 			marks.push({
+// 				value: index,
+// 				answer: question.answer - 1,
+// 				label: question.answer + ' <'
+// 			})
+// 		}
+// 		if (index === timeline.length - 1) {
+// 			marks.push({
+// 				value: index + 1,
+// 				answer: question.answer + 1,
+// 				label: '> ' + question.answer
+// 			});
+// 		} else {
+// 			marks.push({
+// 				value: index + 1,
+// 				answer: question.answer + 1,
+// 				label: question.answer + ' < > ' + timeline[index + 1].answer
+// 			});
+// 		}
+// 	});
 
-	return marks;
-}
+// 	return marks;
+// }
 
-function TimeLine({ timeline, stateTimeline, team, activeTeam, onChange }: { timeline: Question[], team: string, activeTeam: string | null, stateTimeline: Question[], onChange: (newValue: number) => void }) {
+function TimeLine({ timeline, stateTimeline, team, active, onChange }: { timeline: Question[], team: string, active: boolean, stateTimeline: Question[], onChange: (newValue: number) => void }) {
+	const marks = reducers.selectGetMarks(timeline);
 
 	return (
-		<Card key={team} sx={{ p: 2, my: 2, outline: team === activeTeam ? '2px solid green' : '' }}>
+		<Card key={team} sx={{ p: 2, my: 2, outline: active ? '2px solid green' : '' }}>
 			<Typography>{team}</Typography>
 			<Box sx={{ px: 2 }}>
 				{timeline.length > 0 &&
 					<Slider
-						marks={getMarks(timeline)}
+						marks={marks}
 						track={false}
 						step={null}
 						min={0}
 						max={timeline.length}
-						disabled={team !== activeTeam}
+						disabled={!active}
 						onChange={(event, value) => {
-							const answerValue = getMarks(timeline)[value as number].answer;
+							const answerValue = marks[value as number].answer;
 							onChange(answerValue)
 						}}
-					/>}
+					/>
+				}
 				<Stepper activeStep={timeline.length} alternativeLabel>
 					{timeline.map((question) => {
 						let pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
@@ -325,7 +293,6 @@ export default function Home() {
 						/>
 					}
 				</Box>
-				{/* <YearSelector disabled={state.shouldShowAnswer} handleChange={handleChange} changeValue={changeValue} value={state.guess} minValue={-3000} maxValue={2023} /> */}
 				<Box sx={{ display: 'flex', justifyContent: 'end' }}>
 					<Button
 						variant="contained"
@@ -340,10 +307,13 @@ export default function Home() {
 			</Card>
 			{Object.keys(state.teams).map((team) => {
 				return (
-					// <Card key={team} sx={{ p: 2, my: 2, outline: team === state.activeTeam ? '2px solid green' : '' }}>
-					// 	<Typography>{team}</Typography>
-					<TimeLine key={team} stateTimeline={state.timeline} team={team} activeTeam={state.activeTeam} timeline={state.teams[team].timeline} onChange={changeValue} />
-					// </Card>
+					<TimeLine key={team}
+						stateTimeline={state.timeline}
+						team={team}
+						active={state.activeTeam === team}
+						timeline={state.teams[team].timeline}
+						onChange={changeValue}
+					/>
 				)
 			})}
 		</>
