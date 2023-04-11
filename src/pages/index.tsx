@@ -80,10 +80,9 @@ function CustomThumb(props: any) {
 }
 
 function CustomMark(props: any) {
-	const { children, ...other} = props
-	return <SliderThumb sx={{ height: 15, width: 15, color: 'white' }} {...other}>
+	const { children, ...other } = props
+	return <SliderThumb sx={{ height: 10, width: 10 }} {...other}>
 		{children}
-		<CancelIcon sx={{ color: 'primary.main'}} fontSize='small'/>
 	</SliderThumb>
 }
 
