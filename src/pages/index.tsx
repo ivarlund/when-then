@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch, SliderThumb, CardHeader } from '@mui/material';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch, SliderThumb, CardHeader, Divider } from '@mui/material';
 import { Question } from '../data/types';
 import { useEffect, useState } from 'react';
 import { getYearDisplayText } from '../helpers/helperFunctions';
@@ -83,11 +83,10 @@ function TimeLine({ timeline, stateTimeline, team, active, onChange }: { timelin
 
 	return (
 		<Box sx={{borderRadius: '4px', outline: active ? '2px solid green' : '' }}>
-			<Card square sx={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', py: 1}}>
+			<Card key={team} sx={{ p: 2, mb: 2 }}>
 				<Typography align="center" variant="h6">{team}</Typography>
-			</Card>
-			<Card key={team} square sx={{ p: 2, mb: 2, borderBottomLeftRadius: '4px', borderBottomRightRadius: '4px', }}>
-				<Box sx={{ px: 2 }}>
+				<Divider sx={{ pt: 2}} />
+				<Box sx={{ px: 2, pt: 3 }}>
 					{timeline.length > 0 &&
 						<Slider
 							slots={{ thumb: CustomThumb }}
