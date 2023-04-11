@@ -2,10 +2,11 @@ import Head from 'next/head'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch } from '@mui/material';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch, SliderThumb, CardHeader } from '@mui/material';
 import { Question } from '../data/types';
 import { useEffect, useState } from 'react';
 import { getYearDisplayText } from '../helpers/helperFunctions';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
 /**
  * TODO
@@ -50,7 +51,7 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 		? <Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%', bgcolor: 'success.light' }}
 			action={
 				<Button color="inherit" variant="outlined" size="large" onClick={() => resetQuestion()}>
-					Next question
+					OK!
 				</Button>
 			}>
 			<AlertTitle>Great job, that is correct!</AlertTitle>
@@ -67,85 +68,73 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 		</Alert>
 }
 
-// function getMarks(timeline: Question[]) {
-// 	let marks: Mark[] = [];
-// 	timeline.forEach((question, index) => {
-// 		if (index === 0) {
-// 			marks.push({
-// 				value: index,
-// 				answer: question.answer - 1,
-// 				label: question.answer + ' <'
-// 			})
-// 		}
-// 		if (index === timeline.length - 1) {
-// 			marks.push({
-// 				value: index + 1,
-// 				answer: question.answer + 1,
-// 				label: '> ' + question.answer
-// 			});
-// 		} else {
-// 			marks.push({
-// 				value: index + 1,
-// 				answer: question.answer + 1,
-// 				label: question.answer + ' < > ' + timeline[index + 1].answer
-// 			});
-// 		}
-// 	});
-
-// 	return marks;
-// }
+function CustomThumb(props: any) {
+	const { children, ...other } = props;
+	return (
+		<SliderThumb sx={{ height: 28, width: 28 }} {...other}>
+			{children}
+			<ArrowCircleDownIcon sx={{ color: 'secondary.light' }} fontSize='large' />
+		</SliderThumb>
+	);
+}
 
 function TimeLine({ timeline, stateTimeline, team, active, onChange }: { timeline: Question[], team: string, active: boolean, stateTimeline: Question[], onChange: (newValue: number) => void }) {
 	const marks = reducers.selectGetMarks(timeline);
 
 	return (
-		<Card key={team} sx={{ p: 2, my: 2, outline: active ? '2px solid green' : '' }}>
-			<Typography>{team}</Typography>
-			<Box sx={{ px: 2 }}>
-				{timeline.length > 0 &&
-					<Slider
-						marks={marks}
-						track={false}
-						step={null}
-						min={0}
-						max={timeline.length}
-						disabled={!active}
-						onChange={(event, value) => {
-							const answerValue = marks[value as number].answer;
-							onChange(answerValue)
-						}}
-					/>
-				}
-				<Stepper activeStep={timeline.length} alternativeLabel>
-					{timeline.map((question) => {
-						let pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
-						return (
-							<Step key={question.id} sx={{
-								'& .MuiStepLabel-root .Mui-completed': {
-									color: pointLocked ? 'green' : 'orange',
-								},
-								'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
-									color: '#2E3440', marginTop: 1
-								}
-							}}>
-								<Tooltip arrow title={question.description}>
-									<Slide timeout={1000} direction="right" in={true} unmountOnExit>
-										<StepLabel>
-											<Box>
-												{getYearDisplayText(question.answer)}
-											</Box>
-											<Box>
-												{question.question}
-											</Box>
-										</StepLabel>
-									</Slide>
-								</Tooltip>
-							</Step>
-						)
-					})}
-				</Stepper>
-			</Box>
-		</Card>
+		<Box sx={{borderRadius: '4px', outline: active ? '2px solid green' : '' }}>
+			<Card square sx={{borderTopLeftRadius: '4px', borderTopRightRadius: '4px', py: 1}}>
+				<Typography align="center" variant="h6">{team}</Typography>
+			</Card>
+			<Card key={team} square sx={{ p: 2, mb: 2, borderBottomLeftRadius: '4px', borderBottomRightRadius: '4px', }}>
+				<Box sx={{ px: 2 }}>
+					{timeline.length > 0 &&
+						<Slider
+							slots={{ thumb: CustomThumb }}
+							marks={marks}
+							track={false}
+							step={null}
+							min={0}
+							max={timeline.length}
+							disabled={!active}
+							onChange={(event, value) => {
+								const answerValue = marks[value as number].answer;
+								onChange(answerValue)
+							}}
+						/>
+					}
+					<Stepper activeStep={timeline.length} alternativeLabel>
+						{timeline.map((question) => {
+							let pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
+							return (
+								<Step key={question.id} sx={{
+									'& .MuiStepLabel-root .Mui-completed': {
+										color: pointLocked ? 'green' : 'orange',
+									},
+									'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
+										color: '#2E3440', marginTop: 1
+									}
+								}}>
+									<Tooltip arrow title={question.description}>
+										<Slide timeout={1000} direction="right" in={true} unmountOnExit>
+											<StepLabel>
+												<Box>
+													{getYearDisplayText(question.answer)}
+												</Box>
+												<Box>
+													{question.question}
+												</Box>
+											</StepLabel>
+										</Slide>
+									</Tooltip>
+								</Step>
+							)
+						})}
+					</Stepper>
+				</Box>
+			</Card>
+		</Box>
+
 	)
 }
 

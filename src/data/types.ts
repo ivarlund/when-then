@@ -11,7 +11,7 @@ export interface Team {
 export interface Mark {
 	value: number;
 	answer: number;
-	label: string;
+	// label: string;
 }
 interface Teams {
     [key: string]: Team;

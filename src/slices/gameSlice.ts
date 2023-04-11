@@ -71,20 +71,23 @@ function getMarks(timeline: Question[]) {
 			marks.push({
 				value: index,
 				answer: question.answer - 1,
-				label: getYearDisplayText(question.answer) + ' <'
+                // label: '⬇️'
+				// label: getYearDisplayText(question.answer) + ' <'
 			})
 		}
 		if (index === timeline.length - 1) {
 			marks.push({
 				value: index + 1,
 				answer: question.answer + 1,
-				label: '> ' + getYearDisplayText(question.answer)
+                // label: '⬇️'
+				// label: '> ' + getYearDisplayText(question.answer)
 			});
 		} else {
 			marks.push({
 				value: index + 1,
 				answer: question.answer + 1,
-				label: getYearDisplayText(question.answer) + ' < > ' + getYearDisplayText(timeline[index + 1].answer)
+                // label: '⬇️'
+				// label: getYearDisplayText(question.answer) + ' < > ' + getYearDisplayText(timeline[index + 1].answer)
 			});
 		}
 	});
