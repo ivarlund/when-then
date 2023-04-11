@@ -2,11 +2,12 @@ import Head from 'next/head'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
-import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch, SliderThumb, CardHeader, Divider } from '@mui/material';
+import { Typography, Box, Button, Card, Stack, Slider, AlertTitle, Alert, ButtonGroup, Stepper, Step, StepLabel, Tooltip, Slide, Chip, Avatar, TextField, Switch, SliderThumb, CardHeader, Divider, SliderMark } from '@mui/material';
 import { Question } from '../data/types';
 import { useEffect, useState } from 'react';
 import { getYearDisplayText } from '../helpers/helperFunctions';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 /**
  * TODO
@@ -78,18 +79,26 @@ function CustomThumb(props: any) {
 	);
 }
 
+function CustomMark(props: any) {
+	const { children, ...other} = props
+	return <SliderThumb sx={{ height: 15, width: 15, color: 'white' }} {...other}>
+		{children}
+		<CancelIcon sx={{ color: 'primary.main'}} fontSize='small'/>
+	</SliderThumb>
+}
+
 function TimeLine({ timeline, stateTimeline, team, active, onChange }: { timeline: Question[], team: string, active: boolean, stateTimeline: Question[], onChange: (newValue: number) => void }) {
 	const marks = reducers.selectGetMarks(timeline);
 
 	return (
-		<Box sx={{borderRadius: '4px', outline: active ? '2px solid green' : '' }}>
+		<Box sx={{ borderRadius: '4px', outline: active ? '2px solid green' : '' }}>
 			<Card key={team} sx={{ p: 2, mb: 2 }}>
 				<Typography align="center" variant="h6">{team}</Typography>
-				<Divider sx={{ pt: 2}} />
+				<Divider sx={{ pt: 2 }} />
 				<Box sx={{ px: 2, pt: 3 }}>
 					{timeline.length > 0 &&
 						<Slider
-							slots={{ thumb: CustomThumb }}
+							slots={{ thumb: CustomThumb, mark: CustomMark }}
 							marks={marks}
 							track={false}
 							step={null}
