@@ -291,6 +291,7 @@ export default function Home() {
 							if (!reducers.selectGetTeams(state).includes(newTeam) && newTeam !== '') {
 								dispatch(reducers.addTeam(newTeam));
 							}
+							setNewTeam('');
 						}} />
 					</Box>
 				</Box>
