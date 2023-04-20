@@ -11,6 +11,7 @@ import { Button, createTheme, ThemeProvider } from '@mui/material';
 import { useState } from "react";
 import RulesDrawer from "@/components/rulesDrawer";
 import Header from "@/components/header";
+import Head from "next/head";
 
 const theme = createTheme({
 	palette: {
@@ -36,6 +37,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<Provider store={store}>
+			<Head>
+				<title>When then</title>
+				<meta name="description" content="Well, when then?" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<ThemeProvider theme={theme}>
 				<RulesDrawer isOpen={rulesDrawerOpen} setIsOpen={setRulesDrawerOpen} />
 				<Header title="When then?">

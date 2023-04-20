@@ -13,14 +13,7 @@ const initialState: State = {
     answerCorrect: false,
     activeTeam: null,
     round: 1,
-    teams: {
-        'Team 1': {
-            timeline: []
-        },
-        'Team 2': {
-            timeline: []
-        }
-    },
+    teams: {},
     timeline: []
 };
 
@@ -70,24 +63,18 @@ function getMarks(timeline: Question[]) {
 		if (index === 0) {
 			marks.push({
 				value: index,
-				answer: question.answer - 1,
-                // label: '⬇️'
-				// label: getYearDisplayText(question.answer) + ' <'
+				answer: question.answer - 1
 			})
 		}
 		if (index === timeline.length - 1) {
 			marks.push({
 				value: index + 1,
-				answer: question.answer + 1,
-                // label: '⬇️'
-				// label: '> ' + getYearDisplayText(question.answer)
+				answer: question.answer + 1
 			});
 		} else {
 			marks.push({
 				value: index + 1,
-				answer: question.answer + 1,
-                // label: '⬇️'
-				// label: getYearDisplayText(question.answer) + ' < > ' + getYearDisplayText(timeline[index + 1].answer)
+				answer: question.answer + 1
 			});
 		}
 	});
@@ -117,6 +104,11 @@ const gameSlice = createSlice({
     name: 'game',
     initialState,
     reducers: {
+        addTeam(state, action: PayloadAction<string>) {
+            state.teams[action.payload] = {
+                timeline: []
+            };
+        },
         updateQuestionUsed(state, action: PayloadAction<Question>) {
             state = deprecateQuestion(state, action.payload);
         },
@@ -201,6 +193,13 @@ export const selectGetMarks = createSelector(
     }
 );
 
+export const selectGetTeams = createSelector(
+    (state: State) => state.teams,
+    (teams) => {
+        return Object.keys(teams);
+    }
+);
+
 export const {
     answerQuestion,
     updateQuestionUsed,
@@ -211,7 +210,8 @@ export const {
     getNewActiveQuestion,
     updateTimelineWithInitialQuestion,
     incrementRound,
-    resetAndDeprecateActiveQuestion
+    resetAndDeprecateActiveQuestion,
+    addTeam
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

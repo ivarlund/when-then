@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reducers';
 import * as reducers from '@/slices/gameSlice';
@@ -7,7 +6,8 @@ import { Question } from '../data/types';
 import { useEffect, useState } from 'react';
 import { getYearDisplayText } from '../helpers/helperFunctions';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
-import CancelIcon from '@mui/icons-material/Cancel';
+import AddIcon from '@mui/icons-material/Add';
+import Fireworks from '../components/fireworks';
 
 /**
  * TODO
@@ -22,9 +22,9 @@ import CancelIcon from '@mui/icons-material/Cancel';
  *  - Make mobile friendly
  *  - Add green border to current team timeline CHECK
  * Teams
- * 	- Functionality for adding teams 
+ * 	- Functionality for adding teams  CHECK
  * 	- Functionality for removing teams
- * 	- Functionality for changing team names
+ * 	- Functionality for changing team names CHECK
  * 	- Functionality for changing team colors
  * 	- Functionality for changing team score CHECK
  * Game
@@ -49,7 +49,7 @@ function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
 	resetQuestion: () => void
 }) {
 	return answerCorrect
-		? <Alert variant="filled" severity="success" sx={{ mb: 3, width: '100%', bgcolor: 'success.light' }}
+		? <Alert variant="filled" severity="success" sx={{ mb: 3, bgcolor: 'success.light' }}
 			action={
 				<Button color="inherit" variant="outlined" size="large" onClick={() => resetQuestion()}>
 					OK!
@@ -81,70 +81,73 @@ function CustomThumb(props: any) {
 
 function CustomMark(props: any) {
 	const { children, ...other } = props
-	return <SliderThumb sx={{ height: 10, width: 10 }} {...other}>
-		{children}
-	</SliderThumb>
+	return (
+		<SliderThumb sx={{ height: 10, width: 10 }} {...other}>
+			{children}
+		</SliderThumb>
+	);
 }
 
-function TimeLine({ timeline, stateTimeline, team, active, onChange }: { timeline: Question[], team: string, active: boolean, stateTimeline: Question[], onChange: (newValue: number) => void }) {
+function TimeLine({ timeline, stateTimeline, team, active, onChange }: {
+	timeline: Question[],
+	team: string,
+	active: boolean,
+	stateTimeline: Question[],
+	onChange: (newValue: number) => void
+}) {
 	const marks = reducers.selectGetMarks(timeline);
 
 	return (
-		<Box sx={{ borderRadius: '4px', outline: active ? '2px solid green' : '' }}>
-			<Card key={team} sx={{ p: 2, mb: 2 }}>
-				<Typography align="center" variant="h6">{team}</Typography>
-				<Divider sx={{ pt: 2 }} />
-				<Box sx={{ px: 2, pt: 3 }}>
-					{timeline.length > 0 &&
-						<Slider
-							slots={{ thumb: CustomThumb, mark: CustomMark }}
-							marks={marks}
-							track={false}
-							step={null}
-							min={0}
-							max={timeline.length}
-							disabled={!active}
-							onChange={(event, value) => {
-								const answerValue = marks[value as number].answer;
-								onChange(answerValue)
-							}}
-						/>
-					}
-					<Stepper activeStep={timeline.length} alternativeLabel>
-						{timeline.map((question) => {
-							let pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
-							return (
-								<Step key={question.id} sx={{
-									'& .MuiStepLabel-root .Mui-completed': {
-										color: pointLocked ? 'green' : 'orange',
-									},
-									'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
-										color: '#2E3440', marginTop: 1
-									}
-								}}>
-									<Tooltip arrow title={question.description}>
-										<Slide timeout={1000} direction="right" in={true} unmountOnExit>
-											<StepLabel>
-												<Box>
-													{getYearDisplayText(question.answer)}
-												</Box>
-												<Box>
-													{question.question}
-												</Box>
-											</StepLabel>
-										</Slide>
-									</Tooltip>
-								</Step>
-							)
-						})}
-					</Stepper>
-				</Box>
-			</Card>
+		<Box sx={{ p: 2, mb: 2 }}>
+			<Divider sx={{ pt: 2 }} />
+			<Box sx={{ px: 2, pt: 3 }}>
+				{timeline.length > 0 &&
+					<Slider
+						slots={{ thumb: CustomThumb, mark: CustomMark }}
+						marks={marks}
+						track={false}
+						step={null}
+						min={0}
+						max={timeline.length}
+						disabled={!active}
+						onChange={(event, value) => {
+							const answerValue = marks[value as number].answer;
+							onChange(answerValue)
+						}}
+					/>
+				}
+				<Stepper activeStep={timeline.length} alternativeLabel>
+					{timeline.map((question) => {
+						const pointLocked = !stateTimeline.some((q: Question) => q.id === question.id)
+						return (
+							<Step key={question.id} sx={{
+								'& .MuiStepLabel-root .Mui-completed': {
+									color: pointLocked ? 'green' : 'orange',
+								},
+								'& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel': {
+									color: '#2E3440', marginTop: 0.5
+								}
+							}}>
+								<Tooltip arrow title={question.description}>
+									<Slide timeout={1000} direction="right" in={true} unmountOnExit>
+										<StepLabel>
+											<Box>
+												{getYearDisplayText(question.answer)}
+											</Box>
+											<Box>
+												{question.question}
+											</Box>
+										</StepLabel>
+									</Slide>
+								</Tooltip>
+							</Step>
+						)
+					})}
+				</Stepper>
+			</Box>
 		</Box>
-
 	)
 }
-
 
 function CountdownTimer({ time, setTime }: { time: number, setTime: (number: any) => void }) {
 	let outlineColor;
@@ -184,11 +187,36 @@ function CountdownTimer({ time, setTime }: { time: number, setTime: (number: any
 	)
 }
 
+function AddTeamComponent({ newTeam, onChange, onClick }: {
+	newTeam: string,
+	onChange: (newValue: string) => void,
+	onClick: () => void
+}) {
+	return (
+		<Box sx={{ display: 'flex' }}>
+			<TextField sx={{ mr: 0.5 }}
+				value={newTeam}
+				onChange={(e) => onChange(e.target.value)}
+				label="New team"
+				size="small"
+				variant="outlined"
+				onKeyPress={(e) => {
+					if (e.key === 'Enter') {
+						onClick();
+					}
+				}}
+			/>
+			<Button variant="contained" size="small" endIcon={<AddIcon />} onClick={onClick}>Add</Button>
+		</Box>
+	)
+}
+
 export default function Home() {
 	const state = useSelector((state: RootState) => state.game);
 	const dispatch = useDispatch();
 	const [time, setTime] = useState<number>(30);
 	const [timerRunning, setTimerRunning] = useState(false);
+	const [newTeam, setNewTeam] = useState<string>('');
 
 	useEffect(() => {
 		if (time === 0 && timerRunning) {
@@ -225,10 +253,15 @@ export default function Home() {
 	}
 
 	function toggleRound() {
-		// For an arbitrary amount of teams, after the amount of rounds is greater than the amount of teams
-		// the round number minus the amount of teams will be the index of the team that should be active
 		if (state.activeTeam === null) {
-			const nextTeam = state.round % 2 === 0 ? Object.keys(state.teams)[1] : Object.keys(state.teams)[0];
+			let nextTeam = '';
+			// Can't use the reducers.selectGetTeams(state) here because it memoizes the state 
+			// and doesn't update when the state changes so it saves the previously sorted list from render
+			const teams = Object.keys(state.teams);
+			const totalTeams = teams.length;
+
+			const activeTeamIndex = (state.round - 1) % totalTeams;
+			nextTeam = teams[activeTeamIndex];
 			dispatch(reducers.updateActiveTeam(nextTeam));
 			if (state.teams[nextTeam].timeline.length === 0) {
 				dispatch(reducers.updateTimelineWithInitialQuestion(nextTeam));
@@ -242,46 +275,37 @@ export default function Home() {
 
 	return (
 		<>
-			<Head>
-				<title>When then</title>
-				<meta name="description" content="Well, when then?" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<Card sx={{ p: 2, my: 2 }}>
+			<Card sx={{
+				p: 2,
+				mt: 1
+			}}>
+				{Object.keys(state.teams).some((team) => state.teams[team].timeline.length === 10) && <Fireworks />}
 				<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-					<Button sx={{ width: 130 }} disabled={!!state.activeQuestion} variant="outlined" onClick={toggleRound}>
-						{state.activeTeam ? 'End round' : 'Start round'}
-					</Button>
-					{timerRunning && (time > -1) && <CountdownTimer time={time} setTime={setTime} />}
-					<Box sx={{ display: 'flex', flexDirection: 'column' }}>
-						{Object.keys(state.teams).map((team) => {
-							return (
-								<Chip key={team}
-									sx={{ mb: 1 }}
-									color={state.activeTeam === team ? 'success' : 'default'}
-									variant={state.activeTeam === team ? 'filled' : 'outlined'}
-									avatar={<Avatar>{state.teams[team].timeline.length}</Avatar>}
-									label={team}
-								/>)
-						})}
+					<Box sx={{ width: 130 }}>
+						<Button disabled={!!state.activeQuestion || reducers.selectGetTeams(state).length === 0} variant="outlined" onClick={toggleRound}>
+							{state.activeTeam ? 'End round' : 'Start round'}
+						</Button>
+					</Box>
+					<Box>
+						<AddTeamComponent newTeam={newTeam} onChange={setNewTeam} onClick={() => {
+							if (!reducers.selectGetTeams(state).includes(newTeam) && newTeam !== '') {
+								dispatch(reducers.addTeam(newTeam));
+							}
+						}} />
 					</Box>
 				</Box>
-				<Box sx={{ p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: 150 }}>
-					{state.activeQuestion
-						? <Typography variant="h6">{state.activeQuestion.question}</Typography>
-						: <Button
-							onClick={function () {
-								setTimerRunning(true);
-								getNewQuestion();
-							}}
-							sx={{ width: 'auto' }}
-							color="primary"
-							disabled={state.freshQuestions.length === 0 || !state.activeTeam}
-							variant="contained">
-							Show question
-						</Button>
-					}
+				<Box sx={{ pt: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+					{state.activeQuestion ? <Typography variant="h6">{state.activeQuestion.question}</Typography> : <Button
+						onClick={function () {
+							setTimerRunning(true);
+							getNewQuestion();
+						}}
+						sx={{ width: 'auto' }}
+						color="primary"
+						disabled={state.freshQuestions.length === 0 || !state.activeTeam}
+						variant="contained">
+						Show question
+					</Button>}
 					{state.activeQuestion && state.shouldShowAnswer &&
 						<QuestionAnsweredAlert
 							answerCorrect={reducers.selectAnswerCorrect(state)}
@@ -290,29 +314,42 @@ export default function Home() {
 						/>
 					}
 				</Box>
-				<Box sx={{ display: 'flex', justifyContent: 'end' }}>
-					<Button
-						variant="contained"
-						disabled={!state.activeQuestion || state.shouldShowAnswer || !state.activeTeam}
-						onClick={function () {
-							answerQuestion();
-							stopTimer();
-						}}>
-						Answer
-					</Button>
-				</Box>
 			</Card>
-			{Object.keys(state.teams).map((team) => {
-				return (
-					<TimeLine key={team}
-						stateTimeline={state.timeline}
-						team={team}
-						active={state.activeTeam === team}
-						timeline={state.teams[team].timeline}
-						onChange={changeValue}
-					/>
-				)
-			})}
+			{reducers.selectGetTeams(state)
+				.sort((a, b) => (a === state.activeTeam ? -1 : b === state.activeTeam ? 1 : 0))
+				.map(team => (
+					<Card key={team} sx={{ mt: 1, outline: state.activeTeam === team ? '2px solid green' : '' }}>
+						<Box sx={{ display: 'flex', justifyContent: 'space-around', pt: 1 }}>
+							{state.activeTeam === team && timerRunning && (time > -1) && <CountdownTimer time={time} setTime={setTime} />}
+						</Box>
+						<Box sx={{ display: 'flex', justifyContent: 'space-between', px: 1, pt: 1 }}>
+							<Chip key={team}
+								sx={{ mb: 1, justifyContent: 'space-between' }}
+								color={state.activeTeam === team ? 'success' : 'default'}
+								variant={state.activeTeam === team ? 'filled' : 'outlined'}
+								avatar={<Avatar>{state.teams[team].timeline.length}</Avatar>}
+								label={team}
+							/>
+							<Button
+								variant="contained"
+								disabled={!state.activeQuestion || state.shouldShowAnswer || !(state.activeTeam === team)}
+								onClick={function () {
+									answerQuestion();
+									stopTimer();
+								}}>
+								Answer
+							</Button>
+						</Box>
+						<TimeLine
+							stateTimeline={state.timeline}
+							team={team}
+							active={state.activeTeam === team}
+							timeline={state.teams[team].timeline}
+							onChange={changeValue}
+						/>
+					</Card>
+				))
+			}
 		</>
 	)
 }
