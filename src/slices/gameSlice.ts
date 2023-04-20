@@ -1,7 +1,7 @@
 import { createSelector, createSlice, current, PayloadAction } from "@reduxjs/toolkit";
-import questions from '../data/questions.json';
-import { Question, State, Mark } from '../data/types';
-import { getYearDisplayText } from '../helpers/helperFunctions';
+import questions from "../data/questions.json";
+import { Question, State, Mark } from "../data/types";
+import { getYearDisplayText } from "../helpers/helperFunctions";
 
 const initialQuestions: Question[] = questions;
 
@@ -101,13 +101,16 @@ function getAnswerCorrect(guess: number, currentQuestion: Question, currentTimel
 }
 
 const gameSlice = createSlice({
-    name: 'game',
+    name: "game",
     initialState,
     reducers: {
         addTeam(state, action: PayloadAction<string>) {
             state.teams[action.payload] = {
                 timeline: []
             };
+        },
+        updateFreshQuestions(state, action: PayloadAction<Question[]>) {
+            state.freshQuestions = action.payload;
         },
         updateQuestionUsed(state, action: PayloadAction<Question>) {
             state = deprecateQuestion(state, action.payload);
@@ -203,6 +206,7 @@ export const selectGetTeams = createSelector(
 export const {
     answerQuestion,
     updateQuestionUsed,
+    updateFreshQuestions,
     updateShouldShowAnswer,
     updateGuess,
     updateActiveQuestion,

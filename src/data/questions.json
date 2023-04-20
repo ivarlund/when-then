@@ -367,9 +367,9 @@
     },
     {
         "id": 62,
-        "question": "In what year was the famous American writer Mark Twain born?",
-        "description": "Mark Twain, also known as Samuel Clemens, was an American writer, humorist, and lecturer who is best known for his novels 'The Adventures of Tom Sawyer' and 'Adventures of Huckleberry Finn'. He was born in 1835 in Florida, Missouri and is considered one of the greatest American writers of all time.",
-        "answer": 1835
+        "question": "In what year did Microsoft release Windows 95?",
+        "description": "One of the most famous versions of the Windows operating system, it introduced many features still in use today.",
+        "answer": 1995
     },
     {
         "id": 63,
@@ -856,5 +856,83 @@
         "question": "In what year did Alexander the Great become king of Macedon?",
         "answer": -336,
         "description": "Alexander the Great became king of Macedon in 336 BC after the assassination of his father, King Philip II."
+    },
+    {
+        "id": 146,
+        "question": "When was the first website created?",
+        "description": "The first website was created in 1991, marking the beginning of the World Wide Web as we know it today.",
+        "answer": 1991
+    },
+    {
+        "id": 147,
+        "question": "In what year was the first email sent?",
+        "description": "The first email was sent in 1971, paving the way for modern email communication.",
+        "answer": 1971
+    },
+    {
+        "id": 148,
+        "question": "When was the first successful video game, Pong, released?",
+        "description": "The first successful video game, Pong, was released in 1972 and started the video game industry as we know it today.",
+        "answer": 1972
+    },
+    {
+        "id": 149,
+        "question": "When was the first commercially available personal computer, the Altair 8800, released?",
+        "description": "The Altair 8800 was the first commercially available personal computer, which helped spark the home computing revolution.",
+        "answer": 1975
+    },
+    {
+        "id": 150,
+        "question": "In what year was the first graphical web browser, Mosaic, released?",
+        "description": "Mosaic was the first graphical web browser, which made it easier to browse the internet.",
+        "answer": 1993
+    },
+    {
+        "id": 151,
+        "question": "When was the first MP3 player, the MPMan, released?",
+        "description": "The first MP3 player, the MPMan, was released in 1998 and changed the way we listen to music.",
+        "answer": 1998
+    },
+    {
+        "id": 152,
+        "question": "In what year was the first 3D printer created?",
+        "description": "The first 3D printer was created in 1984 and has the potential to revolutionize manufacturing and many other industries.",
+        "answer": 1984
+    },
+    {
+        "id": 153,
+        "question": "When was the first successful digital camera, the Fuji DS-1P, released?",
+        "description": "The first successful digital camera, the Fuji DS-1P, was released in 1988 and transformed the way we take and share pictures.",
+        "answer": 1988
+    },
+    {
+        "id": 154,
+        "question": "In what year was the first search engine, Archie, created?",
+        "description": "Archie was the first search engine and was created in 1990 to help users find information on the internet.",
+        "answer": 1990
+    },
+    {
+        "id": 155,
+        "question": "When was the first successful smartphone, the IBM Simon, released?",
+        "description": "The IBM Simon was the first successful smartphone, combining a mobile phone with a touchscreen interface.",
+        "answer": 1993
+    },
+    {
+        "id": 156,
+        "question": "In what year was the first USB standard released?",
+        "description": "The first USB standard was released in 1996, which has become the standard for connecting all sorts of devices to computers.",
+        "answer": 1996
+    },
+    {
+        "id": 157,
+        "question": "When was the first successful e-book reader, the Rocket eBook, released?",
+        "description": "The first successful e-book reader, the Rocket eBook, was released in 1998 and transformed the way we read and consume literature.",
+        "answer": 1998
+    },
+    {
+        "id": 158,
+        "question": "In what year was the first optical disc, the CD, commercially released?",
+        "description": "The CD, the first optical disc, was commercially released in 1982 and was a major advancement in music storage and distribution, paving the way for DVDs and other optical media.",
+        "answer": 1982
     }
 ]
