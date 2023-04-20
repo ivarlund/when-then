@@ -187,10 +187,11 @@ function CountdownTimer({ time, setTime }: { time: number, setTime: (number: any
 	)
 }
 
-function AddTeamComponent({ newTeam, onChange, onClick }: {
+function AddTeamComponent({ newTeam, onChange, onClick, shouldShowError }: {
 	newTeam: string,
 	onChange: (newValue: string) => void,
-	onClick: () => void
+	onClick: () => void,
+	shouldShowError: boolean
 }) {
 	return (
 		<Box sx={{ display: 'flex' }}>
@@ -200,6 +201,8 @@ function AddTeamComponent({ newTeam, onChange, onClick }: {
 				label="New team"
 				size="small"
 				variant="outlined"
+				error={shouldShowError}
+				helperText={shouldShowError && 'Team name already exists'}
 				onKeyPress={(e) => {
 					if (e.key === 'Enter') {
 						onClick();
@@ -292,7 +295,7 @@ export default function Home() {
 								dispatch(reducers.addTeam(newTeam));
 							}
 							setNewTeam('');
-						}} />
+						}} shouldShowError={!!reducers.selectGetTeams(state).includes(newTeam)}/>
 					</Box>
 				</Box>
 				<Box sx={{ pt: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
