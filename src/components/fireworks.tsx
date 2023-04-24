@@ -2,19 +2,21 @@ import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
-import { Box, Typography } from "@mui/material";
+import { Backdrop, Typography } from "@mui/material";
 
-export default function Fireworks() {
+export default function Fireworks({ winnerTeamName }: { winnerTeamName: string }) {
 	const customInit = useCallback(async (engine: Engine): Promise<void> => {
 		await loadFull(engine);
 	}, []);
 
+	// Can probably do without this
 	const particlesLoaded = useCallback(async (container: Container | undefined) => {
 		await console.log(container);
 	}, []);
+
 	return (
-		<Box>
-			<Typography variant='h1' sx={{ zIndex: 1000 }}>WINNER WINNER CHICKEN DINNER</Typography>
+		<Backdrop sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, display: 'flex', flexDirection: 'column' }} open>
+			<Typography variant='h1' sx={{ zIndex: 1000 }} align="center">WINNER WINNER CHICKEN DINNER <br /> gz {winnerTeamName}</Typography>
 			<Particles
 				id="tsparticles"
 				init={customInit}
@@ -149,6 +151,6 @@ export default function Fireworks() {
 					}
 				}}
 			/>
-		</Box>
+		</Backdrop>
 	)
 };

@@ -1,11 +1,10 @@
 import { createSelector, createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import questions from "../data/questions.json";
-import { Question, State, Mark } from "../data/types";
-import { getYearDisplayText } from "../helpers/helperFunctions";
+import { Question, GameState, Mark } from "../data/types";
 
 const initialQuestions: Question[] = questions;
 
-const initialState: State = {
+const initialState: GameState = {
     freshQuestions: initialQuestions,
     guess: 0,
     activeQuestion: null,
@@ -17,42 +16,42 @@ const initialState: State = {
     timeline: []
 };
 
-function deprecateQuestion(state: State, question: Question) {
+function deprecateQuestion(state: GameState, question: Question) {
     const index = state.freshQuestions.findIndex(q => q.id === question.id)
     state.freshQuestions.splice(index, 1)
     return state;
 }
 
-function setGuess(state: State, guess: number) {
+function setGuess(state: GameState, guess: number) {
     state.guess = guess;
     return state;
 }
 
-function setActiveQuestion(state: State, question: Question | null) {
+function setActiveQuestion(state: GameState, question: Question | null) {
     state.activeQuestion = question;
     return state;
 }
 
 // Should probably only have one function for pushing to timeline?
-function pushActiveQuestionToTimeline(state: State, teamKey: string) {
+function pushActiveQuestionToTimeline(state: GameState, teamKey: string) {
     state.teams[teamKey].timeline.push(state.activeQuestion!);
     state.teams[teamKey].timeline.sort((a, b) => (a.answer - b.answer));
     return state;
 }
 
-function pushInitialQuestionToTimeline(state: State, teamKey: string) {
+function pushInitialQuestionToTimeline(state: GameState, teamKey: string) {
     const question = selectRandomQuestion(state);
     state.teams[teamKey].timeline.push(question);
     state = deprecateQuestion(state, question);
     return state;
 }
 
-function setShouldShowAnswer(state: State, shouldShowAnswer: boolean) {
+function setShouldShowAnswer(state: GameState, shouldShowAnswer: boolean) {
     state.shouldShowAnswer = shouldShowAnswer;
     return state;
 }
 
-function setActiveTeam(state: State, teamName: string | null) {
+function setActiveTeam(state: GameState, teamName: string | null) {
     state.activeTeam = teamName;
     return state;
 }
@@ -66,6 +65,7 @@ function getMarks(timeline: Question[]) {
 				answer: question.answer - 1
 			})
 		}
+        // Can probably remove this if
 		if (index === timeline.length - 1) {
 			marks.push({
 				value: index + 1,
@@ -83,7 +83,7 @@ function getMarks(timeline: Question[]) {
 }
 
 function getAnswerCorrect(guess: number, currentQuestion: Question, currentTimeline: Question[]) {
-    let temporaryTimeline = currentTimeline;;
+    let temporaryTimeline = currentTimeline;
     temporaryTimeline = temporaryTimeline.concat(currentQuestion).sort(
         (a, b) => (a.answer - b.answer)
     );
@@ -100,14 +100,56 @@ function getAnswerCorrect(guess: number, currentQuestion: Question, currentTimel
     }
 }
 
+export const selectRandomQuestion = createSelector(
+    (state: GameState) => state.freshQuestions,
+    (freshQuestions) => {
+        const randomIndex = Math.floor(Math.random() * freshQuestions.length);
+        return freshQuestions[randomIndex];
+    }
+);
+
+export const selectGetAnswerCorrect = createSelector(
+    (state: GameState) => state,
+    (state) => {
+        return state.activeQuestion && state.activeTeam
+        ? getAnswerCorrect(state.guess, state.activeQuestion!, state.teams[state.activeTeam!].timeline)
+        : false
+    }
+);
+
+export const selectAnswerCorrect = createSelector(
+    (state: GameState) => state.answerCorrect,
+    (answerCorrect) => {
+        return answerCorrect;
+    }
+);
+
+export const selectGetMarks = createSelector(
+    (timeline: Question[]) => timeline,
+    (timeline) => {
+        return getMarks(timeline);
+    }
+);
+
+export const selectGetTeams = createSelector(
+    (state: GameState) => state.teams,
+    (teams) => {
+        return Object.keys(teams);
+    }
+);
+
 const gameSlice = createSlice({
     name: "game",
     initialState,
     reducers: {
         addTeam(state, action: PayloadAction<string>) {
             state.teams[action.payload] = {
-                timeline: []
+                timeline: [],
+                color: 'gray'
             };
+        },
+        addTeamMap(state, action: PayloadAction<{[key: string]: {timeline: Question[], color: string}}>) {
+            state.teams = action.payload;
         },
         updateFreshQuestions(state, action: PayloadAction<Question[]>) {
             state.freshQuestions = action.payload;
@@ -129,7 +171,7 @@ const gameSlice = createSlice({
             state.timeline = [];
         },
         getNewActiveQuestion(state) {
-            state = setActiveQuestion(state, selectRandomQuestion(state))
+            state = setActiveQuestion(state, selectRandomQuestion(state));
         },
         incrementRound(state) {
             state.round += 1;
@@ -162,60 +204,22 @@ const gameSlice = createSlice({
             }
         }
     }
-})
-
-// TODO Läs på om hur syntaxen för dessa borde se ut - ska logiken ligga i första eller andra funktionen?
-export const selectRandomQuestion = createSelector(
-    (state: State) => state.freshQuestions,
-    (freshQuestions) => {
-        const randomIndex = Math.floor(Math.random() * freshQuestions.length);
-        return freshQuestions[randomIndex];
-    }
-);
-
-export const selectGetAnswerCorrect = createSelector(
-    (state: State) => state,
-    (state) => {
-        return state.activeQuestion && state.activeTeam
-        ? getAnswerCorrect(state.guess, state.activeQuestion!, state.teams[state.activeTeam!].timeline)
-        : false
-    }
-);
-
-export const selectAnswerCorrect = createSelector(
-    (state: State) => state.answerCorrect,
-    (answerCorrect) => {
-        return answerCorrect;
-    }
-);
-
-export const selectGetMarks = createSelector(
-    (timeline: Question[]) => timeline,
-    (timeline) => {
-        return getMarks(timeline);
-    }
-);
-
-export const selectGetTeams = createSelector(
-    (state: State) => state.teams,
-    (teams) => {
-        return Object.keys(teams);
-    }
-);
+});
 
 export const {
-    answerQuestion,
+    updateGuess,
+    updateActiveTeam,
     updateQuestionUsed,
     updateFreshQuestions,
-    updateShouldShowAnswer,
-    updateGuess,
     updateActiveQuestion,
-    updateActiveTeam,
-    getNewActiveQuestion,
+    updateShouldShowAnswer,
     updateTimelineWithInitialQuestion,
+    addTeam,
+    addTeamMap,
+    answerQuestion,
     incrementRound,
-    resetAndDeprecateActiveQuestion,
-    addTeam
+    getNewActiveQuestion,
+    resetAndDeprecateActiveQuestion
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

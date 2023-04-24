@@ -1,8 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import gameReducer from "./slices/gameSlice";
+import setupReducer from "./slices/setupSlice";
 
 const rootReducer = combineReducers({
-  game: gameReducer
+  game: gameReducer,
+  setup: setupReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

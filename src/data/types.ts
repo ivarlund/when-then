@@ -6,17 +6,23 @@ export interface Question {
 }
 export interface Team {
     timeline: Question[];
+    color: string;
 }
 
 export interface Mark {
 	value: number;
 	answer: number;
-	// label: string;
 }
-interface Teams {
+export interface Teams {
     [key: string]: Team;
 }
-export interface State {
+
+export interface TeamOptions {
+    name: string,
+    color: string
+}
+
+export interface GameState {
     freshQuestions: Question[];
     guess: number;
     activeQuestion: Question | null;
@@ -26,4 +32,9 @@ export interface State {
     answerCorrect: boolean;
     teams: Teams;
     timeline: Question[];
+}
+
+export interface SetupState {
+    teams: TeamOptions[];
+    enableAi: boolean;
 }

@@ -22,37 +22,27 @@ import {
 } from "@mui/material";
 import { Question } from "../data/types";
 import { useEffect, useState } from "react";
-import { getYearDisplayText } from "../helpers/helperFunctions";
+import { getYearDisplayText, getWinningTeamIndex } from "@/helpers/helperFunctions";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
-import AddIcon from "@mui/icons-material/Add";
-import Fireworks from "../components/fireworks";
+import Fireworks from "@/components/fireworks";
 import CountdownTimer from "@/components/countdownTimer";
+import Setup from "@/components/setup";
 
 function QuestionAnsweredAlert({ answerCorrect, description, resetQuestion }: {
-	answerCorrect: boolean | undefined,
+	answerCorrect: boolean,
 	description: string,
 	resetQuestion: () => void
 }) {
 	return (
-		answerCorrect
-			? <Alert variant="filled" severity="success" sx={{ mb: 3, bgcolor: 'success.light' }}
-				action={
-					<Button color="inherit" variant="outlined" size="large" onClick={resetQuestion}>
-						OK!
-					</Button>
-				}>
-				<AlertTitle>Great job, that is correct!</AlertTitle>
-				{description}
-			</Alert>
-			: <Alert variant="filled" severity="warning" sx={{ mb: 3, width: '100%', bgcolor: 'warning.light' }}
-				action={
-					<Button color="inherit" variant="outlined" onClick={resetQuestion}>
-						Next question
-					</Button>
-				}>
-				<AlertTitle>Too bad, that is wrong!</AlertTitle>
-				{description}
-			</Alert>
+		<Alert variant="filled" severity="success" sx={{ mb: 3, bgcolor: answerCorrect ? 'success.light' : 'warning.light' }}
+			action={
+				<Button color="inherit" variant="outlined" size="large" onClick={resetQuestion}>
+					OK!
+				</Button>
+			}>
+			<AlertTitle>{answerCorrect ? 'Great job, that is correct!' : 'Too bad that is wrong!'}</AlertTitle>
+			{description}
+		</Alert>
 	);
 }
 
@@ -135,33 +125,6 @@ function TimeLine({ timeline, stateTimeline, active, onChange }: {
 	);
 }
 
-function AddTeamComponent({ newTeam, shouldShowError, onChange, onClick }: {
-	newTeam: string,
-	shouldShowError: boolean
-	onChange: (newValue: string) => void,
-	onClick: () => void,
-}) {
-	return (
-		<Box sx={{ display: 'flex' }}>
-			<TextField sx={{ mr: 0.5 }}
-				value={newTeam}
-				onChange={(e) => onChange(e.target.value)}
-				label="New team"
-				size="small"
-				variant="outlined"
-				error={shouldShowError}
-				helperText={shouldShowError && 'Team name already exists'}
-				onKeyPress={(e) => {
-					if (e.key === 'Enter') {
-						onClick();
-					}
-				}}
-			/>
-			<Button variant="contained" size="small" endIcon={<AddIcon />} onClick={onClick}>Add</Button>
-		</Box>
-	)
-}
-
 export default function Home() {
 	const state = useSelector((state: RootState) => state.game);
 	const dispatch = useDispatch();
@@ -169,7 +132,7 @@ export default function Home() {
 	const [timerRunning, setTimerRunning] = useState(false);
 	const [newTeam, setNewTeam] = useState<string>('');
 
-	const winner = Object.keys(state.teams).some((team) => state.teams[team].timeline.length === 10);
+	const winner = getWinningTeamIndex(state.teams);
 	const noTeams = reducers.selectGetTeams(state).length === 0;
 	const noQuestions = state.freshQuestions.length === 0;
 
@@ -186,10 +149,12 @@ export default function Home() {
 		setTime(30);
 	}
 
-	function changeValue(newValue: number) {
+	// naming? changeValue doesn't really say what it does
+	function handleUpdateGuess(newValue: number) {
 		dispatch(reducers.updateGuess(newValue));
 	}
 
+	// naming? should this maybe be setNewActiveQuestion?
 	function getNewQuestion() {
 		dispatch(reducers.getNewActiveQuestion());
 	}
@@ -231,18 +196,15 @@ export default function Home() {
 		}
 	}
 
-	return (
+	return noTeams ? <Setup /> : (
 		<>
 			<Card sx={{ p: 2, my: 1 }}>
-				{winner && <Fireworks />}
+				{(winner > -1) && <Fireworks winnerTeamName={reducers.selectGetTeams(state)[winner]} />}
 				<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
 					<Box sx={{ width: 130 }}>
 						<Button disabled={!!state.activeQuestion || noTeams} variant="outlined" onClick={toggleRound}>
 							{state.activeTeam ? 'End round' : 'Start round'}
 						</Button>
-					</Box>
-					<Box>
-						<AddTeamComponent newTeam={newTeam} onChange={setNewTeam} onClick={addTeam} shouldShowError={!!reducers.selectGetTeams(state).includes(newTeam)} />
 					</Box>
 				</Box>
 				<Box sx={{
@@ -282,8 +244,12 @@ export default function Home() {
 						</Box>
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', px: 1, pt: 1 }}>
 							<Chip key={team}
-								sx={{ mb: 1, justifyContent: 'space-between' }}
-								color={state.activeTeam === team ? 'success' : 'default'}
+								sx={{ 
+									mb: 1, 
+									justifyContent: 'space-between', 
+									backgroundColor: state.teams[team].color ,
+									outline: state.activeTeam === team ? '2px solid green' : '' 
+								}}
 								variant={state.activeTeam === team ? 'filled' : 'outlined'}
 								avatar={<Avatar>{state.teams[team].timeline.length}</Avatar>}
 								label={team}
@@ -302,10 +268,11 @@ export default function Home() {
 							stateTimeline={state.timeline}
 							active={state.activeTeam === team}
 							timeline={state.teams[team].timeline}
-							onChange={changeValue}
+							onChange={handleUpdateGuess}
 						/>
 					</Card>
 				))}
 		</>
 	)
+
 }
