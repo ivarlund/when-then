@@ -163,14 +163,11 @@ const gameSlice = createSlice({
         updateGuess(state, action: PayloadAction<number>) {
             state = setGuess(state, action.payload);
         },
-        updateActiveQuestion(state, action: PayloadAction<Question>) {
-            state = setActiveQuestion(state, action.payload);
-        },
         updateActiveTeam(state, action: PayloadAction<string | null>) {
             state = setActiveTeam(state, action.payload);
             state.timeline = [];
         },
-        getNewActiveQuestion(state) {
+        updateActiveQuestion(state) {
             state = setActiveQuestion(state, selectRandomQuestion(state));
         },
         incrementRound(state) {
@@ -211,14 +208,13 @@ export const {
     updateActiveTeam,
     updateQuestionUsed,
     updateFreshQuestions,
-    updateActiveQuestion,
     updateShouldShowAnswer,
     updateTimelineWithInitialQuestion,
     addTeam,
     addTeamMap,
     answerQuestion,
     incrementRound,
-    getNewActiveQuestion,
+    updateActiveQuestion,
     resetAndDeprecateActiveQuestion
 } = gameSlice.actions;
 

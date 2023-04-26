@@ -12,6 +12,40 @@ export default function Header({ title, children }: { title: string, children?: 
     const dispatch = useDispatch();
     const [isCalling, setIsCalling] = useState<boolean>(false);
     const [category, setCategory] = useState<string>('Movies');
+    
+    // This fetching logic should be moved outside to a logics file
+    function fetchGPTQuestions() {
+        setIsCalling(true);
+        fetch("/api/questionGenerator", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [{
+                    role: "user",
+                    content: `\"Generate 10 questions ${'about ' + category} in the following format: {\"id\": <unique_id>,\"question\": \"In what year was <random_event>?\",\"answer\": <random_year>,\"description\": \"<random_event> took place in <random_year>.\"}\"`
+                }],
+                temperature: 0.7
+            })
+        })
+            .then(async res => {
+                if (res.status === 200) {
+                    const questions = await res.json();
+                    const parsedQuestions = parseQuestions(questions.choices[0].message.content);
+                    console.log('INDEX', questions.choices[0].message.content);
+                    console.log('PARSED', parsedQuestions);
+                    dispatch(reducers.updateFreshQuestions(parsedQuestions));
+                }
+                setIsCalling(false);
+            })
+            .catch(err => {
+                setIsCalling(false);
+                console.log(err)
+            });
+    
+    }
 
     return (
         <Paper sx={{
@@ -55,38 +89,7 @@ export default function Header({ title, children }: { title: string, children?: 
             {setupState.enableAi &&
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <TextField size="small" label="Category" value={category} onChange={(e) => setCategory(e.target.value)} />
-                    {/* This fetching logic should be moved outside to a logics file */}
-                    <Button variant="text" sx={{ color: '#F2F8F2' }} disabled={isCalling} onClick={(e) => {
-                        setIsCalling(true);
-                        fetch("/api/questionGenerator", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({
-                                model: "gpt-3.5-turbo",
-                                messages: [{
-                                    role: "user",
-                                    content: `\"Generate 10 questions ${'about ' + category} in the following format: {\"id\": <unique_id>,\"question\": \"In what year was <random_event>?\",\"answer\": <random_year>,\"description\": \"<random_event> took place in <random_year>.\"}\"`
-                                }],
-                                temperature: 0.7
-                            })
-                        })
-                            .then(async res => {
-                                if (res.status === 200) {
-                                    const questions = await res.json();
-                                    const parsedQuestions = parseQuestions(questions.choices[0].message.content);
-                                    console.log('INDEX', questions.choices[0].message.content);
-                                    console.log('PARSED', parsedQuestions);
-                                    dispatch(reducers.updateFreshQuestions(parsedQuestions));
-                                }
-                                setIsCalling(false);
-                            })
-                            .catch(err => {
-                                setIsCalling(false);
-                                console.log(err)
-                            });
-                    }}>FETCH</Button>
+                    <Button variant="text" sx={{ color: '#F2F8F2' }} disabled={isCalling} onClick={fetchGPTQuestions}>FETCH</Button>
                 </Box>
             }
             {isCalling && (

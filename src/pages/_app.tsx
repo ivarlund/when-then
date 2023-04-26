@@ -1,7 +1,7 @@
 import "@/styles/globals.css"
 import type { AppProps } from 'next/app'
 import { Provider } from 'react-redux';
-import store from '../store';
+import store from '@/store';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<ThemeProvider theme={theme}>
 				<RulesDrawer isOpen={rulesDrawerOpen} setIsOpen={setRulesDrawerOpen} />
 				<Header title="When then?">
-					<Button sx={{ my: 2, color: '#F2F8F2' }} onClick={() => setRulesDrawerOpen(true)} variant="text">
+					<Button sx={{ my: 2, color: '#F2F8F2' }} onClick={() => setRulesDrawerOpen(true)} variant="outlined">
 						Show rules
 					</Button>
 				</Header>
