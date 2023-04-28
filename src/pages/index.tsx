@@ -74,7 +74,7 @@ function TimeLine({ timeline, stateTimeline, active, onChange }: {
 	const marks = reducers.selectGetMarks(timeline);
 	useEffect(() => {
 		if (active) {
-			onChange(marks[0].answer)
+			onChange(marks[0].value)
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [active]);
@@ -93,7 +93,7 @@ function TimeLine({ timeline, stateTimeline, active, onChange }: {
 						max={timeline.length}
 						disabled={!active}
 						onChange={(event, value) => {
-							const answerValue = marks[value as number].answer;
+							const answerValue = marks[value as number].value;
 							onChange(answerValue)
 						}}
 					/>}
@@ -158,7 +158,6 @@ function TeamComponent({
 		stopTimer: () => void,
 		onChange: (newValue: number) => void
 	}) {
-		console.log(timerRunning, 'timerRunning', time, 'time')
 	return (
 		<Card key={team} sx={{ mb: 1, outline: active ? '2px solid green' : '' }}>
 			<Box sx={{ display: 'flex', justifyContent: 'space-around', pt: 1 }}>
@@ -282,7 +281,7 @@ export default function Home() {
 							? <Typography variant="h6">{state.activeQuestion.question}</Typography>
 							: <Button
 								onClick={() => {
-                                    setTimerRunning(true);
+									setTimerRunning(true);
 									getNewActiveQuestion();
 								}}
 								sx={{ width: 'auto' }}

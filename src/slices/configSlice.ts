@@ -1,7 +1,7 @@
-import { SetupState, TeamOptions } from "@/data/types";
+import { ConfigState, TeamOptions } from "@/data/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: SetupState = {
+const initialState: ConfigState = {
     teams: [{
         color: "default",
         name: "Team 1",
@@ -11,10 +11,11 @@ const initialState: SetupState = {
         name: "Team 2",
     },
     ],
-    enableAi: false
+    enableAi: false,
+    isCallingService: false
 }
 
-const setupSlice = createSlice({
+const configSlice = createSlice({
     name: "setup",
     initialState,
     reducers: {
@@ -27,6 +28,7 @@ const setupSlice = createSlice({
         },
         removeTeam(state, action: PayloadAction<number>) {
             state.teams = state.teams.filter((team, index) => index !== action.payload);
+            // state.teams = state.teams.splice(action.payload, 1);
         },
         updateTeamName(state, action: PayloadAction<{ index: number, name: string }>) {
             const { index, name } = action.payload;
@@ -38,6 +40,9 @@ const setupSlice = createSlice({
         },
         updateEnableAi(state, action: PayloadAction<boolean>) {
             state.enableAi = action.payload;
+        },
+        updateIsCallingService(state, action: PayloadAction<boolean>) {
+            state.isCallingService = action.payload;
         }
     }
 });
@@ -48,6 +53,6 @@ export const {
     updateTeamName,
     updateTeamColor,
     updateEnableAi
-} = setupSlice.actions;
+} = configSlice.actions;
 
-export default setupSlice.reducer;
+export default configSlice.reducer;

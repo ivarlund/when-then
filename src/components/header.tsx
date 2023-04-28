@@ -4,47 +4,49 @@ import * as reducers from "@/slices/gameSlice";
 
 import GamesIcon from "@mui/icons-material/Games";
 import { useState } from "react";
-import { parseQuestions } from "@/helpers/helperFunctions";
+import { parseQuestions, callService, getGPTQuery } from "@/helpers/helperFunctions";
 import { RootState } from "@/reducers";
+
+const data = (category: string) => ({
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+            {
+                role: "user",
+                content: getGPTQuery(category)
+            },
+        ],
+        temperature: 0.7,
+    })
+});
+const apiEndpoint = "/api/questionGenerator";
 
 export default function Header({ title, children }: { title: string, children?: React.ReactNode }) {
     const setupState = useSelector((state: RootState) => state.setup);
     const dispatch = useDispatch();
     const [isCalling, setIsCalling] = useState<boolean>(false);
     const [category, setCategory] = useState<string>('Movies');
-    
-    // This fetching logic should be moved outside to a logics file
+
+
+    // TODO Need a cooler way to do this. I dont find it necessary to 
+    // wrap the fetch api but I probably want to generalize it in some way
     function fetchGPTQuestions() {
         setIsCalling(true);
-        fetch("/api/questionGenerator", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                model: "gpt-3.5-turbo",
-                messages: [{
-                    role: "user",
-                    content: `\"Generate 10 questions ${'about ' + category} in the following format: {\"id\": <unique_id>,\"question\": \"In what year was <random_event>?\",\"answer\": <random_year>,\"description\": \"<random_event> took place in <random_year>.\"}\"`
-                }],
-                temperature: 0.7
-            })
-        })
-            .then(async res => {
-                if (res.status === 200) {
-                    const questions = await res.json();
-                    const parsedQuestions = parseQuestions(questions.choices[0].message.content);
-                    console.log('INDEX', questions.choices[0].message.content);
-                    console.log('PARSED', parsedQuestions);
+        fetch(apiEndpoint, data(category))
+            .then(res => {
+                res.json().then(response => {
+                    const parsedQuestions = parseQuestions(response.choices[0].message.content);
                     dispatch(reducers.updateFreshQuestions(parsedQuestions));
-                }
-                setIsCalling(false);
+                })
             })
-            .catch(err => {
+            .catch(err => console.log(err))
+            .finally(() => {
                 setIsCalling(false);
-                console.log(err)
             });
-    
     }
 
     return (
@@ -89,7 +91,7 @@ export default function Header({ title, children }: { title: string, children?: 
             {setupState.enableAi &&
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <TextField size="small" label="Category" value={category} onChange={(e) => setCategory(e.target.value)} />
-                    <Button variant="text" sx={{ color: '#F2F8F2' }} disabled={isCalling} onClick={fetchGPTQuestions}>FETCH</Button>
+                    <Button variant="outlined" sx={{ color: '#F2F8F2', ml: 0.5 }} disabled={isCalling} onClick={fetchGPTQuestions}>FETCH</Button>
                 </Box>
             }
             {isCalling && (

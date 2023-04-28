@@ -17,6 +17,12 @@ export interface Teams {
     [key: string]: Team;
 }
 
+export interface ServiceParameters {
+    url: string;
+    method: string;
+    headers?: HeadersInit;
+    body?: Record<string, unknown>;
+}
 export interface TeamOptions {
     name: string,
     color: string
@@ -34,7 +40,8 @@ export interface GameState {
     timeline: Question[];
 }
 
-export interface SetupState {
+export interface ConfigState {
     teams: TeamOptions[];
     enableAi: boolean;
+    isCallingService: boolean;
 }

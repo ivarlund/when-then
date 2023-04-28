@@ -2,7 +2,7 @@ import { Box, Button, Card, Checkbox, FormControlLabel, IconButton, MenuItem, Se
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/reducers";
 import DeleteIcon from '@mui/icons-material/Delete';
-import * as reducers from "@/slices/setupSlice";
+import * as reducers from "@/slices/configSlice";
 import { addTeamMap } from "@/slices/gameSlice";
 import AddIcon from '@mui/icons-material/Add';
 import { TeamOptions, Teams } from "@/data/types";
@@ -13,7 +13,8 @@ const colorMap: { [key: string]: string } = {
     "#EBCB8B": "Yellow",
     "#A3BE8C": "Green",
     "#B48EAD": "Purple",
-    "#88C0D0": "Blue"
+    "#88C0D0": "Blue",
+    "#ca69ae": "Pink"
 }
 
 export default function Setup() {
@@ -126,6 +127,7 @@ export default function Setup() {
                                 <MenuItem disabled={colorTaken('#A3BE8C')} sx={{ backgroundColor: '#A3BE8C' }} value={'#A3BE8C'}>Green</MenuItem>
                                 <MenuItem disabled={colorTaken('#B48EAD')} sx={{ backgroundColor: '#B48EAD' }} value={'#B48EAD'}>Purple</MenuItem>
                                 <MenuItem disabled={colorTaken('#88C0D0')} sx={{ backgroundColor: '#88C0D0' }} value={'#88C0D0'}>Blue</MenuItem>
+                                <MenuItem disabled={colorTaken('#ca69ae')} sx={{ backgroundColor: '#ca69ae' }} value={'#ca69ae'}>Pink</MenuItem>
                             </Select>
                             <Box>
                                 <IconButton sx={{ ml: 1 }} onClick={() => removeTeamOnClick(index)}>

@@ -34,7 +34,7 @@ function setActiveQuestion(state: GameState, question: Question | null) {
 
 // Should probably only have one function for pushing to timeline?
 function pushActiveQuestionToTimeline(state: GameState, teamKey: string) {
-    state.teams[teamKey].timeline.push(state.activeQuestion!);
+    state.teams[teamKey].timeline.splice(state.guess, 0, state.activeQuestion!);
     state.teams[teamKey].timeline.sort((a, b) => (a.answer - b.answer));
     return state;
 }
@@ -83,20 +83,16 @@ function getMarks(timeline: Question[]) {
 }
 
 function getAnswerCorrect(guess: number, currentQuestion: Question, currentTimeline: Question[]) {
-    let temporaryTimeline = currentTimeline;
-    temporaryTimeline = temporaryTimeline.concat(currentQuestion).sort(
-        (a, b) => (a.answer - b.answer)
-    );
-
-    const index = temporaryTimeline.findIndex(q => q.id === currentQuestion.id);
-    const previous = temporaryTimeline[index - 1] && temporaryTimeline[index - 1].answer;
-    const next = temporaryTimeline[index + 1] && temporaryTimeline[index + 1].answer;
+    let temporaryTimeline = [...currentTimeline];
+    temporaryTimeline.splice(guess, 0, currentQuestion);
+    const previous = temporaryTimeline[guess - 1]?.answer;
+    const next = temporaryTimeline[guess + 1]?.answer;
     if (!!previous && !!next) {
-        return guess >= previous && guess <= next;
+        return currentQuestion.answer >= previous && currentQuestion.answer <= next;
     } else if (!!previous && !next) {
-        return guess >= previous;
+        return currentQuestion.answer >= previous;
     } else if (!previous && !!next) {
-        return guess <= next;
+        return currentQuestion.answer <= next;
     }
 }
 
