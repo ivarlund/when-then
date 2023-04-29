@@ -1,938 +1,938 @@
 [
-    {
-        "id": 1,
-        "question": "In what year was the first motion picture shown to a paying audience?",
-        "description": "This question refers to the historic moment when cinema was born, and it seeks to know when the first motion picture was shown to a paying audience.",
-        "answer": 1895
-    },
-    {
-        "question": "In what year was the famous painter Leonardo da Vinci born?",
-        "description": "This question asks about the birth year of one of the most famous artists of all time, Leonardo da Vinci, who was known for his many contributions to the fields of painting, sculpture, architecture, engineering, and science.",
-        "answer": 1452,
-        "id": 2
-    },
-    {
-        "id": 3,
-        "question": "In what year did the Beatles release their first album, 'Please Please Me'?",
-        "description": "This question refers to the iconic British rock band, The Beatles, and it seeks to know the year when they released their first album, 'Please Please Me', which helped to kickstart their incredible career.",
-        "answer": 1963
-    },
-    {
-        "id": 4,
-        "question": "In what year did the popular TV show 'The Simpsons' first air?",
-        "description": "This question refers to the beloved animated TV show, 'The Simpsons', and it seeks to know the year when it first aired, which marked the beginning of its long and successful run as one of the most iconic shows in TV history.",
-        "answer": 1989
-    },
-    {
-        "id": 5,
-        "question": "In what year did Coco Chanel open her first boutique in Paris?",
-        "description": "This question refers to the legendary fashion designer, Coco Chanel, and it seeks to know the year when she opened her first boutique in Paris, which marked the beginning of her rise to become one of the most influential figures in the world of fashion.",
-        "answer": 1910
-    },
-    {
-        "id": 6,
-        "question": "In what year did the famous French monarch, Louis XIV, die?",
-        "description": "This question refers to one of the most famous French monarchs of all time, Louis XIV, who was also known as the Sun King, and it seeks to know the year when he passed away, which marked the end of his long and eventful reign as king of France.",
-        "answer": 1715
-    },
-    {
-        "id": 7,
-        "question": "In what year did the famous Hollywood actress Marilyn Monroe pass away?",
-        "description": "This question refers to the iconic Hollywood actress, Marilyn Monroe, and it seeks to know the year when she passed away, which marked the end of her legendary career and her enduring legacy as a cultural icon.",
-        "answer": 1962
-    },
-    {
-        "id": 8,
-        "question": "In what year was the first issue of Rolling Stone magazine published?",
-        "description": "This question refers to the legendary music and culture magazine, Rolling Stone, and it seeks to know the year when its first issue was published, which marked the beginning of its long and influential run as one of the most important publications in the world of music and popular culture.",
-        "answer": 1967
-    },
-    {
-        "id": 9,
-        "question": "In what year did Michael Jackson release his iconic album 'Thriller'?",
-        "description": "This question refers to the King of Pop, Michael Jackson, and it seeks to know the year when he released his iconic album, 'Thriller'",
-        "answer": 1982
-    },
-    {
-        "id": 10,
-        "question": "In what year did the famous Italian composer Wolfgang Amadeus Mozart die?",
-        "description": "Wolfgang Amadeus Mozart was one of the greatest composers in the history of classical music, known for his masterpieces such as 'The Marriage of Figaro' and 'Don Giovanni'. He died at the young age of 35 in 1791, leaving behind a legacy that continues to inspire and influence musicians to this day.",
-        "answer": 1791
-    },
-    {
-        "question": "In what year did the popular musical 'Hamilton' make its debut on Broadway?",
-        "description": "The hit musical 'Hamilton' premiered on Broadway in 2015, written by Lin-Manuel Miranda and inspired by the life of American founding father Alexander Hamilton. The show has received critical acclaim for its innovative blend of hip-hop, jazz, and traditional musical theater styles, and has been praised for its diverse casting and progressive approach to historical storytelling.",
-        "answer": 2015,
-        "id": 11
-    },
-    {
-        "id": 12,
-        "question": "In what year did the first episode of the TV show 'Friends' air?",
-        "description": "The beloved sitcom 'Friends' first aired in 1994 and quickly became a cultural phenomenon, running for ten seasons and gaining a massive global following. The show follows a group of six friends living in New York City as they navigate their personal and professional lives, and has been celebrated for its sharp writing, memorable characters, and iconic catchphrases.",
-        "answer": 1994
-    },
-    {
-        "id": 13,
-        "question": "In what year did the iconic American fashion designer Ralph Lauren launch his fashion brand?",
-        "description": "Ralph Lauren is one of the most renowned fashion designers in the world, known for his classic, preppy style and luxury brand. He launched his eponymous fashion line in 1967, starting with a collection of ties and expanding to include clothing, accessories, and home goods. Today, the Ralph Lauren brand is a global empire, with stores in over 80 countries and a legacy of timeless, elegant fashion.",
-        "answer": 1967
-    },
-    {
-        "id": 14,
-        "question": "In what year was the famous English playwright William Shakespeare born?",
-        "description": "William Shakespeare is widely regarded as one of the greatest playwrights in the history of English literature, known for his poetic language, complex characters, and timeless themes. He was born in 1564 in the town of Stratford-upon-Avon, and went on to write some of the most iconic plays in the English language, including 'Romeo and Juliet', 'Hamlet', and 'Macbeth'. His work continues to be studied and performed around the world to this day.",
-        "answer": 1564
-    },
-    {
-        "id": 15,
-        "question": "In what year did the Academy Awards (Oscars) ceremony first take place?",
-        "description": "The Academy Awards, also known as the Oscars, is one of the most prestigious awards ceremonies in the entertainment industry, honoring the best in film each year. The first Oscars ceremony took place in 1929, and has since become a major cultural event, watched by millions of people around the world. The ceremony features awards in categories such as Best Picture, Best Actor and Actress, and Best Director, and is often a platform for political and social commentary.",
-        "answer": 1929
-    },
-    {
-        "id": 16,
-        "question": "In what year did the famous American singer Elvis Presley pass away?",
-        "description": "Elvis Presley, often referred to as the 'King of Rock and Roll', was one of the most iconic musicians of the 20th century. He passed away in a Memphis hospital in August of 1977, at the age of 42, due to heart failure and other health issues.",
-        "answer": 1977
-    },
-    {
-        "id": 17,
-        "question": "In what year was the popular video-sharing platform YouTube launched?",
-        "description": "YouTube, the world's largest video-sharing platform, was launched in 2005 by three former PayPal employees. The platform quickly gained popularity due to its easy accessibility, free access, and wide range of content.",
-        "answer": 2005
-    },
-    {
-        "id": 18,
-        "question": "In what year did the first issue of the comic book 'Superman' hit the shelves?",
-        "description": "Superman, one of the most popular and enduring superhero characters, first appeared in Action Comics #1, which hit the shelves in June of 1938. Created by writer Jerry Siegel and artist Joe Shuster, the character has since become a cultural icon.",
-        "answer": 1938
-    },
-    {
-        "id": 19,
-        "question": "In what year did the famous French fashion designer Christian Dior launch his first collection, known as the 'New Look'?",
-        "description": "Christian Dior, a highly influential figure in the fashion world, launched his first collection in 1947, which was dubbed the 'New Look'. The collection featured ultra-feminine designs, including full skirts and cinched waists, that marked a departure from the boxy and practical styles of the previous decade.",
-        "answer": 1947
-    },
-    {
-        "id": 20,
-        "question": "In what year was the famous American author Mark Twain born?",
-        "description": "Mark Twain, the pen name of Samuel Langhorne Clemens, was born in 1835 in Florida, Missouri. Twain is widely regarded as one of the greatest American writers of all time, known for his sharp wit, satirical style, and iconic characters like Tom Sawyer and Huckleberry Finn.",
-        "answer": 1835
-    },
-    {
-        "id": 21,
-        "question": "In what year did the popular TV show 'Game of Thrones' first premiere?",
-        "description": "The TV series 'Game of Thrones' based on George R.R. Martin's novel 'A Song of Ice and Fire' first premiered in this year.",
-        "answer": 2011
-    },
-    {
-        "id": 22,
-        "question": "In what year was the famous Hollywood actress Audrey Hepburn born?",
-        "description": "Audrey Hepburn, one of the most iconic actresses of all time, was born in this year in a city in Belgium.",
-        "answer": 1929
-    },
-    {
-        "id": 23,
-        "question": "In what year did the first issue of the popular comic book 'Spider-Man' hit the stands?",
-        "description": "The first issue of the popular Marvel comic book 'Spider-Man', created by Stan Lee and Steve Ditko, hit the stands in this year.",
-        "answer": 1962
-    },
-    {
-        "id": 24,
-        "question": "In what year did the famous English scientist Sir Isaac Newton publish his 'Principia Mathematica'?",
-        "description": "Sir Isaac Newton, one of the most influential scientists of all time, published his groundbreaking work 'Principia Mathematica' in this year, which laid the foundation for classical mechanics.",
-        "answer": 1687
-    },
-    {
-        "id": 25,
-        "question": "In what year did the iconic American pop artist Andy Warhol pass away?",
-        "description": "Andy Warhol, the iconic American artist known for his unique pop art style, passed away in this year due to complications following gallbladder surgery.",
-        "answer": 1987
-    },
-    {
-        "id": 26,
-        "question": "In what year was the famous French emperor Napoleon Bonaparte born?",
-        "description": "Napoleon Bonaparte was born on August 15th, 1769, in the city of Ajaccio on the island of Corsica, which was then a French territory.",
-        "answer": 1769
-    },
-    {
-        "id": 27,
-        "question": "In what year did the popular TV show 'Breaking Bad' make its debut?",
-        "description": "Breaking Bad first premiered on AMC on January 20th, 2008. Created by Vince Gilligan, the show became a cultural phenomenon and is widely regarded as one of the greatest television dramas of all time.",
-        "answer": 2008
-    },
-    {
-        "id": 28,
-        "question": "In what year did the famous American author Ernest Hemingway win the Nobel Prize in Literature?",
-        "description": "Ernest Hemingway won the Nobel Prize in Literature in 1954, for his mastery of the art of narrative, which was demonstrated in The Old Man and the Sea, and for the influence that he has exerted on contemporary style.",
-        "answer": 1954
-    },
-    {
-        "id": 29,
-        "question": "In what year did the iconic British band Queen release their album 'A Night at the Opera'?",
-        "description": "Queen released their fourth studio album 'A Night at the Opera' on November 21st, 1975. The album features some of their most well-known songs, including 'Bohemian Rhapsody' and 'You're My Best Friend'.",
-        "answer": 1975
-    },
-    {
-        "id": 30,
-        "question": "In what year did the famous American film director Steven Spielberg release his movie 'Jaws'?",
-        "description": "Jaws, directed by Steven Spielberg, was released in the United States on June 20th, 1975. The movie, which is widely considered one of the greatest films of all time, became a cultural phenomenon and helped establish the summer blockbuster as a major part of the movie industry.",
-        "answer": 1975
-    },
-    {
-        "id": 31,
-        "question": "In what year was the popular American talk show 'The Oprah Winfrey Show' first aired?",
-        "description": "The Oprah Winfrey Show first aired nationally on September 8th, 1986. Hosted by Oprah Winfrey, the show became the highest-rated talk show in the United States and ran for 25 seasons, ending its run on May 25th, 2011.",
-        "answer": 1986
-    },
-    {
-        "id": 32,
-        "question": "In what year did the famous American singer Whitney Houston pass away?",
-        "description": "Whitney Houston passed away on February 11th, 2012, at the age of 48. Houston was one of the most successful singers of all time, with numerous chart-topping hits and a powerful voice that earned her the nickname 'The Voice'.",
-        "answer": 2012
-    },
-    {
-        "id": 33,
-        "question": "In what year did the first issue of the popular comic book 'Batman' hit the shelves?",
-        "description": "The first issue of Batman was released in the spring of 1939, published by DC Comics. Created by Bob Kane and Bill Finger, the character of Batman would go on to become one of the most iconic superheroes of all time.",
-        "answer": 1939
-    },
-    {
-        "id": 34,
-        "question": "In what year was the famous German composer Ludwig van Beethoven born?",
-        "description": "Ludwig van Beethoven was a pivotal figure in the transition from classical to romantic music. He was born in Bonn, Germany, and began composing at a young age, despite his father's efforts to mold him into a child prodigy like Mozart. Beethoven's works include nine symphonies, numerous piano sonatas, string quartets, and choral works.",
-        "answer": 1770
-    },
-    {
-        "id": 35,
-        "question": "In what year did the iconic French fashion designer Yves Saint Laurent launch his brand?",
-        "description": "Yves Saint Laurent was a trailblazing fashion designer who revolutionized the industry by introducing menswear-inspired styles for women. In 1961, he launched his eponymous brand with business partner Pierre Bergé. Saint Laurent's designs were known for their timeless elegance, use of luxurious fabrics, and incorporation of art and cultural references.",
-        "answer": 1961
-    },
-    {
-        "id": 36,
-        "question": "In what year did the popular TV show 'The Walking Dead' make its debut?",
-        "description": "'The Walking Dead' is a post-apocalyptic horror television series that premiered in 2010. Based on a comic book series of the same name, the show follows a group of survivors as they navigate a world overrun by zombies. The series has become a cultural phenomenon, with devoted fans around the world and spinoff shows and merchandise.",
-        "answer": 2010
-    },
-    {
-        "id": 37,
-        "question": "In what year was the famous American singer and actor Frank Sinatra born?",
-        "description": "Frank Sinatra was a legendary performer known for his distinctive voice, charisma, and enduring popularity. He was born in Hoboken, New Jersey in 1915 and began his career as a singer in the swing era of the 1930s. Sinatra's music and movies made him a household name, and he remains an icon of American culture to this day.",
-        "answer": 1915
-    },
-    {
-        "id": 38,
-        "question": "In what year did the famous Italian explorer Christopher Columbus make his first voyage to the Americas?",
-        "description": "Christopher Columbus was a 15th-century explorer who is credited with discovering the Americas. In 1492, he set sail from Spain with three ships and a crew of about 90 men. After a long and perilous journey, Columbus and his crew landed on an island in the Caribbean, which he named San Salvador. This historic voyage marked the beginning of European exploration and colonization of the New World.",
-        "answer": 1492
-    },
-    {
-        "id": 39,
-        "question": "In what year did the popular American sitcom 'Seinfeld' air its final episode?",
-        "description": "'Seinfeld' was a groundbreaking sitcom that aired from 1989 to 1998. Created by Larry David and Jerry Seinfeld, the show was known for its quirky characters, observational humor, and unique approach to storytelling. The final episode, which aired on May 14, 1998, was watched by 76 million people and remains one of the most-watched television finales of all time.",
-        "answer": 1998
-    },
-    {
-        "id": 40,
-        "question": "In what year did Leonardo da Vinci complete his painting 'The Last Supper'?",
-        "description": "Leonardo da Vinci's 'The Last Supper' is one of the most famous paintings in the world. It is a masterpiece of the Italian Renaissance, and has been admired for centuries for its composition, use of perspective, and emotional intensity. The painting depicts the scene of the Last Supper, when Jesus Christ shared a final meal with his disciples before his crucifixion.",
-        "answer": 1498
-    },
-    {
-        "id": 41,
-        "question": "In what year did the famous Dutch painter Vincent van Gogh pass away?",
-        "description": "Vincent van Gogh was a post-impressionist painter who is widely regarded as one of the greatest artists of all time. Despite a short and troubled life, he created some of the most iconic paintings of the modern era. Van Gogh passed away in 1890 at the age of 37, leaving behind a legacy that continues to inspire and influence artists to this day.",
-        "answer": 1890
-    },
-    {
-        "id": 42,
-        "question": "In what year was the famous Italian painter Michelangelo born?",
-        "description": "Michelangelo was a Renaissance artist who is widely regarded as one of the greatest painters and sculptors of all time. Born in 1475 in Tuscany, Italy, Michelangelo created some of the most famous works of art in history, including the frescoes on the ceiling of the Sistine Chapel and the statue of David. His work had a profound influence on the art world and his legacy continues to inspire artists today.",
-        "answer": 1475
-    },
-    {
-        "id": 43,
-        "question": "In what year did the famous French painter Claude Monet complete his painting 'Water Lilies'?",
-        "description": "Claude Monet was a French impressionist painter who is famous for his landscapes and seascapes. 'Water Lilies' is a series of paintings that Monet created in the late 19th and early 20th centuries, depicting his flower garden at his home in Giverny. The paintings are known for their vibrant colors and brushstrokes, and are considered to be some of Monet's greatest works. The series was completed in 1916.",
-        "answer": 1916
-    },
-    {
-        "id": 44,
-        "question": "In what year was the famous Spanish painter Pablo Picasso born?",
-        "description": "Pablo Picasso was a Spanish artist who is widely regarded as one of the greatest and most influential artists of the 20th century. He was born in Malaga, Spain in 1881, and went on to create some of the most iconic paintings and sculptures of the modern era. Picasso was a pioneer of the cubist movement, and his work had a profound influence on the art world throughout his life.",
-        "answer": 1881
-    },
-    {
-        "id": 45,
-        "question": "In what year did the famous Dutch painter Rembrandt van Rijn complete his painting 'The Night Watch'?",
-        "description": "Rembrandt van Rijn was a Dutch painter who is widely regarded as one of the greatest artists of the Baroque period. 'The Night Watch' is one of his most famous paintings, and is known for its dramatic use of light and shadow. The painting depicts a group of Dutch soldiers, and is considered to be a masterpiece of 17th century art. 'The Night Watch' was completed in 1642",
-        "answer": 1642
-    },
-    {
-        "id": 46,
-        "question": "In what year was the famous American artist Andy Warhol born?",
-        "description": "Andy Warhol was a leading figure in the Pop Art movement of the 1960s, known for his colorful and bold works that depicted everyday objects and celebrities. He was born on August 6, 1928, in Pittsburgh, Pennsylvania.",
-        "answer": 1928
-    },
-    {
-        "id": 47,
-        "question": "In what year did the famous Dutch painter Johannes Vermeer complete his painting 'Girl with a Pearl Earring'?",
-        "description": "Johannes Vermeer was a Dutch Baroque painter who is best known for his masterful use of light and color in his works. 'Girl with a Pearl Earring' is one of his most famous paintings, completed in 1665.",
-        "answer": 1665
-    },
-    {
-        "id": 48,
-        "question": "In what year was the famous British painter J.M.W. Turner born?",
-        "description": "J.M.W. Turner was a British Romantic painter who is known for his atmospheric and luminous landscapes. He was born on April 23, 1775, in London, England.",
-        "answer": 1775
-    },
-    {
-        "id": 49,
-        "question": "In what year did the famous Mexican painter Frida Kahlo pass away?",
-        "description": "Frida Kahlo was a Mexican painter known for her self-portraits and works that were inspired by the culture and tradition of her homeland. She passed away on July 13, 1954, at the age of 47.",
-        "answer": 1954
-    },
-    {
-        "id": 50,
-        "question": "In what year was the famous American actor Tom Hanks born?",
-        "description": "Tom Hanks is a beloved American actor known for his roles in films such as 'Forrest Gump', 'Philadelphia', and 'Saving Private Ryan'. He was born on July 9, 1956, in Concord, California.",
-        "answer": 1956
-    },
-    {
-        "id": 51,
-        "question": "In what year did the famous American singer Michael Jackson pass away?",
-        "description": "Michael Jackson was a pop icon who passed away at the age of 50. He died unexpectedly in his Los Angeles home on June 25th, 2009. His death was a shock to his fans all over the world and many still remember him as the King of Pop.",
-        "answer": 2009
-    },
-    {
-        "id": 52,
-        "question": "In what year was the famous American actress Marilyn Monroe born?",
-        "description": "Marilyn Monroe was a Hollywood legend known for her beauty, charisma, and tragic life. She was born Norma Jeane Mortenson on June 1st, 1926, in Los Angeles, California. Her childhood was marked by instability and abuse, but she went on to become one of the most iconic actresses of all time.",
-        "answer": 1926
-    },
-    {
-        "id": 53,
-        "question": "In what year did the famous American actress Angelina Jolie win an Academy Award for Best Supporting Actress for her role in 'Girl, Interrupted'?",
-        "description": "Angelina Jolie is a talented actress, director, and humanitarian known for her striking looks and powerful performances. She won the Academy Award for Best Supporting Actress in 2000 for her role as Lisa Rowe in the film 'Girl, Interrupted'. The film tells the story of a young woman's stay in a mental institution and Jolie's performance was widely praised for its intensity and authenticity.",
-        "answer": 2000
-    },
-    {
-        "id": 54,
-        "question": "In what year was the famous American singer Elvis Presley born?",
-        "description": "Elvis Presley was a cultural icon and one of the most significant musicians of the 20th century. He was born on January 8th, 1935, in Tupelo, Mississippi, and rose to fame in the mid-1950s with his unique blend of rock, country, and blues music. His influence on popular culture can still be felt today, and his music continues to be enjoyed by fans all over the world.",
-        "answer": 1935
-    },
-    {
-        "id": 55,
-        "question": "In what year did the famous American actor Robin Williams pass away?",
-        "description": "Robin Williams was a beloved comedian and actor known for his quick wit, infectious energy, and incredible range. He passed away on August 11th, 2014, at the age of 63, leaving behind a legacy of iconic performances in films such as 'Good Will Hunting', 'Dead Poets Society', and 'Mrs. Doubtfire'. Williams was also a devoted philanthropist, supporting a variety of causes throughout his life.",
-        "answer": 2014
-    },
-    {
-        "id": 56,
-        "question": "In what year was the famous British actor and humanitarian Sir Michael Caine born?",
-        "description": "Sir Michael Caine is a beloved British actor and humanitarian known for his iconic roles in films such as 'Alfie', 'The Italian Job', and 'The Dark Knight'. He has also been actively involved in numerous charitable organizations throughout his career, including UNICEF, and was appointed a Commander of the Order of the British Empire (CBE) in 1992 for his services to drama.",
-        "answer": 1933
-    },
-    {
-        "id": 57,
-        "question": "In what year did the famous American actress Meryl Streep win an Academy Award for Best Actress for her role in 'Sophie's Choice'?",
-        "description": "Meryl Streep is widely regarded as one of the greatest actresses of all time, with a career spanning over five decades. She has been nominated for a record-breaking 21 Academy Awards, and has won three, including Best Actress for her unforgettable performance in the 1982 film 'Sophie's Choice'. Streep is known for her incredible range and versatility as an actress, and has portrayed a wide variety of complex and compelling characters over the course of her career.",
-        "answer": 1983
-    },
-    {
-        "id": 58,
-        "question": "In what year was the famous American singer Beyoncé Knowles born?",
-        "description": "Beyoncé Knowles is an incredibly talented singer, songwriter, and actress who has achieved massive success both as a solo artist and as a member of the group Destiny's Child. She has won numerous awards and accolades for her music, including 28 Grammy Awards, and is widely considered one of the most influential and iconic musicians of her generation. Beyoncé has also been involved in various philanthropic endeavors, including the establishment of the BeyGOOD Foundation to help support and empower disadvantaged communities.",
-        "answer": 1981
-    },
-    {
-        "id": 59,
-        "question": "In what year did the famous American actor and director Clint Eastwood win an Academy Award for Best Director for his film 'Unforgiven'?",
-        "description": "Clint Eastwood is a legendary American actor, director, and producer who has been a major figure in the film industry for over six decades. He has won numerous awards and accolades for his work, including four Academy Awards, and is known for his iconic performances in films such as 'Dirty Harry', 'The Good, the Bad and the Ugly', and 'Gran Torino'. Eastwood also has a successful career as a director, and won his first Academy Award for Best Director in 1993 for his film 'Unforgiven', which also won Best Picture that year.",
-        "answer": 1993
-    },
-    {
-        "id": 60,
-        "question": "In what year was the famous American writer Ernest Hemingway born?",
-        "description": "Ernest Hemingway was one of the most celebrated American writers of the 20th century, known for his concise, straightforward writing style and his adventurous lifestyle. He was born in Oak Park, Illinois in 1899 and went on to have a prolific career, writing such classics as 'The Old Man and the Sea' and 'A Farewell to Arms'.",
-        "answer": 1899
-    },
-    {
-        "id": 61,
-        "question": "In what year was the famous English author Jane Austen born?",
-        "description": "Jane Austen was a renowned English novelist whose works have become classics of English literature. She was born in 1775 in Hampshire, England and went on to write such novels as 'Pride and Prejudice' and 'Sense and Sensibility'. Her works continue to be widely read and adapted for film and television.",
-        "answer": 1775
-    },
-    {
-        "id": 62,
-        "question": "In what year did Microsoft release Windows 95?",
-        "description": "One of the most famous versions of the Windows operating system, it introduced many features still in use today.",
-        "answer": 1995
-    },
-    {
-        "id": 63,
-        "question": "In what year was the famous Russian writer Fyodor Dostoevsky born?",
-        "description": "Fyodor Dostoevsky was a Russian novelist, short-story writer, and essayist who is considered one of the greatest writers in the history of Russian literature. He was born in 1821 in Moscow, Russia and went on to write such works as 'Crime and Punishment' and 'The Brothers Karamazov'. His works continue to be widely read and studied today.",
-        "answer": 1821
-    },
-    {
-        "id": 64,
-        "question": "In what year was the famous American author Harper Lee's novel 'To Kill a Mockingbird' published?",
-        "description": "Harper Lee was an American novelist whose novel 'To Kill a Mockingbird' has become a classic of modern American literature. The novel was published in 1960 and tells the story of a young girl growing up in the South during the 1930s and her father, a lawyer, who defends a black man accused of rape. The novel continues to be widely read and studied today.",
-        "answer": 1960
-    },
-    {
-        "id": 65,
-        "question": "In what year was the first book of the famous British author J.K. Rowling's 'Harry Potter' series, 'Harry Potter and the Philosopher's Stone', published?",
-        "description": "This question is about the publication year of the first book in the 'Harry Potter' series, written by J.K. Rowling, which tells the story of a young orphan boy who discovers he is a wizard and attends a magical school called Hogwarts.",
-        "answer": 1997
-    },
-    {
-        "id": 66,
-        "question": "In what year was the novel 'Beloved' by the famous American author Toni Morrison first published?",
-        "description": "This question is about the publication year of 'Beloved', a Pulitzer Prize-winning novel written by Toni Morrison, which tells the story of a former slave in post-Civil War America who is haunted by the memory of her dead daughter.",
-        "answer": 1987
-    },
-    {
-        "id": 67,
-        "question": "In what year was the novel 'Oliver Twist' by the famous British author Charles Dickens first published?",
-        "description": "This question is about the publication year of 'Oliver Twist', a novel written by Charles Dickens, which tells the story of a young orphan boy who escapes from a workhouse and joins a gang of pickpockets in London.",
-        "answer": 1838
-    },
-    {
-        "id": 68,
-        "question": "In what year was the autobiography 'I Know Why the Caged Bird Sings' by the famous American writer Maya Angelou first published?",
-        "description": "This question is about the publication year of 'I Know Why the Caged Bird Sings', an autobiography written by Maya Angelou, which tells the story of her childhood and young adulthood in the segregated South and the struggles she faced as a Black woman.",
-        "answer": 1969
-    },
-    {
-        "id": 69,
-        "question": "In what year was the famous American author Edgar Allan Poe's poem 'The Raven' first published?",
-        "description": "This question is about the publication year of 'The Raven', a poem written by Edgar Allan Poe, which tells the story of a man who is visited by a talking raven that drives him to the brink of madness.",
-        "answer": 1845
-    },
-    {
-        "id": 70,
-        "question": "In what year did the Hanseatic League establish a trading post in the Baltic Sea town of Riga?",
-        "description": "The Hanseatic League, a medieval confederation of merchant guilds and market towns in Northwestern and Central Europe, was known for its extensive trading network throughout the Baltic Sea region. This question asks about the year when the League established a trading post in the town of Riga, located on the eastern coast of the Baltic Sea.",
-        "answer": 1282
-    },
-    {
-        "id": 71,
-        "question": "In what year did the Danish King Waldemar IV conquer the city of Gdańsk and gain control of the Baltic Sea trade routes?",
-        "description": "During the Middle Ages, the city of Gdańsk (known in German as Danzig) was an important center of commerce and trade on the Baltic Sea. This question asks about the year when the Danish King Waldemar IV, also known as Waldemar Atterdag, captured the city and gained control of the important trade routes that passed through it.",
-        "answer": 1361
-    },
-    {
-        "id": 72,
-        "question": "In what year did the Swedish navy defeat the Russian navy in the Battle of Svensksund, a naval battle fought in the eastern part of the Baltic Sea?",
-        "description": "The Battle of Svensksund was a major naval engagement fought between Sweden and Russia in the eastern part of the Baltic Sea. This question asks about the year when the Swedish navy, under the command of Admiral Carl Olof Cronstedt, achieved a decisive victory over the Russian fleet, which was under the command of Admiral Samuel Greig.",
-        "answer": 1790
-    },
-    {
-        "id": 73,
-        "question": "In what year did the Russian navy defeat the Swedish navy in the Battle of Gangut, a naval battle fought in the Gulf of Finland in the eastern part of the Baltic Sea?",
-        "description": "The Battle of Gangut was a naval engagement fought between Russia and Sweden in the eastern part of the Baltic Sea, specifically in the Gulf of Finland. This question asks about the year when the Russian navy, led by Admiral Fyodor Apraksin, achieved a decisive victory over the Swedish fleet, which was under the command of Admiral Carl Gustaf Armfeldt.",
-        "answer": 1714
-    },
-    {
-        "id": 74,
-        "question": "In what year did the first steamship cross the Baltic Sea, from Stockholm to St. Petersburg?",
-        "description": "The first steamship to cross the Baltic Sea was an important milestone in the history of maritime transportation. This question asks about the year when this event occurred, specifically the year when the steamship arrived in St. Petersburg after departing from Stockholm.",
-        "answer": 1816
-    },
-    {
-        "id": 75,
-        "question": "In what year was the Treaty of Nystad signed, which marked the end of the Great Northern War between Sweden and Russia and ceded much of the eastern part of the Baltic Sea to Russia?",
-        "description": "The Treaty of Nystad was a peace treaty signed in present-day Finland that ended the Great Northern War between Sweden and Russia. The treaty marked the beginning of Russia's rise as a major power in Europe and ceded much of the eastern part of the Baltic Sea to Russia.",
-        "answer": 1721
-    },
-    {
-        "id": 76,
-        "question": "In what year was the Battle of Bornhöved fought, a major battle near the Baltic Sea coast between the armies of Denmark and Holstein on one side and the army of the Hanseatic League on the other side?",
-        "description": "The Battle of Bornhöved was a major battle fought on the border between present-day Germany and Denmark that pitted the armies of Denmark and Holstein against the army of the Hanseatic League. The battle was fought near the Baltic Sea coast and resulted in a decisive victory for the Hanseatic League.",
-        "answer": 1227
-    },
-    {
-        "id": 77,
-        "question": "In what year did the German battleship SMS Schleswig-Holstein bombard the Polish military outpost at Westerplatte, marking the start of World War II?",
-        "description": "On September 1, 1939, the German battleship SMS Schleswig-Holstein bombarded the Polish military outpost at Westerplatte, marking the beginning of World War II. The attack on Westerplatte was part of a larger invasion of Poland by Germany that triggered the involvement of multiple nations in the war.",
-        "answer": 1939
-    },
-    {
-        "id": 78,
-        "question": "In what year was the Treaty of Stolbovo signed, which ended the Ingrian War between Sweden and Russia and gave Russia control of the Karelian Isthmus and access to the Baltic Sea?",
-        "description": "The Treaty of Stolbovo was a peace treaty signed between Sweden and Russia that marked the end of the Ingrian War. The treaty gave Russia control of the Karelian Isthmus, which provided Russia with access to the Baltic Sea and helped to establish Russia as a major power in the region.",
-        "answer": 1617
-    },
-    {
-        "id": 79,
-        "question": "In what year did the Soviet Union intentionally sink the German liner MV Wilhelm Gustloff in the Baltic Sea, resulting in the deaths of over 9,000 refugees and civilians?",
-        "description": "On January 30, 1945, the Soviet Union intentionally sank the German liner MV Wilhelm Gustloff in the Baltic Sea. The ship was carrying over 9,000 refugees and civilians, many of whom were fleeing from the advancing Soviet army. The sinking of the ship resulted in one of the deadliest maritime disasters in history.",
-        "answer": 1945
-    },
-    {
-        "id": 80,
-        "question": "In what year did World War II end?",
-        "answer": 1945,
-        "description": "The war officially ended on September 2, 1945, with the signing of the Japanese Instrument of Surrender."
-    },
-    {
-        "id": 81,
-        "question": "In what year did the United States declare independence from Great Britain?",
-        "answer": 1776,
-        "description": "The Declaration of Independence was adopted by the Continental Congress on July 4, 1776."
-    },
-    {
-        "id": 82,
-        "question": "In what year did Neil Armstrong and Buzz Aldrin walk on the moon?",
-        "answer": 1969,
-        "description": "Apollo 11 landed on the moon on July 20, 1969."
-    },
-    {
-        "id": 83,
-        "question": "In what year did the Berlin Wall fall?",
-        "answer": 1989,
-        "description": "The wall fell on November 9, 1989, marking the end of the Cold War."
-    },
-    {
-        "id": 84,
-        "question": "In what year did the Titanic sink?",
-        "answer": 1912,
-        "description": "The Titanic sank on April 15, 1912, after hitting an iceberg."
-    },
-    {
-        "id": 85,
-        "question": "In what year did the first iPhone come out?",
-        "answer": 2007,
-        "description": "The first iPhone was released on June 29, 2007."
-    },
-    {
-        "id": 86,
-        "question": "In what year was William Shakespeare born?",
-        "answer": 1564,
-        "description": "Shakespeare was born on April 26, 1564, in Stratford-upon-Avon, England."
-    },
-    {
-        "id": 87,
-        "question": "In what year did the first modern Olympic Games take place?",
-        "answer": 1896,
-        "description": "The first modern Olympic Games were held in Athens, Greece, from April 6 to April 15, 1896."
-    },
-    {
-        "id": 88,
-        "question": "In what year did the Soviet Union launch the first artificial satellite, Sputnik 1?",
-        "answer": 1957,
-        "description": "Sputnik 1 was launched on October 4, 1957, marking the beginning of the Space Age."
-    },
-    {
-        "id": 89,
-        "question": "In what year did the first Star Wars movie come out?",
-        "answer": 1977,
-        "description": "Star Wars: Episode IV - A New Hope was released on May 25, 1977."
-    },
-    {
-        "id": 90,
-        "question": "In what year did the United States enter World War I?",
-        "answer": 1917,
-        "description": "The United States declared war on Germany on April 6, 1917."
-    },
-    {
-        "id": 91,
-        "question": "In what year did the Spanish Civil War start?",
-        "answer": 1936,
-        "description": "The Spanish Civil War began on July 17, 1936, and lasted until April 1, 1939."
-    },
-    {
-        "id": 92,
-        "question": "In what year did the European Union form?",
-        "answer": 1993,
-        "description": "The European Union was officially formed with the signing of the Maastricht Treaty on November 1, 1993."
-    },
-    {
-        "id": 93,
-        "question": "In what year did the first successful powered flight take place?",
-        "answer": 1903,
-        "description": "The Wright brothers achieved the first successful powered flight on December 17, 1903, in Kitty Hawk, North Carolina."
-    },
-    {
-        "id": 94,
-        "question": "In what year did the first modern computer, ENIAC, become operational?",
-        "answer": 1945,
-        "description": "The Electronic Numerical Integrator and Computer (ENIAC) was completed and became operational on February 15, 1945."
-    },
-    {
-        "id": 95,
-        "question": "In what year did the Chernobyl nuclear disaster occur?",
-        "answer": 1986,
-        "description": "The Chernobyl nuclear disaster occurred on April 26, 1986, at the Chernobyl Nuclear Power Plant in Ukraine."
-    },
-    {
-        "id": 96,
-        "question": "In what year did the first successful heart transplant take place?",
-        "answer": 1967,
-        "description": "Dr. Christiaan Barnard performed the first successful heart transplant on December 3, 1967, in Cape Town, South Africa."
-    },
-    {
-        "id": 97,
-        "question": "In what year did the first successful human flight with a jetpack occur?",
-        "answer": 1961,
-        "description": "The first successful human flight with a jetpack occurred on April 21, 1961, when Harold Graham flew for 13 seconds in Bell Aerosystems' rocket belt."
-    },
-    {
-        "id": 98,
-        "question": "In what year did the United Nations formally come into existence?",
-        "answer": 1945,
-        "description": "The United Nations officially came into existence on October 24, 1945, with the signing of the UN Charter by 51 countries."
-    },
-    {
-        "id": 99,
-        "question": "In what year did the Vietnam War end?",
-        "answer": 1975,
-        "description": "The Vietnam War officially ended on April 30, 1975, when North Vietnam captured Saigon (now Ho Chi Minh City), the capital of South Vietnam."
-    },
-    {
-        "id": 100,
-        "question": "In what year did the first successful organ transplant occur?",
-        "answer": 1954,
-        "description": "The first successful organ transplant occurred on December 23, 1954, when Dr. Joseph Murray performed a kidney transplant between identical twins."
-    },
-    {
-        "id": 101,
-        "question": "In what year did the first successful cloning of a mammal, Dolly the sheep, take place?",
-        "answer": 1996,
-        "description": "Dolly the sheep was successfully cloned on July 5, 1996, at the Roslin Institute in Scotland."
-    },
-    {
-        "id": 102,
-        "question": "In what year was the city of Rome founded?",
-        "answer": -753,
-        "description": "According to tradition, the city of Rome was founded on April 21, 753 BC."
-    },
-    {
-        "id": 103,
-        "question": "In what year did the construction of Stonehenge begin?",
-        "answer": -3000,
-        "description": "The construction of Stonehenge, a prehistoric monument in Wiltshire, England, began around 3000 BC."
-    },
-    {
-        "id": 104,
-        "question": "In what year was the Hanging Gardens of Babylon built?",
-        "answer": -600,
-        "description": "The Hanging Gardens of Babylon, one of the Seven Wonders of the Ancient World, were built around 600 BC."
-    },
-    {
-        "id": 105,
-        "question": "In what year did the Buddha live?",
-        "answer": -563,
-        "description": "The Buddha, also known as Siddhartha Gautama, was born in Lumbini, Nepal, in 563 BC and died in 483 BC."
-    },
-    {
-        "id": 106,
-        "question": "In what year did the ancient Olympic Games begin?",
-        "answer": -776,
-        "description": "The ancient Olympic Games, which were held in Olympia, Greece, began in 776 BC and continued until 393 AD."
-    },
-    {
-        "id": 107,
-        "question": "In what year was the city of Alexandria, Egypt founded?",
-        "answer": -331,
-        "description": "The city of Alexandria, Egypt, was founded by Alexander the Great in 331 BC."
-    },
-    {
-        "id": 108,
-        "question": "In what year was the Colossus of Rhodes built?",
-        "answer": -280,
-        "description": "The Colossus of Rhodes, a statue of the Greek god Helios that stood over 30 meters (98 feet) tall, was built around 280 BC and was destroyed in an earthquake in 226 BC."
-    },
-    {
-        "id": 109,
-        "question": "In what year did Julius Caesar die?",
-        "answer": -44,
-        "description": "Julius Caesar, the Roman dictator, was assassinated on March 15, 44 BC."
-    },
-    {
-        "id": 110,
-        "question": "In what year was the Great Pyramid of Giza built?",
-        "answer": -2560,
-        "description": "The Great Pyramid of Giza, the oldest and largest of the three pyramids in the Giza pyramid complex, was built around 2560 BC."
-    },
-    {
-        "id": 111,
-        "question": "In what year was the Code of Hammurabi written?",
-        "answer": -1754,
-        "description": "The Code of Hammurabi, a well-preserved Babylonian law code of ancient Mesopotamia, was written around 1754 BC."
-    },
-    {
-        "id": 112,
-        "question": "In what year did Julius Caesar become the dictator of Rome?",
-        "answer": -44,
-        "description": "Julius Caesar became the dictator of Rome in 44 BC after defeating his rival, Pompey, in a civil war."
-    },
-    {
-        "id": 113,
-        "question": "In what year did the Roman Empire officially split into the Eastern and Western empires?",
-        "answer": 395,
-        "description": "In 395 AD, the Roman Empire officially split into the Eastern Roman Empire (later known as the Byzantine Empire) and the Western Roman Empire."
-    },
-    {
-        "id": 114,
-        "question": "In what year did the Black Death begin to spread throughout Europe?",
-        "answer": 1347,
-        "description": "The Black Death, a deadly pandemic caused by the bubonic plague, began to spread throughout Europe in 1347 and ultimately resulted in the deaths of millions of people."
-    },
-    {
-        "id": 115,
-        "question": "In what year did the Protestant Reformation begin?",
-        "answer": 1517,
-        "description": "The Protestant Reformation began in 1517 when Martin Luther published his Ninety-Five Theses, which criticized the practices and beliefs of the Roman Catholic Church."
-    },
-    {
-        "id": 116,
-        "question": "In what year did the Industrial Revolution begin?",
-        "answer": 1760,
-        "description": "The Industrial Revolution began in Britain in the mid-18th century and eventually spread to other parts of Europe, North America, and the world."
-    },
-    {
-        "id": 117,
-        "question": "In what year did World War I begin?",
-        "answer": 1914,
-        "description": "World War I began in 1914 after the assassination of Archduke Franz Ferdinand of Austria-Hungary by a Serbian nationalist."
-    },
-    {
-        "id": 118,
-        "question": "In what year did the Russian Revolution take place?",
-        "answer": 1917,
-        "description": "The Russian Revolution took place in 1917 and ultimately resulted in the establishment of the Soviet Union."
-    },
-    {
-        "id": 119,
-        "question": "In what year did the United States enter World War II?",
-        "answer": 1941,
-        "description": "The United States entered World War II in 1941 after the Japanese attack on Pearl Harbor."
-    },
-    {
-        "id": 120,
-        "question": "In what year did the Universal Declaration of Human Rights come into existence?",
-        "answer": 1948,
-        "description": "The Universal Declaration of Human Rights was adopted by the United Nations General Assembly on December 10, 1948."
-    },
-    {
-        "id": 121,
-        "question": "In what year did the Soviet Union dissolve?",
-        "answer": 1991,
-        "description": "The Soviet Union dissolved on December 26, 1991, after a period of political and economic turmoil."
-    },
-    {
-        "id": 122,
-        "question": "In what year did the Treaty of Versailles end World War I?",
-        "answer": 1919,
-        "description": "The Treaty of Versailles, which formally ended World War I, was signed on June 28, 1919, in the Hall of Mirrors at the Palace of Versailles, France."
-    },
-    {
-        "id": 123,
-        "question": "In what year did the first modern postage stamp, the Penny Black, go into circulation?",
-        "answer": 1840,
-        "description": "The Penny Black, the first adhesive postage stamp, was issued in Britain on May 1, 1840, and featured an image of Queen Victoria."
-    },
-    {
-        "id": 124,
-        "question": "In what year was the Great Fire of London?",
-        "answer": 1666,
-        "description": "The Great Fire of London burned for four days from September 2 to September 6, 1666, destroying much of the city and leaving an estimated 100,000 people homeless."
-    },
-    {
-        "id": 125,
-        "question": "In what year was the Mona Lisa painted?",
-        "answer": 1503,
-        "description": "The Mona Lisa was painted by Leonardo da Vinci between 1503 and 1506."
-    },
-    {
-        "id": 126,
-        "question": "In what year did the Black Death first arrive in Europe?",
-        "answer": 1347,
-        "description": "The Black Death, also known as the bubonic plague, first arrived in Europe in 1347 and went on to kill an estimated 25 million people, or about a third of the continent's population."
-    },
-    {
-        "id": 127,
-        "question": "In what year did the Industrial Revolution begin?",
-        "answer": 1760,
-        "description": "The Industrial Revolution began in Britain in the mid-18th century, around 1760, and eventually spread to other parts of the world."
-    },
-    {
-        "id": 128,
-        "question": "In what year did the first modern atlas, the Atlas Novus, by Willem Janszoon Blaeu, get published?",
-        "answer": 1635,
-        "description": "The Atlas Novus, a collection of maps of the world and the heavens, was published by Dutch cartographer Willem Janszoon Blaeu in 1635."
-    },
-    {
-        "id": 129,
-        "question": "In what year did the construction of the Great Wall of China begin?",
-        "answer": -214,
-        "description": "The construction of the Great Wall of China began in the 7th century BC, but the most famous sections of the wall were built during the Ming dynasty, starting in the 14th century AD. The year -214 is the approximate date of the first recorded mention of the wall, in a text by the ancient Chinese historian Sima Qian."
-    },
-    {
-        "id": 130,
-        "question": "In what year did the Battle of Marathon take place?",
-        "answer": -490,
-        "description": "The Battle of Marathon was fought in 490 BC between the Athenians and the Persian Empire. The Athenians were victorious and the battle is considered a pivotal moment in the development of Western civilization."
-    },
-    {
-        "id": 131,
-        "question": "In what year did the United States invade Afghanistan?",
-        "answer": 2001,
-        "description": "The United States invaded Afghanistan on October 7, 2001, in response to the September 11 terrorist attacks. The conflict is still ongoing"
-    },
-    {
-        "id": 132,
-        "question": "In what year did the Battle of Hastings take place?",
-        "answer": 1066,
-        "description": "The Battle of Hastings was fought on October 14, 1066, between the Norman-French army of William, the Duke of Normandy, and the English army of King Harold II. The Normans were victorious, and William became King of England, marking the beginning of the Norman Conquest."
-    },
-    {
-        "id": 133,
-        "question": "In what year did the Black Death reach its peak mortality in Europe?",
-        "answer": 1348,
-        "description": "The Black Death reached its peak mortality in Europe in 1348, when it killed an estimated 50 million people, or about 60% of the population."
-    },
-    {
-        "id": 134,
-        "question": "In what year did Christopher Columbus make his first voyage to the Americas?",
-        "answer": 1492,
-        "description": "Christopher Columbus set sail on his first voyage to the Americas on August 3, 1492, with three ships: the Santa Maria, the Pinta, and the Niña. He arrived in the Bahamas on October 12 of that year."
-    },
-    {
-        "id": 135,
-        "question": "In what year did the American Civil War end?",
-        "answer": 1865,
-        "description": "The American Civil War ended on April 9, 1865, when Confederate General Robert E. Lee surrendered to Union General Ulysses S. Grant at the Appomattox Court House in Virginia."
-    },
-    {
-        "id": 136,
-        "question": "In what year did Julius Caesar cross the Rubicon River?",
-        "answer": -49,
-        "description": "In 49 BC, Julius Caesar led his army across the Rubicon River, which was the border between Italy and Gaul (modern-day France). This act was seen as a declaration of war against the Roman Republic and ultimately led to Caesar's rise to power."
-    },
-    {
-        "id": 137,
-        "question": "In what year did the construction of the Great Pyramid of Giza begin?",
-        "answer": -2560,
-        "description": "The Great Pyramid of Giza was built as a tomb for the pharaoh Khufu and construction began around 2560 BC. It is the oldest and largest of the three pyramids in Giza, and one of the Seven Wonders of the Ancient World."
-    },
-    {
-        "id": 138,
-        "question": "In what year did the Zhou dynasty begin in China?",
-        "answer": -1046,
-        "description": "The Zhou dynasty is believed to have begun in 1046 BC after overthrowing the Shang dynasty, and is considered one of the longest-lasting dynasties in Chinese history."
-    },
-    {
-        "id": 139,
-        "question": "In what year was the ancient city of Rome founded?",
-        "answer": -753,
-        "description": "According to legend, the ancient city of Rome was founded in 753 BC by twin brothers Romulus and Remus. Rome went on to become one of the most powerful and influential cities in the ancient world."
-    },
-    {
-        "id": 140,
-        "question": "In what year did the Peloponnesian War begin?",
-        "answer": -431,
-        "description": "The Peloponnesian War was fought between Athens and Sparta and their respective allies from 431 to 404 BC. The war was one of the most significant events in ancient Greek history, and had a profound impact on the development of Western civilization."
-    },
-    {
-        "id": 141,
-        "question": "In what year did the construction of Stonehenge begin?",
-        "answer": -3000,
-        "description": "Stonehenge is a prehistoric monument in England, and the construction of the stones is believed to have begun around 3000 BC. The purpose of the monument is still unknown, but it is believed to have been a site of religious or ceremonial significance."
-    },
-    {
-        "id": 142,
-        "question": "In what year did the ancient city of Babylon fall to the Persians?",
-        "answer": -539,
-        "description": "The ancient city of Babylon fell to the Persian Empire in 539 BC after a siege led by Cyrus the Great. Babylon had been one of the most important cities in the ancient world, and its fall marked the end of the Neo-Babylonian Empire."
-    },
-    {
-        "id": 143,
-        "question": "In what year did Alexander the Great become king of Macedon?",
-        "answer": -336,
-        "description": "Alexander the Great became king of Macedon in 336 BC after the assassination of his father, King Philip II."
-    },
-    {
-        "id": 146,
-        "question": "When was the first website created?",
-        "description": "The first website was created in 1991, marking the beginning of the World Wide Web as we know it today.",
-        "answer": 1991
-    },
-    {
-        "id": 147,
-        "question": "In what year was the first email sent?",
-        "description": "The first email was sent in 1971, paving the way for modern email communication.",
-        "answer": 1971
-    },
-    {
-        "id": 148,
-        "question": "When was the first successful video game, Pong, released?",
-        "description": "The first successful video game, Pong, was released in 1972 and started the video game industry as we know it today.",
-        "answer": 1972
-    },
-    {
-        "id": 149,
-        "question": "When was the first commercially available personal computer, the Altair 8800, released?",
-        "description": "The Altair 8800 was the first commercially available personal computer, which helped spark the home computing revolution.",
-        "answer": 1975
-    },
-    {
-        "id": 150,
-        "question": "In what year was the first graphical web browser, Mosaic, released?",
-        "description": "Mosaic was the first graphical web browser, which made it easier to browse the internet.",
-        "answer": 1993
-    },
-    {
-        "id": 151,
-        "question": "When was the first MP3 player, the MPMan, released?",
-        "description": "The first MP3 player, the MPMan, was released in 1998 and changed the way we listen to music.",
-        "answer": 1998
-    },
-    {
-        "id": 152,
-        "question": "In what year was the first 3D printer created?",
-        "description": "The first 3D printer was created in 1984 and has the potential to revolutionize manufacturing and many other industries.",
-        "answer": 1984
-    },
-    {
-        "id": 153,
-        "question": "When was the first successful digital camera, the Fuji DS-1P, released?",
-        "description": "The first successful digital camera, the Fuji DS-1P, was released in 1988 and transformed the way we take and share pictures.",
-        "answer": 1988
-    },
-    {
-        "id": 154,
-        "question": "In what year was the first search engine, Archie, created?",
-        "description": "Archie was the first search engine and was created in 1990 to help users find information on the internet.",
-        "answer": 1990
-    },
-    {
-        "id": 155,
-        "question": "When was the first successful smartphone, the IBM Simon, released?",
-        "description": "The IBM Simon was the first successful smartphone, combining a mobile phone with a touchscreen interface.",
-        "answer": 1993
-    },
-    {
-        "id": 156,
-        "question": "In what year was the first USB standard released?",
-        "description": "The first USB standard was released in 1996, which has become the standard for connecting all sorts of devices to computers.",
-        "answer": 1996
-    },
-    {
-        "id": 157,
-        "question": "When was the first successful e-book reader, the Rocket eBook, released?",
-        "description": "The first successful e-book reader, the Rocket eBook, was released in 1998 and transformed the way we read and consume literature.",
-        "answer": 1998
-    },
-    {
-        "id": 158,
-        "question": "In what year was the first optical disc, the CD, commercially released?",
-        "description": "The CD, the first optical disc, was commercially released in 1982 and was a major advancement in music storage and distribution, paving the way for DVDs and other optical media.",
-        "answer": 1982
-    }
+	{
+		"id": 1,
+		"question": "In what year was the first motion picture shown to a paying audience?",
+		"description": "This question refers to the historic moment when cinema was born, and it seeks to know when the first motion picture was shown to a paying audience.",
+		"answer": 1895
+	},
+	{
+		"question": "In what year was the famous painter Leonardo da Vinci born?",
+		"description": "This question asks about the birth year of one of the most famous artists of all time, Leonardo da Vinci, who was known for his many contributions to the fields of painting, sculpture, architecture, engineering, and science.",
+		"answer": 1452,
+		"id": 2
+	},
+	{
+		"id": 3,
+		"question": "In what year did the Beatles release their first album, 'Please Please Me'?",
+		"description": "This question refers to the iconic British rock band, The Beatles, and it seeks to know the year when they released their first album, 'Please Please Me', which helped to kickstart their incredible career.",
+		"answer": 1963
+	},
+	{
+		"id": 4,
+		"question": "In what year did the popular TV show 'The Simpsons' first air?",
+		"description": "This question refers to the beloved animated TV show, 'The Simpsons', and it seeks to know the year when it first aired, which marked the beginning of its long and successful run as one of the most iconic shows in TV history.",
+		"answer": 1989
+	},
+	{
+		"id": 5,
+		"question": "In what year did Coco Chanel open her first boutique in Paris?",
+		"description": "This question refers to the legendary fashion designer, Coco Chanel, and it seeks to know the year when she opened her first boutique in Paris, which marked the beginning of her rise to become one of the most influential figures in the world of fashion.",
+		"answer": 1910
+	},
+	{
+		"id": 6,
+		"question": "In what year did the famous French monarch, Louis XIV, die?",
+		"description": "This question refers to one of the most famous French monarchs of all time, Louis XIV, who was also known as the Sun King, and it seeks to know the year when he passed away, which marked the end of his long and eventful reign as king of France.",
+		"answer": 1715
+	},
+	{
+		"id": 7,
+		"question": "In what year did the famous Hollywood actress Marilyn Monroe pass away?",
+		"description": "This question refers to the iconic Hollywood actress, Marilyn Monroe, and it seeks to know the year when she passed away, which marked the end of her legendary career and her enduring legacy as a cultural icon.",
+		"answer": 1962
+	},
+	{
+		"id": 8,
+		"question": "In what year was the first issue of Rolling Stone magazine published?",
+		"description": "This question refers to the legendary music and culture magazine, Rolling Stone, and it seeks to know the year when its first issue was published, which marked the beginning of its long and influential run as one of the most important publications in the world of music and popular culture.",
+		"answer": 1967
+	},
+	{
+		"id": 9,
+		"question": "In what year did Michael Jackson release his iconic album 'Thriller'?",
+		"description": "This question refers to the King of Pop, Michael Jackson, and it seeks to know the year when he released his iconic album, 'Thriller'",
+		"answer": 1982
+	},
+	{
+		"id": 10,
+		"question": "In what year did the famous Italian composer Wolfgang Amadeus Mozart die?",
+		"description": "Wolfgang Amadeus Mozart was one of the greatest composers in the history of classical music, known for his masterpieces such as 'The Marriage of Figaro' and 'Don Giovanni'. He died at the young age of 35 in 1791, leaving behind a legacy that continues to inspire and influence musicians to this day.",
+		"answer": 1791
+	},
+	{
+		"question": "In what year did the popular musical 'Hamilton' make its debut on Broadway?",
+		"description": "The hit musical 'Hamilton' premiered on Broadway in 2015, written by Lin-Manuel Miranda and inspired by the life of American founding father Alexander Hamilton. The show has received critical acclaim for its innovative blend of hip-hop, jazz, and traditional musical theater styles, and has been praised for its diverse casting and progressive approach to historical storytelling.",
+		"answer": 2015,
+		"id": 11
+	},
+	{
+		"id": 12,
+		"question": "In what year did the first episode of the TV show 'Friends' air?",
+		"description": "The beloved sitcom 'Friends' first aired in 1994 and quickly became a cultural phenomenon, running for ten seasons and gaining a massive global following. The show follows a group of six friends living in New York City as they navigate their personal and professional lives, and has been celebrated for its sharp writing, memorable characters, and iconic catchphrases.",
+		"answer": 1994
+	},
+	{
+		"id": 13,
+		"question": "In what year did the iconic American fashion designer Ralph Lauren launch his fashion brand?",
+		"description": "Ralph Lauren is one of the most renowned fashion designers in the world, known for his classic, preppy style and luxury brand. He launched his eponymous fashion line in 1967, starting with a collection of ties and expanding to include clothing, accessories, and home goods. Today, the Ralph Lauren brand is a global empire, with stores in over 80 countries and a legacy of timeless, elegant fashion.",
+		"answer": 1967
+	},
+	{
+		"id": 14,
+		"question": "In what year was the famous English playwright William Shakespeare born?",
+		"description": "William Shakespeare is widely regarded as one of the greatest playwrights in the history of English literature, known for his poetic language, complex characters, and timeless themes. He was born in 1564 in the town of Stratford-upon-Avon, and went on to write some of the most iconic plays in the English language, including 'Romeo and Juliet', 'Hamlet', and 'Macbeth'. His work continues to be studied and performed around the world to this day.",
+		"answer": 1564
+	},
+	{
+		"id": 15,
+		"question": "In what year did the Academy Awards (Oscars) ceremony first take place?",
+		"description": "The Academy Awards, also known as the Oscars, is one of the most prestigious awards ceremonies in the entertainment industry, honoring the best in film each year. The first Oscars ceremony took place in 1929, and has since become a major cultural event, watched by millions of people around the world. The ceremony features awards in categories such as Best Picture, Best Actor and Actress, and Best Director, and is often a platform for political and social commentary.",
+		"answer": 1929
+	},
+	{
+		"id": 16,
+		"question": "In what year did the famous American singer Elvis Presley pass away?",
+		"description": "Elvis Presley, often referred to as the 'King of Rock and Roll', was one of the most iconic musicians of the 20th century. He passed away in a Memphis hospital in August of 1977, at the age of 42, due to heart failure and other health issues.",
+		"answer": 1977
+	},
+	{
+		"id": 17,
+		"question": "In what year was the popular video-sharing platform YouTube launched?",
+		"description": "YouTube, the world's largest video-sharing platform, was launched in 2005 by three former PayPal employees. The platform quickly gained popularity due to its easy accessibility, free access, and wide range of content.",
+		"answer": 2005
+	},
+	{
+		"id": 18,
+		"question": "In what year did the first issue of the comic book 'Superman' hit the shelves?",
+		"description": "Superman, one of the most popular and enduring superhero characters, first appeared in Action Comics #1, which hit the shelves in June of 1938. Created by writer Jerry Siegel and artist Joe Shuster, the character has since become a cultural icon.",
+		"answer": 1938
+	},
+	{
+		"id": 19,
+		"question": "In what year did the famous French fashion designer Christian Dior launch his first collection, known as the 'New Look'?",
+		"description": "Christian Dior, a highly influential figure in the fashion world, launched his first collection in 1947, which was dubbed the 'New Look'. The collection featured ultra-feminine designs, including full skirts and cinched waists, that marked a departure from the boxy and practical styles of the previous decade.",
+		"answer": 1947
+	},
+	{
+		"id": 20,
+		"question": "In what year was the famous American author Mark Twain born?",
+		"description": "Mark Twain, the pen name of Samuel Langhorne Clemens, was born in 1835 in Florida, Missouri. Twain is widely regarded as one of the greatest American writers of all time, known for his sharp wit, satirical style, and iconic characters like Tom Sawyer and Huckleberry Finn.",
+		"answer": 1835
+	},
+	{
+		"id": 21,
+		"question": "In what year did the popular TV show 'Game of Thrones' first premiere?",
+		"description": "The TV series 'Game of Thrones' based on George R.R. Martin's novel 'A Song of Ice and Fire' first premiered in this year.",
+		"answer": 2011
+	},
+	{
+		"id": 22,
+		"question": "In what year was the famous Hollywood actress Audrey Hepburn born?",
+		"description": "Audrey Hepburn, one of the most iconic actresses of all time, was born in this year in a city in Belgium.",
+		"answer": 1929
+	},
+	{
+		"id": 23,
+		"question": "In what year did the first issue of the popular comic book 'Spider-Man' hit the stands?",
+		"description": "The first issue of the popular Marvel comic book 'Spider-Man', created by Stan Lee and Steve Ditko, hit the stands in this year.",
+		"answer": 1962
+	},
+	{
+		"id": 24,
+		"question": "In what year did the famous English scientist Sir Isaac Newton publish his 'Principia Mathematica'?",
+		"description": "Sir Isaac Newton, one of the most influential scientists of all time, published his groundbreaking work 'Principia Mathematica' in this year, which laid the foundation for classical mechanics.",
+		"answer": 1687
+	},
+	{
+		"id": 25,
+		"question": "In what year did the iconic American pop artist Andy Warhol pass away?",
+		"description": "Andy Warhol, the iconic American artist known for his unique pop art style, passed away in this year due to complications following gallbladder surgery.",
+		"answer": 1987
+	},
+	{
+		"id": 26,
+		"question": "In what year was the famous French emperor Napoleon Bonaparte born?",
+		"description": "Napoleon Bonaparte was born on August 15th, 1769, in the city of Ajaccio on the island of Corsica, which was then a French territory.",
+		"answer": 1769
+	},
+	{
+		"id": 27,
+		"question": "In what year did the popular TV show 'Breaking Bad' make its debut?",
+		"description": "Breaking Bad first premiered on AMC on January 20th, 2008. Created by Vince Gilligan, the show became a cultural phenomenon and is widely regarded as one of the greatest television dramas of all time.",
+		"answer": 2008
+	},
+	{
+		"id": 28,
+		"question": "In what year did the famous American author Ernest Hemingway win the Nobel Prize in Literature?",
+		"description": "Ernest Hemingway won the Nobel Prize in Literature in 1954, for his mastery of the art of narrative, which was demonstrated in The Old Man and the Sea, and for the influence that he has exerted on contemporary style.",
+		"answer": 1954
+	},
+	{
+		"id": 29,
+		"question": "In what year did the iconic British band Queen release their album 'A Night at the Opera'?",
+		"description": "Queen released their fourth studio album 'A Night at the Opera' on November 21st, 1975. The album features some of their most well-known songs, including 'Bohemian Rhapsody' and 'You're My Best Friend'.",
+		"answer": 1975
+	},
+	{
+		"id": 30,
+		"question": "In what year did the famous American film director Steven Spielberg release his movie 'Jaws'?",
+		"description": "Jaws, directed by Steven Spielberg, was released in the United States on June 20th, 1975. The movie, which is widely considered one of the greatest films of all time, became a cultural phenomenon and helped establish the summer blockbuster as a major part of the movie industry.",
+		"answer": 1975
+	},
+	{
+		"id": 31,
+		"question": "In what year was the popular American talk show 'The Oprah Winfrey Show' first aired?",
+		"description": "The Oprah Winfrey Show first aired nationally on September 8th, 1986. Hosted by Oprah Winfrey, the show became the highest-rated talk show in the United States and ran for 25 seasons, ending its run on May 25th, 2011.",
+		"answer": 1986
+	},
+	{
+		"id": 32,
+		"question": "In what year did the famous American singer Whitney Houston pass away?",
+		"description": "Whitney Houston passed away on February 11th, 2012, at the age of 48. Houston was one of the most successful singers of all time, with numerous chart-topping hits and a powerful voice that earned her the nickname 'The Voice'.",
+		"answer": 2012
+	},
+	{
+		"id": 33,
+		"question": "In what year did the first issue of the popular comic book 'Batman' hit the shelves?",
+		"description": "The first issue of Batman was released in the spring of 1939, published by DC Comics. Created by Bob Kane and Bill Finger, the character of Batman would go on to become one of the most iconic superheroes of all time.",
+		"answer": 1939
+	},
+	{
+		"id": 34,
+		"question": "In what year was the famous German composer Ludwig van Beethoven born?",
+		"description": "Ludwig van Beethoven was a pivotal figure in the transition from classical to romantic music. He was born in Bonn, Germany, and began composing at a young age, despite his father's efforts to mold him into a child prodigy like Mozart. Beethoven's works include nine symphonies, numerous piano sonatas, string quartets, and choral works.",
+		"answer": 1770
+	},
+	{
+		"id": 35,
+		"question": "In what year did the iconic French fashion designer Yves Saint Laurent launch his brand?",
+		"description": "Yves Saint Laurent was a trailblazing fashion designer who revolutionized the industry by introducing menswear-inspired styles for women. In 1961, he launched his eponymous brand with business partner Pierre Bergé. Saint Laurent's designs were known for their timeless elegance, use of luxurious fabrics, and incorporation of art and cultural references.",
+		"answer": 1961
+	},
+	{
+		"id": 36,
+		"question": "In what year did the popular TV show 'The Walking Dead' make its debut?",
+		"description": "'The Walking Dead' is a post-apocalyptic horror television series that premiered in 2010. Based on a comic book series of the same name, the show follows a group of survivors as they navigate a world overrun by zombies. The series has become a cultural phenomenon, with devoted fans around the world and spinoff shows and merchandise.",
+		"answer": 2010
+	},
+	{
+		"id": 37,
+		"question": "In what year was the famous American singer and actor Frank Sinatra born?",
+		"description": "Frank Sinatra was a legendary performer known for his distinctive voice, charisma, and enduring popularity. He was born in Hoboken, New Jersey in 1915 and began his career as a singer in the swing era of the 1930s. Sinatra's music and movies made him a household name, and he remains an icon of American culture to this day.",
+		"answer": 1915
+	},
+	{
+		"id": 38,
+		"question": "In what year did the famous Italian explorer Christopher Columbus make his first voyage to the Americas?",
+		"description": "Christopher Columbus was a 15th-century explorer who is credited with discovering the Americas. In 1492, he set sail from Spain with three ships and a crew of about 90 men. After a long and perilous journey, Columbus and his crew landed on an island in the Caribbean, which he named San Salvador. This historic voyage marked the beginning of European exploration and colonization of the New World.",
+		"answer": 1492
+	},
+	{
+		"id": 39,
+		"question": "In what year did the popular American sitcom 'Seinfeld' air its final episode?",
+		"description": "'Seinfeld' was a groundbreaking sitcom that aired from 1989 to 1998. Created by Larry David and Jerry Seinfeld, the show was known for its quirky characters, observational humor, and unique approach to storytelling. The final episode, which aired on May 14, 1998, was watched by 76 million people and remains one of the most-watched television finales of all time.",
+		"answer": 1998
+	},
+	{
+		"id": 40,
+		"question": "In what year did Leonardo da Vinci complete his painting 'The Last Supper'?",
+		"description": "Leonardo da Vinci's 'The Last Supper' is one of the most famous paintings in the world. It is a masterpiece of the Italian Renaissance, and has been admired for centuries for its composition, use of perspective, and emotional intensity. The painting depicts the scene of the Last Supper, when Jesus Christ shared a final meal with his disciples before his crucifixion.",
+		"answer": 1498
+	},
+	{
+		"id": 41,
+		"question": "In what year did the famous Dutch painter Vincent van Gogh pass away?",
+		"description": "Vincent van Gogh was a post-impressionist painter who is widely regarded as one of the greatest artists of all time. Despite a short and troubled life, he created some of the most iconic paintings of the modern era. Van Gogh passed away in 1890 at the age of 37, leaving behind a legacy that continues to inspire and influence artists to this day.",
+		"answer": 1890
+	},
+	{
+		"id": 42,
+		"question": "In what year was the famous Italian painter Michelangelo born?",
+		"description": "Michelangelo was a Renaissance artist who is widely regarded as one of the greatest painters and sculptors of all time. Born in 1475 in Tuscany, Italy, Michelangelo created some of the most famous works of art in history, including the frescoes on the ceiling of the Sistine Chapel and the statue of David. His work had a profound influence on the art world and his legacy continues to inspire artists today.",
+		"answer": 1475
+	},
+	{
+		"id": 43,
+		"question": "In what year did the famous French painter Claude Monet complete his painting 'Water Lilies'?",
+		"description": "Claude Monet was a French impressionist painter who is famous for his landscapes and seascapes. 'Water Lilies' is a series of paintings that Monet created in the late 19th and early 20th centuries, depicting his flower garden at his home in Giverny. The paintings are known for their vibrant colors and brushstrokes, and are considered to be some of Monet's greatest works. The series was completed in 1916.",
+		"answer": 1916
+	},
+	{
+		"id": 44,
+		"question": "In what year was the famous Spanish painter Pablo Picasso born?",
+		"description": "Pablo Picasso was a Spanish artist who is widely regarded as one of the greatest and most influential artists of the 20th century. He was born in Malaga, Spain in 1881, and went on to create some of the most iconic paintings and sculptures of the modern era. Picasso was a pioneer of the cubist movement, and his work had a profound influence on the art world throughout his life.",
+		"answer": 1881
+	},
+	{
+		"id": 45,
+		"question": "In what year did the famous Dutch painter Rembrandt van Rijn complete his painting 'The Night Watch'?",
+		"description": "Rembrandt van Rijn was a Dutch painter who is widely regarded as one of the greatest artists of the Baroque period. 'The Night Watch' is one of his most famous paintings, and is known for its dramatic use of light and shadow. The painting depicts a group of Dutch soldiers, and is considered to be a masterpiece of 17th century art. 'The Night Watch' was completed in 1642",
+		"answer": 1642
+	},
+	{
+		"id": 46,
+		"question": "In what year was the famous American artist Andy Warhol born?",
+		"description": "Andy Warhol was a leading figure in the Pop Art movement of the 1960s, known for his colorful and bold works that depicted everyday objects and celebrities. He was born on August 6, 1928, in Pittsburgh, Pennsylvania.",
+		"answer": 1928
+	},
+	{
+		"id": 47,
+		"question": "In what year did the famous Dutch painter Johannes Vermeer complete his painting 'Girl with a Pearl Earring'?",
+		"description": "Johannes Vermeer was a Dutch Baroque painter who is best known for his masterful use of light and color in his works. 'Girl with a Pearl Earring' is one of his most famous paintings, completed in 1665.",
+		"answer": 1665
+	},
+	{
+		"id": 48,
+		"question": "In what year was the famous British painter J.M.W. Turner born?",
+		"description": "J.M.W. Turner was a British Romantic painter who is known for his atmospheric and luminous landscapes. He was born on April 23, 1775, in London, England.",
+		"answer": 1775
+	},
+	{
+		"id": 49,
+		"question": "In what year did the famous Mexican painter Frida Kahlo pass away?",
+		"description": "Frida Kahlo was a Mexican painter known for her self-portraits and works that were inspired by the culture and tradition of her homeland. She passed away on July 13, 1954, at the age of 47.",
+		"answer": 1954
+	},
+	{
+		"id": 50,
+		"question": "In what year was the famous American actor Tom Hanks born?",
+		"description": "Tom Hanks is a beloved American actor known for his roles in films such as 'Forrest Gump', 'Philadelphia', and 'Saving Private Ryan'. He was born on July 9, 1956, in Concord, California.",
+		"answer": 1956
+	},
+	{
+		"id": 51,
+		"question": "In what year did the famous American singer Michael Jackson pass away?",
+		"description": "Michael Jackson was a pop icon who passed away at the age of 50. He died unexpectedly in his Los Angeles home on June 25th, 2009. His death was a shock to his fans all over the world and many still remember him as the King of Pop.",
+		"answer": 2009
+	},
+	{
+		"id": 52,
+		"question": "In what year was the famous American actress Marilyn Monroe born?",
+		"description": "Marilyn Monroe was a Hollywood legend known for her beauty, charisma, and tragic life. She was born Norma Jeane Mortenson on June 1st, 1926, in Los Angeles, California. Her childhood was marked by instability and abuse, but she went on to become one of the most iconic actresses of all time.",
+		"answer": 1926
+	},
+	{
+		"id": 53,
+		"question": "In what year did the famous American actress Angelina Jolie win an Academy Award for Best Supporting Actress for her role in 'Girl, Interrupted'?",
+		"description": "Angelina Jolie is a talented actress, director, and humanitarian known for her striking looks and powerful performances. She won the Academy Award for Best Supporting Actress in 2000 for her role as Lisa Rowe in the film 'Girl, Interrupted'. The film tells the story of a young woman's stay in a mental institution and Jolie's performance was widely praised for its intensity and authenticity.",
+		"answer": 2000
+	},
+	{
+		"id": 54,
+		"question": "In what year was the famous American singer Elvis Presley born?",
+		"description": "Elvis Presley was a cultural icon and one of the most significant musicians of the 20th century. He was born on January 8th, 1935, in Tupelo, Mississippi, and rose to fame in the mid-1950s with his unique blend of rock, country, and blues music. His influence on popular culture can still be felt today, and his music continues to be enjoyed by fans all over the world.",
+		"answer": 1935
+	},
+	{
+		"id": 55,
+		"question": "In what year did the famous American actor Robin Williams pass away?",
+		"description": "Robin Williams was a beloved comedian and actor known for his quick wit, infectious energy, and incredible range. He passed away on August 11th, 2014, at the age of 63, leaving behind a legacy of iconic performances in films such as 'Good Will Hunting', 'Dead Poets Society', and 'Mrs. Doubtfire'. Williams was also a devoted philanthropist, supporting a variety of causes throughout his life.",
+		"answer": 2014
+	},
+	{
+		"id": 56,
+		"question": "In what year was the famous British actor and humanitarian Sir Michael Caine born?",
+		"description": "Sir Michael Caine is a beloved British actor and humanitarian known for his iconic roles in films such as 'Alfie', 'The Italian Job', and 'The Dark Knight'. He has also been actively involved in numerous charitable organizations throughout his career, including UNICEF, and was appointed a Commander of the Order of the British Empire (CBE) in 1992 for his services to drama.",
+		"answer": 1933
+	},
+	{
+		"id": 57,
+		"question": "In what year did the famous American actress Meryl Streep win an Academy Award for Best Actress for her role in 'Sophie's Choice'?",
+		"description": "Meryl Streep is widely regarded as one of the greatest actresses of all time, with a career spanning over five decades. She has been nominated for a record-breaking 21 Academy Awards, and has won three, including Best Actress for her unforgettable performance in the 1982 film 'Sophie's Choice'. Streep is known for her incredible range and versatility as an actress, and has portrayed a wide variety of complex and compelling characters over the course of her career.",
+		"answer": 1983
+	},
+	{
+		"id": 58,
+		"question": "In what year was the famous American singer Beyoncé Knowles born?",
+		"description": "Beyoncé Knowles is an incredibly talented singer, songwriter, and actress who has achieved massive success both as a solo artist and as a member of the group Destiny's Child. She has won numerous awards and accolades for her music, including 28 Grammy Awards, and is widely considered one of the most influential and iconic musicians of her generation. Beyoncé has also been involved in various philanthropic endeavors, including the establishment of the BeyGOOD Foundation to help support and empower disadvantaged communities.",
+		"answer": 1981
+	},
+	{
+		"id": 59,
+		"question": "In what year did the famous American actor and director Clint Eastwood win an Academy Award for Best Director for his film 'Unforgiven'?",
+		"description": "Clint Eastwood is a legendary American actor, director, and producer who has been a major figure in the film industry for over six decades. He has won numerous awards and accolades for his work, including four Academy Awards, and is known for his iconic performances in films such as 'Dirty Harry', 'The Good, the Bad and the Ugly', and 'Gran Torino'. Eastwood also has a successful career as a director, and won his first Academy Award for Best Director in 1993 for his film 'Unforgiven', which also won Best Picture that year.",
+		"answer": 1993
+	},
+	{
+		"id": 60,
+		"question": "In what year was the famous American writer Ernest Hemingway born?",
+		"description": "Ernest Hemingway was one of the most celebrated American writers of the 20th century, known for his concise, straightforward writing style and his adventurous lifestyle. He was born in Oak Park, Illinois in 1899 and went on to have a prolific career, writing such classics as 'The Old Man and the Sea' and 'A Farewell to Arms'.",
+		"answer": 1899
+	},
+	{
+		"id": 61,
+		"question": "In what year was the famous English author Jane Austen born?",
+		"description": "Jane Austen was a renowned English novelist whose works have become classics of English literature. She was born in 1775 in Hampshire, England and went on to write such novels as 'Pride and Prejudice' and 'Sense and Sensibility'. Her works continue to be widely read and adapted for film and television.",
+		"answer": 1775
+	},
+	{
+		"id": 62,
+		"question": "In what year did Microsoft release Windows 95?",
+		"description": "One of the most famous versions of the Windows operating system, it introduced many features still in use today.",
+		"answer": 1995
+	},
+	{
+		"id": 63,
+		"question": "In what year was the famous Russian writer Fyodor Dostoevsky born?",
+		"description": "Fyodor Dostoevsky was a Russian novelist, short-story writer, and essayist who is considered one of the greatest writers in the history of Russian literature. He was born in 1821 in Moscow, Russia and went on to write such works as 'Crime and Punishment' and 'The Brothers Karamazov'. His works continue to be widely read and studied today.",
+		"answer": 1821
+	},
+	{
+		"id": 64,
+		"question": "In what year was the famous American author Harper Lee's novel 'To Kill a Mockingbird' published?",
+		"description": "Harper Lee was an American novelist whose novel 'To Kill a Mockingbird' has become a classic of modern American literature. The novel was published in 1960 and tells the story of a young girl growing up in the South during the 1930s and her father, a lawyer, who defends a black man accused of rape. The novel continues to be widely read and studied today.",
+		"answer": 1960
+	},
+	{
+		"id": 65,
+		"question": "In what year was the first book of the famous British author J.K. Rowling's 'Harry Potter' series, 'Harry Potter and the Philosopher's Stone', published?",
+		"description": "This question is about the publication year of the first book in the 'Harry Potter' series, written by J.K. Rowling, which tells the story of a young orphan boy who discovers he is a wizard and attends a magical school called Hogwarts.",
+		"answer": 1997
+	},
+	{
+		"id": 66,
+		"question": "In what year was the novel 'Beloved' by the famous American author Toni Morrison first published?",
+		"description": "This question is about the publication year of 'Beloved', a Pulitzer Prize-winning novel written by Toni Morrison, which tells the story of a former slave in post-Civil War America who is haunted by the memory of her dead daughter.",
+		"answer": 1987
+	},
+	{
+		"id": 67,
+		"question": "In what year was the novel 'Oliver Twist' by the famous British author Charles Dickens first published?",
+		"description": "This question is about the publication year of 'Oliver Twist', a novel written by Charles Dickens, which tells the story of a young orphan boy who escapes from a workhouse and joins a gang of pickpockets in London.",
+		"answer": 1838
+	},
+	{
+		"id": 68,
+		"question": "In what year was the autobiography 'I Know Why the Caged Bird Sings' by the famous American writer Maya Angelou first published?",
+		"description": "This question is about the publication year of 'I Know Why the Caged Bird Sings', an autobiography written by Maya Angelou, which tells the story of her childhood and young adulthood in the segregated South and the struggles she faced as a Black woman.",
+		"answer": 1969
+	},
+	{
+		"id": 69,
+		"question": "In what year was the famous American author Edgar Allan Poe's poem 'The Raven' first published?",
+		"description": "This question is about the publication year of 'The Raven', a poem written by Edgar Allan Poe, which tells the story of a man who is visited by a talking raven that drives him to the brink of madness.",
+		"answer": 1845
+	},
+	{
+		"id": 70,
+		"question": "In what year did the Hanseatic League establish a trading post in the Baltic Sea town of Riga?",
+		"description": "The Hanseatic League, a medieval confederation of merchant guilds and market towns in Northwestern and Central Europe, was known for its extensive trading network throughout the Baltic Sea region. This question asks about the year when the League established a trading post in the town of Riga, located on the eastern coast of the Baltic Sea.",
+		"answer": 1282
+	},
+	{
+		"id": 71,
+		"question": "In what year did the Danish King Waldemar IV conquer the city of Gdańsk and gain control of the Baltic Sea trade routes?",
+		"description": "During the Middle Ages, the city of Gdańsk (known in German as Danzig) was an important center of commerce and trade on the Baltic Sea. This question asks about the year when the Danish King Waldemar IV, also known as Waldemar Atterdag, captured the city and gained control of the important trade routes that passed through it.",
+		"answer": 1361
+	},
+	{
+		"id": 72,
+		"question": "In what year did the Swedish navy defeat the Russian navy in the Battle of Svensksund, a naval battle fought in the eastern part of the Baltic Sea?",
+		"description": "The Battle of Svensksund was a major naval engagement fought between Sweden and Russia in the eastern part of the Baltic Sea. This question asks about the year when the Swedish navy, under the command of Admiral Carl Olof Cronstedt, achieved a decisive victory over the Russian fleet, which was under the command of Admiral Samuel Greig.",
+		"answer": 1790
+	},
+	{
+		"id": 73,
+		"question": "In what year did the Russian navy defeat the Swedish navy in the Battle of Gangut, a naval battle fought in the Gulf of Finland in the eastern part of the Baltic Sea?",
+		"description": "The Battle of Gangut was a naval engagement fought between Russia and Sweden in the eastern part of the Baltic Sea, specifically in the Gulf of Finland. This question asks about the year when the Russian navy, led by Admiral Fyodor Apraksin, achieved a decisive victory over the Swedish fleet, which was under the command of Admiral Carl Gustaf Armfeldt.",
+		"answer": 1714
+	},
+	{
+		"id": 74,
+		"question": "In what year did the first steamship cross the Baltic Sea, from Stockholm to St. Petersburg?",
+		"description": "The first steamship to cross the Baltic Sea was an important milestone in the history of maritime transportation. This question asks about the year when this event occurred, specifically the year when the steamship arrived in St. Petersburg after departing from Stockholm.",
+		"answer": 1816
+	},
+	{
+		"id": 75,
+		"question": "In what year was the Treaty of Nystad signed, which marked the end of the Great Northern War between Sweden and Russia and ceded much of the eastern part of the Baltic Sea to Russia?",
+		"description": "The Treaty of Nystad was a peace treaty signed in present-day Finland that ended the Great Northern War between Sweden and Russia. The treaty marked the beginning of Russia's rise as a major power in Europe and ceded much of the eastern part of the Baltic Sea to Russia.",
+		"answer": 1721
+	},
+	{
+		"id": 76,
+		"question": "In what year was the Battle of Bornhöved fought, a major battle near the Baltic Sea coast between the armies of Denmark and Holstein on one side and the army of the Hanseatic League on the other side?",
+		"description": "The Battle of Bornhöved was a major battle fought on the border between present-day Germany and Denmark that pitted the armies of Denmark and Holstein against the army of the Hanseatic League. The battle was fought near the Baltic Sea coast and resulted in a decisive victory for the Hanseatic League.",
+		"answer": 1227
+	},
+	{
+		"id": 77,
+		"question": "In what year did the German battleship SMS Schleswig-Holstein bombard the Polish military outpost at Westerplatte, marking the start of World War II?",
+		"description": "On September 1, 1939, the German battleship SMS Schleswig-Holstein bombarded the Polish military outpost at Westerplatte, marking the beginning of World War II. The attack on Westerplatte was part of a larger invasion of Poland by Germany that triggered the involvement of multiple nations in the war.",
+		"answer": 1939
+	},
+	{
+		"id": 78,
+		"question": "In what year was the Treaty of Stolbovo signed, which ended the Ingrian War between Sweden and Russia and gave Russia control of the Karelian Isthmus and access to the Baltic Sea?",
+		"description": "The Treaty of Stolbovo was a peace treaty signed between Sweden and Russia that marked the end of the Ingrian War. The treaty gave Russia control of the Karelian Isthmus, which provided Russia with access to the Baltic Sea and helped to establish Russia as a major power in the region.",
+		"answer": 1617
+	},
+	{
+		"id": 79,
+		"question": "In what year did the Soviet Union intentionally sink the German liner MV Wilhelm Gustloff in the Baltic Sea, resulting in the deaths of over 9,000 refugees and civilians?",
+		"description": "On January 30, 1945, the Soviet Union intentionally sank the German liner MV Wilhelm Gustloff in the Baltic Sea. The ship was carrying over 9,000 refugees and civilians, many of whom were fleeing from the advancing Soviet army. The sinking of the ship resulted in one of the deadliest maritime disasters in history.",
+		"answer": 1945
+	},
+	{
+		"id": 80,
+		"question": "In what year did World War II end?",
+		"answer": 1945,
+		"description": "The war officially ended on September 2, 1945, with the signing of the Japanese Instrument of Surrender."
+	},
+	{
+		"id": 81,
+		"question": "In what year did the United States declare independence from Great Britain?",
+		"answer": 1776,
+		"description": "The Declaration of Independence was adopted by the Continental Congress on July 4, 1776."
+	},
+	{
+		"id": 82,
+		"question": "In what year did Neil Armstrong and Buzz Aldrin walk on the moon?",
+		"answer": 1969,
+		"description": "Apollo 11 landed on the moon on July 20, 1969."
+	},
+	{
+		"id": 83,
+		"question": "In what year did the Berlin Wall fall?",
+		"answer": 1989,
+		"description": "The wall fell on November 9, 1989, marking the end of the Cold War."
+	},
+	{
+		"id": 84,
+		"question": "In what year did the Titanic sink?",
+		"answer": 1912,
+		"description": "The Titanic sank on April 15, 1912, after hitting an iceberg."
+	},
+	{
+		"id": 85,
+		"question": "In what year did the first iPhone come out?",
+		"answer": 2007,
+		"description": "The first iPhone was released on June 29, 2007."
+	},
+	{
+		"id": 86,
+		"question": "In what year was William Shakespeare born?",
+		"answer": 1564,
+		"description": "Shakespeare was born on April 26, 1564, in Stratford-upon-Avon, England."
+	},
+	{
+		"id": 87,
+		"question": "In what year did the first modern Olympic Games take place?",
+		"answer": 1896,
+		"description": "The first modern Olympic Games were held in Athens, Greece, from April 6 to April 15, 1896."
+	},
+	{
+		"id": 88,
+		"question": "In what year did the Soviet Union launch the first artificial satellite, Sputnik 1?",
+		"answer": 1957,
+		"description": "Sputnik 1 was launched on October 4, 1957, marking the beginning of the Space Age."
+	},
+	{
+		"id": 89,
+		"question": "In what year did the first Star Wars movie come out?",
+		"answer": 1977,
+		"description": "Star Wars: Episode IV - A New Hope was released on May 25, 1977."
+	},
+	{
+		"id": 90,
+		"question": "In what year did the United States enter World War I?",
+		"answer": 1917,
+		"description": "The United States declared war on Germany on April 6, 1917."
+	},
+	{
+		"id": 91,
+		"question": "In what year did the Spanish Civil War start?",
+		"answer": 1936,
+		"description": "The Spanish Civil War began on July 17, 1936, and lasted until April 1, 1939."
+	},
+	{
+		"id": 92,
+		"question": "In what year did the European Union form?",
+		"answer": 1993,
+		"description": "The European Union was officially formed with the signing of the Maastricht Treaty on November 1, 1993."
+	},
+	{
+		"id": 93,
+		"question": "In what year did the first successful powered flight take place?",
+		"answer": 1903,
+		"description": "The Wright brothers achieved the first successful powered flight on December 17, 1903, in Kitty Hawk, North Carolina."
+	},
+	{
+		"id": 94,
+		"question": "In what year did the first modern computer, ENIAC, become operational?",
+		"answer": 1945,
+		"description": "The Electronic Numerical Integrator and Computer (ENIAC) was completed and became operational on February 15, 1945."
+	},
+	{
+		"id": 95,
+		"question": "In what year did the Chernobyl nuclear disaster occur?",
+		"answer": 1986,
+		"description": "The Chernobyl nuclear disaster occurred on April 26, 1986, at the Chernobyl Nuclear Power Plant in Ukraine."
+	},
+	{
+		"id": 96,
+		"question": "In what year did the first successful heart transplant take place?",
+		"answer": 1967,
+		"description": "Dr. Christiaan Barnard performed the first successful heart transplant on December 3, 1967, in Cape Town, South Africa."
+	},
+	{
+		"id": 97,
+		"question": "In what year did the first successful human flight with a jetpack occur?",
+		"answer": 1961,
+		"description": "The first successful human flight with a jetpack occurred on April 21, 1961, when Harold Graham flew for 13 seconds in Bell Aerosystems' rocket belt."
+	},
+	{
+		"id": 98,
+		"question": "In what year did the United Nations formally come into existence?",
+		"answer": 1945,
+		"description": "The United Nations officially came into existence on October 24, 1945, with the signing of the UN Charter by 51 countries."
+	},
+	{
+		"id": 99,
+		"question": "In what year did the Vietnam War end?",
+		"answer": 1975,
+		"description": "The Vietnam War officially ended on April 30, 1975, when North Vietnam captured Saigon (now Ho Chi Minh City), the capital of South Vietnam."
+	},
+	{
+		"id": 100,
+		"question": "In what year did the first successful organ transplant occur?",
+		"answer": 1954,
+		"description": "The first successful organ transplant occurred on December 23, 1954, when Dr. Joseph Murray performed a kidney transplant between identical twins."
+	},
+	{
+		"id": 101,
+		"question": "In what year did the first successful cloning of a mammal, Dolly the sheep, take place?",
+		"answer": 1996,
+		"description": "Dolly the sheep was successfully cloned on July 5, 1996, at the Roslin Institute in Scotland."
+	},
+	{
+		"id": 102,
+		"question": "In what year was the city of Rome founded?",
+		"answer": -753,
+		"description": "According to tradition, the city of Rome was founded on April 21, 753 BC."
+	},
+	{
+		"id": 103,
+		"question": "In what year did the construction of Stonehenge begin?",
+		"answer": -3000,
+		"description": "The construction of Stonehenge, a prehistoric monument in Wiltshire, England, began around 3000 BC."
+	},
+	{
+		"id": 104,
+		"question": "In what year was the Hanging Gardens of Babylon built?",
+		"answer": -600,
+		"description": "The Hanging Gardens of Babylon, one of the Seven Wonders of the Ancient World, were built around 600 BC."
+	},
+	{
+		"id": 105,
+		"question": "In what year did the Buddha live?",
+		"answer": -563,
+		"description": "The Buddha, also known as Siddhartha Gautama, was born in Lumbini, Nepal, in 563 BC and died in 483 BC."
+	},
+	{
+		"id": 106,
+		"question": "In what year did the ancient Olympic Games begin?",
+		"answer": -776,
+		"description": "The ancient Olympic Games, which were held in Olympia, Greece, began in 776 BC and continued until 393 AD."
+	},
+	{
+		"id": 107,
+		"question": "In what year was the city of Alexandria, Egypt founded?",
+		"answer": -331,
+		"description": "The city of Alexandria, Egypt, was founded by Alexander the Great in 331 BC."
+	},
+	{
+		"id": 108,
+		"question": "In what year was the Colossus of Rhodes built?",
+		"answer": -280,
+		"description": "The Colossus of Rhodes, a statue of the Greek god Helios that stood over 30 meters (98 feet) tall, was built around 280 BC and was destroyed in an earthquake in 226 BC."
+	},
+	{
+		"id": 109,
+		"question": "In what year did Julius Caesar die?",
+		"answer": -44,
+		"description": "Julius Caesar, the Roman dictator, was assassinated on March 15, 44 BC."
+	},
+	{
+		"id": 110,
+		"question": "In what year was the Great Pyramid of Giza built?",
+		"answer": -2560,
+		"description": "The Great Pyramid of Giza, the oldest and largest of the three pyramids in the Giza pyramid complex, was built around 2560 BC."
+	},
+	{
+		"id": 111,
+		"question": "In what year was the Code of Hammurabi written?",
+		"answer": -1754,
+		"description": "The Code of Hammurabi, a well-preserved Babylonian law code of ancient Mesopotamia, was written around 1754 BC."
+	},
+	{
+		"id": 112,
+		"question": "In what year did Julius Caesar become the dictator of Rome?",
+		"answer": -44,
+		"description": "Julius Caesar became the dictator of Rome in 44 BC after defeating his rival, Pompey, in a civil war."
+	},
+	{
+		"id": 113,
+		"question": "In what year did the Roman Empire officially split into the Eastern and Western empires?",
+		"answer": 395,
+		"description": "In 395 AD, the Roman Empire officially split into the Eastern Roman Empire (later known as the Byzantine Empire) and the Western Roman Empire."
+	},
+	{
+		"id": 114,
+		"question": "In what year did the Black Death begin to spread throughout Europe?",
+		"answer": 1347,
+		"description": "The Black Death, a deadly pandemic caused by the bubonic plague, began to spread throughout Europe in 1347 and ultimately resulted in the deaths of millions of people."
+	},
+	{
+		"id": 115,
+		"question": "In what year did the Protestant Reformation begin?",
+		"answer": 1517,
+		"description": "The Protestant Reformation began in 1517 when Martin Luther published his Ninety-Five Theses, which criticized the practices and beliefs of the Roman Catholic Church."
+	},
+	{
+		"id": 116,
+		"question": "In what year did the Industrial Revolution begin?",
+		"answer": 1760,
+		"description": "The Industrial Revolution began in Britain in the mid-18th century and eventually spread to other parts of Europe, North America, and the world."
+	},
+	{
+		"id": 117,
+		"question": "In what year did World War I begin?",
+		"answer": 1914,
+		"description": "World War I began in 1914 after the assassination of Archduke Franz Ferdinand of Austria-Hungary by a Serbian nationalist."
+	},
+	{
+		"id": 118,
+		"question": "In what year did the Russian Revolution take place?",
+		"answer": 1917,
+		"description": "The Russian Revolution took place in 1917 and ultimately resulted in the establishment of the Soviet Union."
+	},
+	{
+		"id": 119,
+		"question": "In what year did the United States enter World War II?",
+		"answer": 1941,
+		"description": "The United States entered World War II in 1941 after the Japanese attack on Pearl Harbor."
+	},
+	{
+		"id": 120,
+		"question": "In what year did the Universal Declaration of Human Rights come into existence?",
+		"answer": 1948,
+		"description": "The Universal Declaration of Human Rights was adopted by the United Nations General Assembly on December 10, 1948."
+	},
+	{
+		"id": 121,
+		"question": "In what year did the Soviet Union dissolve?",
+		"answer": 1991,
+		"description": "The Soviet Union dissolved on December 26, 1991, after a period of political and economic turmoil."
+	},
+	{
+		"id": 122,
+		"question": "In what year did the Treaty of Versailles end World War I?",
+		"answer": 1919,
+		"description": "The Treaty of Versailles, which formally ended World War I, was signed on June 28, 1919, in the Hall of Mirrors at the Palace of Versailles, France."
+	},
+	{
+		"id": 123,
+		"question": "In what year did the first modern postage stamp, the Penny Black, go into circulation?",
+		"answer": 1840,
+		"description": "The Penny Black, the first adhesive postage stamp, was issued in Britain on May 1, 1840, and featured an image of Queen Victoria."
+	},
+	{
+		"id": 124,
+		"question": "In what year was the Great Fire of London?",
+		"answer": 1666,
+		"description": "The Great Fire of London burned for four days from September 2 to September 6, 1666, destroying much of the city and leaving an estimated 100,000 people homeless."
+	},
+	{
+		"id": 125,
+		"question": "In what year was the Mona Lisa painted?",
+		"answer": 1503,
+		"description": "The Mona Lisa was painted by Leonardo da Vinci between 1503 and 1506."
+	},
+	{
+		"id": 126,
+		"question": "In what year did the Black Death first arrive in Europe?",
+		"answer": 1347,
+		"description": "The Black Death, also known as the bubonic plague, first arrived in Europe in 1347 and went on to kill an estimated 25 million people, or about a third of the continent's population."
+	},
+	{
+		"id": 127,
+		"question": "In what year did the Industrial Revolution begin?",
+		"answer": 1760,
+		"description": "The Industrial Revolution began in Britain in the mid-18th century, around 1760, and eventually spread to other parts of the world."
+	},
+	{
+		"id": 128,
+		"question": "In what year did the first modern atlas, the Atlas Novus, by Willem Janszoon Blaeu, get published?",
+		"answer": 1635,
+		"description": "The Atlas Novus, a collection of maps of the world and the heavens, was published by Dutch cartographer Willem Janszoon Blaeu in 1635."
+	},
+	{
+		"id": 129,
+		"question": "In what year did the construction of the Great Wall of China begin?",
+		"answer": -214,
+		"description": "The construction of the Great Wall of China began in the 7th century BC, but the most famous sections of the wall were built during the Ming dynasty, starting in the 14th century AD. The year -214 is the approximate date of the first recorded mention of the wall, in a text by the ancient Chinese historian Sima Qian."
+	},
+	{
+		"id": 130,
+		"question": "In what year did the Battle of Marathon take place?",
+		"answer": -490,
+		"description": "The Battle of Marathon was fought in 490 BC between the Athenians and the Persian Empire. The Athenians were victorious and the battle is considered a pivotal moment in the development of Western civilization."
+	},
+	{
+		"id": 131,
+		"question": "In what year did the United States invade Afghanistan?",
+		"answer": 2001,
+		"description": "The United States invaded Afghanistan on October 7, 2001, in response to the September 11 terrorist attacks. The conflict is still ongoing"
+	},
+	{
+		"id": 132,
+		"question": "In what year did the Battle of Hastings take place?",
+		"answer": 1066,
+		"description": "The Battle of Hastings was fought on October 14, 1066, between the Norman-French army of William, the Duke of Normandy, and the English army of King Harold II. The Normans were victorious, and William became King of England, marking the beginning of the Norman Conquest."
+	},
+	{
+		"id": 133,
+		"question": "In what year did the Black Death reach its peak mortality in Europe?",
+		"answer": 1348,
+		"description": "The Black Death reached its peak mortality in Europe in 1348, when it killed an estimated 50 million people, or about 60% of the population."
+	},
+	{
+		"id": 134,
+		"question": "In what year did Christopher Columbus make his first voyage to the Americas?",
+		"answer": 1492,
+		"description": "Christopher Columbus set sail on his first voyage to the Americas on August 3, 1492, with three ships: the Santa Maria, the Pinta, and the Niña. He arrived in the Bahamas on October 12 of that year."
+	},
+	{
+		"id": 135,
+		"question": "In what year did the American Civil War end?",
+		"answer": 1865,
+		"description": "The American Civil War ended on April 9, 1865, when Confederate General Robert E. Lee surrendered to Union General Ulysses S. Grant at the Appomattox Court House in Virginia."
+	},
+	{
+		"id": 136,
+		"question": "In what year did Julius Caesar cross the Rubicon River?",
+		"answer": -49,
+		"description": "In 49 BC, Julius Caesar led his army across the Rubicon River, which was the border between Italy and Gaul (modern-day France). This act was seen as a declaration of war against the Roman Republic and ultimately led to Caesar's rise to power."
+	},
+	{
+		"id": 137,
+		"question": "In what year did the construction of the Great Pyramid of Giza begin?",
+		"answer": -2560,
+		"description": "The Great Pyramid of Giza was built as a tomb for the pharaoh Khufu and construction began around 2560 BC. It is the oldest and largest of the three pyramids in Giza, and one of the Seven Wonders of the Ancient World."
+	},
+	{
+		"id": 138,
+		"question": "In what year did the Zhou dynasty begin in China?",
+		"answer": -1046,
+		"description": "The Zhou dynasty is believed to have begun in 1046 BC after overthrowing the Shang dynasty, and is considered one of the longest-lasting dynasties in Chinese history."
+	},
+	{
+		"id": 139,
+		"question": "In what year was the ancient city of Rome founded?",
+		"answer": -753,
+		"description": "According to legend, the ancient city of Rome was founded in 753 BC by twin brothers Romulus and Remus. Rome went on to become one of the most powerful and influential cities in the ancient world."
+	},
+	{
+		"id": 140,
+		"question": "In what year did the Peloponnesian War begin?",
+		"answer": -431,
+		"description": "The Peloponnesian War was fought between Athens and Sparta and their respective allies from 431 to 404 BC. The war was one of the most significant events in ancient Greek history, and had a profound impact on the development of Western civilization."
+	},
+	{
+		"id": 141,
+		"question": "In what year did the construction of Stonehenge begin?",
+		"answer": -3000,
+		"description": "Stonehenge is a prehistoric monument in England, and the construction of the stones is believed to have begun around 3000 BC. The purpose of the monument is still unknown, but it is believed to have been a site of religious or ceremonial significance."
+	},
+	{
+		"id": 142,
+		"question": "In what year did the ancient city of Babylon fall to the Persians?",
+		"answer": -539,
+		"description": "The ancient city of Babylon fell to the Persian Empire in 539 BC after a siege led by Cyrus the Great. Babylon had been one of the most important cities in the ancient world, and its fall marked the end of the Neo-Babylonian Empire."
+	},
+	{
+		"id": 143,
+		"question": "In what year did Alexander the Great become king of Macedon?",
+		"answer": -336,
+		"description": "Alexander the Great became king of Macedon in 336 BC after the assassination of his father, King Philip II."
+	},
+	{
+		"id": 146,
+		"question": "When was the first website created?",
+		"description": "The first website was created in 1991, marking the beginning of the World Wide Web as we know it today.",
+		"answer": 1991
+	},
+	{
+		"id": 147,
+		"question": "In what year was the first email sent?",
+		"description": "The first email was sent in 1971, paving the way for modern email communication.",
+		"answer": 1971
+	},
+	{
+		"id": 148,
+		"question": "When was the first successful video game, Pong, released?",
+		"description": "The first successful video game, Pong, was released in 1972 and started the video game industry as we know it today.",
+		"answer": 1972
+	},
+	{
+		"id": 149,
+		"question": "When was the first commercially available personal computer, the Altair 8800, released?",
+		"description": "The Altair 8800 was the first commercially available personal computer, which helped spark the home computing revolution.",
+		"answer": 1975
+	},
+	{
+		"id": 150,
+		"question": "In what year was the first graphical web browser, Mosaic, released?",
+		"description": "Mosaic was the first graphical web browser, which made it easier to browse the internet.",
+		"answer": 1993
+	},
+	{
+		"id": 151,
+		"question": "When was the first MP3 player, the MPMan, released?",
+		"description": "The first MP3 player, the MPMan, was released in 1998 and changed the way we listen to music.",
+		"answer": 1998
+	},
+	{
+		"id": 152,
+		"question": "In what year was the first 3D printer created?",
+		"description": "The first 3D printer was created in 1984 and has the potential to revolutionize manufacturing and many other industries.",
+		"answer": 1984
+	},
+	{
+		"id": 153,
+		"question": "When was the first successful digital camera, the Fuji DS-1P, released?",
+		"description": "The first successful digital camera, the Fuji DS-1P, was released in 1988 and transformed the way we take and share pictures.",
+		"answer": 1988
+	},
+	{
+		"id": 154,
+		"question": "In what year was the first search engine, Archie, created?",
+		"description": "Archie was the first search engine and was created in 1990 to help users find information on the internet.",
+		"answer": 1990
+	},
+	{
+		"id": 155,
+		"question": "When was the first successful smartphone, the IBM Simon, released?",
+		"description": "The IBM Simon was the first successful smartphone, combining a mobile phone with a touchscreen interface.",
+		"answer": 1993
+	},
+	{
+		"id": 156,
+		"question": "In what year was the first USB standard released?",
+		"description": "The first USB standard was released in 1996, which has become the standard for connecting all sorts of devices to computers.",
+		"answer": 1996
+	},
+	{
+		"id": 157,
+		"question": "When was the first successful e-book reader, the Rocket eBook, released?",
+		"description": "The first successful e-book reader, the Rocket eBook, was released in 1998 and transformed the way we read and consume literature.",
+		"answer": 1998
+	},
+	{
+		"id": 158,
+		"question": "In what year was the first optical disc, the CD, commercially released?",
+		"description": "The CD, the first optical disc, was commercially released in 1982 and was a major advancement in music storage and distribution, paving the way for DVDs and other optical media.",
+		"answer": 1982
+	}
 ]

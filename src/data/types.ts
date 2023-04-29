@@ -1,12 +1,12 @@
 export interface Question {
-    id: number;
-    question: string;
-    answer: number;
-    description: string;
+	id: number;
+	question: string;
+	answer: number;
+	description: string;
 }
 export interface Team {
-    timeline: Question[];
-    color: string;
+	timeline: Question[];
+	color: string;
 }
 
 export interface Mark {
@@ -14,34 +14,34 @@ export interface Mark {
 	answer: number;
 }
 export interface Teams {
-    [key: string]: Team;
+	[key: string]: Team;
 }
 
 export interface ServiceParameters {
-    url: string;
-    method: string;
-    headers?: HeadersInit;
-    body?: Record<string, unknown>;
+	url: string;
+	method: string;
+	headers?: HeadersInit;
+	body?: Record<string, unknown>;
 }
 export interface TeamOptions {
-    name: string,
-    color: string
+	name: string;
+	color: string;
 }
 
 export interface GameState {
-    freshQuestions: Question[];
-    guess: number;
-    activeQuestion: Question | null;
-    activeTeam: string | null;
-    round: number;
-    shouldShowAnswer: boolean;
-    answerCorrect: boolean;
-    teams: Teams;
-    timeline: Question[];
+	freshQuestions: Question[];
+	guess: number;
+	activeQuestion: Question | null;
+	activeTeam: string | null;
+	round: number;
+	shouldShowAnswer: boolean;
+	answerCorrect: boolean;
+	teams: Teams;
+	timeline: Question[];
 }
 
 export interface ConfigState {
-    teams: TeamOptions[];
-    enableAi: boolean;
-    isCallingService: boolean;
+	teams: TeamOptions[];
+	enableAi: boolean;
+	isCallingService: boolean;
 }

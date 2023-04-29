@@ -4,153 +4,165 @@ import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 import { Backdrop, Typography } from "@mui/material";
 
-export default function Fireworks({ winnerTeamName }: { winnerTeamName: string }) {
+export default function Fireworks({
+	winnerTeamName,
+}: {
+	winnerTeamName: string;
+}) {
 	const customInit = useCallback(async (engine: Engine): Promise<void> => {
 		await loadFull(engine);
 	}, []);
 
 	// Can probably do without this
-	const particlesLoaded = useCallback(async (container: Container | undefined) => {
-		await console.log(container);
-	}, []);
+	const particlesLoaded = useCallback(
+		async (container: Container | undefined) => {
+			await console.log(container);
+		},
+		[]
+	);
 
 	return (
-		<Backdrop sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1, display: 'flex', flexDirection: 'column' }} open>
-			<Typography variant='h1' sx={{ zIndex: 1000 }} align="center">WINNER WINNER CHICKEN DINNER <br /> gz {winnerTeamName}</Typography>
+		<Backdrop
+			sx={{
+				color: "#fff",
+				zIndex: (theme) => theme.zIndex.drawer + 1,
+				display: "flex",
+				flexDirection: "column",
+			}}
+			open
+		>
+			<Typography sx={{ zIndex: 1000 }} variant="h1" align="center">
+				WINNER WINNER CHICKEN DINNER
+				<br />
+				gz {winnerTeamName}
+			</Typography>
 			<Particles
 				id="tsparticles"
 				init={customInit}
 				loaded={particlesLoaded}
 				options={{
-					"fullScreen": {
-						"zIndex": 1
+					fullScreen: {
+						zIndex: 1,
 					},
-					"particles": {
-						"number": {
-							"value": 0
+					particles: {
+						number: {
+							value: 0,
 						},
-						"color": {
-							"value": [
-								"#00FFFC",
-								"#FC00FF",
-								"#fffc00"
-							]
+						color: {
+							value: ["#00FFFC", "#FC00FF", "#fffc00"],
 						},
-						"shape": {
-							"type": [
-								"circle",
-								"square"
-							],
-							"options": {}
+						shape: {
+							type: ["circle", "square"],
+							options: {},
 						},
-						"opacity": {
-							"value": 1,
-							"animation": {
-								"enable": true,
-								"minimumValue": 0,
-								"speed": 2,
-								"startValue": "max",
-								"destroy": "min"
-							}
-						},
-						"size": {
-							"value": 4,
-							"random": {
-								"enable": true,
-								"minimumValue": 2
-							}
-						},
-						"links": {
-							"enable": false
-						},
-						"life": {
-							"duration": {
-								"sync": true,
-								"value": 5
+						opacity: {
+							value: 1,
+							animation: {
+								enable: true,
+								minimumValue: 0,
+								speed: 2,
+								startValue: "max",
+								destroy: "min",
 							},
-							"count": 1
 						},
-						"move": {
-							"enable": true,
-							"gravity": {
-								"enable": true,
-								"acceleration": 10
+						size: {
+							value: 4,
+							random: {
+								enable: true,
+								minimumValue: 2,
 							},
-							"speed": {
-								"min": 10,
-								"max": 20
-							},
-							"decay": 0.1,
-							"direction": "none",
-							"straight": false,
-							"outModes": {
-								"default": "destroy",
-								"top": "none"
-							}
 						},
-						"rotate": {
-							"value": {
-								"min": 0,
-								"max": 360
-							},
-							"direction": "random",
-							"move": true,
-							"animation": {
-								"enable": true,
-								"speed": 60
-							}
+						links: {
+							enable: false,
 						},
-						"tilt": {
-							"direction": "random",
-							"enable": true,
-							"move": true,
-							"value": {
-								"min": 0,
-								"max": 360
+						life: {
+							duration: {
+								sync: true,
+								value: 5,
 							},
-							"animation": {
-								"enable": true,
-								"speed": 60
-							}
+							count: 1,
 						},
-						"roll": {
-							"darken": {
-								"enable": true,
-								"value": 25
+						move: {
+							enable: true,
+							gravity: {
+								enable: true,
+								acceleration: 10,
 							},
-							"enable": true,
-							"speed": {
-								"min": 15,
-								"max": 25
-							}
+							speed: {
+								min: 10,
+								max: 20,
+							},
+							decay: 0.1,
+							direction: "none",
+							straight: false,
+							outModes: {
+								default: "destroy",
+								top: "none",
+							},
 						},
-						"wobble": {
-							"distance": 30,
-							"enable": true,
-							"move": true,
-							"speed": {
-								"min": -15,
-								"max": 15
-							}
-						}
+						rotate: {
+							value: {
+								min: 0,
+								max: 360,
+							},
+							direction: "random",
+							move: true,
+							animation: {
+								enable: true,
+								speed: 60,
+							},
+						},
+						tilt: {
+							direction: "random",
+							enable: true,
+							move: true,
+							value: {
+								min: 0,
+								max: 360,
+							},
+							animation: {
+								enable: true,
+								speed: 60,
+							},
+						},
+						roll: {
+							darken: {
+								enable: true,
+								value: 25,
+							},
+							enable: true,
+							speed: {
+								min: 15,
+								max: 25,
+							},
+						},
+						wobble: {
+							distance: 30,
+							enable: true,
+							move: true,
+							speed: {
+								min: -15,
+								max: 15,
+							},
+						},
 					},
-					"emitters": {
-						"life": {
-							"count": 0,
-							"duration": 0.1,
-							"delay": 0.4
+					emitters: {
+						life: {
+							count: 0,
+							duration: 0.1,
+							delay: 0.4,
 						},
-						"rate": {
-							"delay": 0.1,
-							"quantity": 150
+						rate: {
+							delay: 0.1,
+							quantity: 150,
 						},
-						"size": {
-							"width": 0,
-							"height": 0
-						}
-					}
+						size: {
+							width: 0,
+							height: 0,
+						},
+					},
 				}}
 			/>
 		</Backdrop>
-	)
-};
+	);
+}

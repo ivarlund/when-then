@@ -1,13 +1,13 @@
-import "@/styles/globals.css"
-import type { AppProps } from 'next/app'
-import { Provider } from 'react-redux';
-import store from '@/store';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import { Container } from '@mui/system';
-import { Button, createTheme, ThemeProvider } from '@mui/material';
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { Provider } from "react-redux";
+import store from "@/store";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import { Container } from "@mui/system";
+import { Button, createTheme, ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import RulesDrawer from "@/components/rulesDrawer";
 import Header from "@/components/header";
@@ -26,10 +26,10 @@ const theme = createTheme({
 			light: "#EBCB8B",
 		},
 		text: {
-			primary: '#2E3440',
-			secondary: '#434C5E'
-		}
-	}
+			primary: "#2E3440",
+			secondary: "#434C5E",
+		},
+	},
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -40,13 +40,23 @@ export default function App({ Component, pageProps }: AppProps) {
 			<Head>
 				<title>When then</title>
 				<meta name="description" content="Well, when then?" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<ThemeProvider theme={theme}>
-				<RulesDrawer isOpen={rulesDrawerOpen} setIsOpen={setRulesDrawerOpen} />
+				<RulesDrawer
+					isOpen={rulesDrawerOpen}
+					setIsOpen={setRulesDrawerOpen}
+				/>
 				<Header title="When then?">
-					<Button sx={{ my: 2, color: '#F2F8F2' }} onClick={() => setRulesDrawerOpen(true)} variant="outlined">
+					<Button
+						sx={{ my: 2, color: "#F2F8F2" }}
+						onClick={() => setRulesDrawerOpen(true)}
+						variant="outlined"
+					>
 						Show rules
 					</Button>
 				</Header>
@@ -55,5 +65,5 @@ export default function App({ Component, pageProps }: AppProps) {
 				</Container>
 			</ThemeProvider>
 		</Provider>
-	)
+	);
 }
