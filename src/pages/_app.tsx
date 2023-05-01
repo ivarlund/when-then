@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import { Provider } from "react-redux";
 import store from "@/store";
 import "@fontsource/roboto/300.css";
@@ -33,37 +34,41 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+	// Why the heck did i put the rulesdrawer here?
 	const [rulesDrawerOpen, setRulesDrawerOpen] = useState(false);
 
 	return (
-		<Provider store={store}>
-			<Head>
-				<title>When then</title>
-				<meta name="description" content="Well, when then?" />
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1"
-				/>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<ThemeProvider theme={theme}>
-				<RulesDrawer
-					isOpen={rulesDrawerOpen}
-					setIsOpen={setRulesDrawerOpen}
-				/>
-				<Header title="When then?">
-					<Button
-						sx={{ my: 2, color: "#F2F8F2" }}
-						onClick={() => setRulesDrawerOpen(true)}
-						variant="outlined"
-					>
-						Show rules
-					</Button>
-				</Header>
-				<Container>
-					<Component {...pageProps} />
-				</Container>
-			</ThemeProvider>
-		</Provider>
+		<>
+			<Provider store={store}>
+				<Head>
+					<title>When then</title>
+					<meta name="description" content="Well, when then?" />
+					<meta
+						name="viewport"
+						content="width=device-width, initial-scale=1"
+					/>
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+				<ThemeProvider theme={theme}>
+					<RulesDrawer
+						isOpen={rulesDrawerOpen}
+						setIsOpen={setRulesDrawerOpen}
+					/>
+					<Header title="When then?">
+						<Button
+							sx={{ my: 2, color: "#F2F8F2" }}
+							onClick={() => setRulesDrawerOpen(true)}
+							variant="outlined"
+						>
+							Show rules
+						</Button>
+					</Header>
+					<Container>
+						<Component {...pageProps} />
+					</Container>
+				</ThemeProvider>
+			</Provider>
+			<Analytics />
+		</>
 	);
 }
