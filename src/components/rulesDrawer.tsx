@@ -37,52 +37,26 @@ export default function RulesDrawer({
 			<Paper sx={{ p: 2, bgcolor: "#ECEFF4" }} square>
 				<Container>
 					<Card sx={{ px: 3, py: 2 }} variant="outlined">
-						<Typography variant="h6">Spelets mål</Typography>
+						<Typography variant="h6">Goal of the game</Typography>
 						<Typography>
-							Att bli först med att samla på sig 10st frågekort
-							genom att placera händelser, personer, platser och
-							prylar i rätt ordning i förhållande till de kort som
-							man redan har framför sig.
+							To be the first to collect 10 question cards by placing events, people, places, and objects in the correct order relative to the cards already in front of you.
 						</Typography>
 						<Divider sx={{ my: 2 }} />
-						<Typography variant="h6">Spelets gång</Typography>
+						<Typography variant="h6">Gameplay</Typography>
 						<Typography gutterBottom>
-							En av spelarna slår den färgade tärningen och
-							spelaren till vänster läser upp frågan från det
-							översta kortet av den kategori som motsvaras av
-							färgen. Nu ska den aktive spelaren försöka placera
-							kortet tidsmässigt korrekt i förhållande till de
-							kort som man redan har på sin tidslinje (både
-							ovanför och under tidlåset).
+							One of the players rolls the colored die, and the player to the left reads the question from the top card of the category corresponding to the color. Now, the active player tries to place the card in the correct chronological order relative to the cards already on their timeline (both above and below the timeline).
 						</Typography>
 						<Typography gutterBottom>
-							Lyckas en spelare placera frågekortet korrekt på sin
-							tidslinje så behåller personen kortet framför sig –
-							ovanför sitt tidlås. Vill spelaren försöka svara
-							rätt på ytterligare en fråga så slår denne tärningen
-							igen.
+							If a player successfully places the question card correctly on their timeline, they keep the card in front of them, above their timeline. If the player wants to try to answer another question correctly, they roll the die again.
 						</Typography>
 						<Typography gutterBottom>
-							Om en spelare placerar frågekortet fel så förlorar
-							denne samtliga kort som ligger ovanför tidlåset.
-							Spelaren till vänster om frågeläsaren får därefter
-							en chans att placera kortet rätt efter sin egen
-							tidslinje. Spelet fortsätter därefter som vanligt
-							med att nästa spelare i turordningen får slå
-							tärningen och försöka placera åtminstone ett
-							frågekort.
+							If a player places the question card incorrectly, they lose all the cards above their timeline. The player to the left of the question reader then gets a chance to place the card correctly according to their own timeline. The game continues as usual with the next player in turn rolling the die and attempting to place at least one question card.
 						</Typography>
 						<Typography gutterBottom>
-							När en spelare väljer att avsluta sin tur och inte
-							längre vill försöka placera fler frågor, tar denne
-							samtliga av sina frågekort som ligger ovanför
-							tidlåset och placerar dessa under låset istället.
-							Turen går därefter vidare till nästa person i
-							medsols ordning.
+							When a player chooses to end their turn and no longer wants to attempt placing more questions, they take all their question cards above the timeline and place them under the lock instead. The turn then passes to the next person in clockwise order.
 						</Typography>
 						<Typography>
-							Den spelare som blir först med att samla 10st
-							frågekort under sitt tidlås har vunnit.
+							The player who collects 10 question cards under their timeline first wins.
 						</Typography>
 					</Card>
 				</Container>

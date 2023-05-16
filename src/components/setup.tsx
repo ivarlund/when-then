@@ -2,14 +2,15 @@ import {
 	Box,
 	Button,
 	Card,
-	Checkbox,
+	Checkbox, Divider,
 	FormControlLabel,
+	FormHelperText,
 	IconButton,
 	MenuItem,
 	Select,
 	SelectChangeEvent,
 	TextField,
-	Typography,
+	Typography
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/reducers";
@@ -26,7 +27,7 @@ const colorMap: { [key: string]: string } = {
 	"#A3BE8C": "Green",
 	"#B48EAD": "Purple",
 	"#88C0D0": "Blue",
-	"#CA69AE": "Pink",
+	"#CA69AE": "Pink"
 };
 
 export default function Setup() {
@@ -121,12 +122,13 @@ export default function Setup() {
 									onChange={handleAiChange}
 								/>
 							}
-							label="Enable epic AI question features"
+							label="Enable AI question generation features"
 						/>
-						{/* <FormHelperText sx={{ mt: 0 }}>
-                            This epic and tremendously experience-improving feature is only available to our premium members
-                        </FormHelperText> */}
+						<FormHelperText sx={{ mt: 0 }}>
+							This feature is only available to our premium members
+						</FormHelperText>
 					</Box>
+					<Divider sx={{ mb: 2 }} />
 					<Box>
 						<Button
 							startIcon={<AddIcon />}
@@ -160,7 +162,7 @@ export default function Setup() {
 									width: "50%",
 									height: "100%",
 									backgroundColor: team.color,
-									borderRadius: "4px",
+									borderRadius: "4px"
 								}}
 								size="small"
 								value={team.color}

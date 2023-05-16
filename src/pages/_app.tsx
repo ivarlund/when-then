@@ -19,18 +19,18 @@ const theme = createTheme({
 		primary: {
 			dark: "#4B6789",
 			main: "#5E81AC",
-			light: "#81A1C1",
+			light: "#81A1C1"
 		},
 		secondary: {
 			dark: "#A89164",
 			main: "#d3b67d",
-			light: "#EBCB8B",
+			light: "#EBCB8B"
 		},
 		text: {
 			primary: "#2E3440",
-			secondary: "#434C5E",
-		},
-	},
+			secondary: "#434C5E"
+		}
+	}
 });
 
 export default function App({ Component, pageProps }: AppProps) {
